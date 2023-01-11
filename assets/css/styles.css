@@ -1,3 +1,23 @@
+
+/*----------------------------------------------------- Colors */
+
+.txt-color-1 {
+    color: #131f53;
+}
+
+.txt-color-2 {
+    color: #ffffff;
+}
+
+.logo-row {
+    margin-top: 56px;
+}
+
 .logo {
     max-width: 40%;
+}
+
+.btn-primary {
+    background-color: #db0008;
+    border-color: #db0008;
 }
