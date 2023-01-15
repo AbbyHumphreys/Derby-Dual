@@ -9,6 +9,12 @@
     color: #ffffff;
 }
 
+.bg-color-1 {
+    background-color: #131f53;
+}
+
+/*----------------------------------------------------- Main Section */
+
 .logo-row {
     margin-top: 56px;
 }
@@ -21,3 +27,6 @@
     background-color: #db0008;
     border-color: #db0008;
 }
+
+/*----------------------------------------------------- About Section */
+
