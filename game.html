@@ -12,49 +12,42 @@
 </head>
 <body>
     <header>
-        <nav class="navbar nav-small fixed-top">
+        <nav class="navbar fixed-top">
             <div class="container-fluid">
-                <div class="row text-center">
-                    <div class="col-1"></div>
-                    <div class="col-3">
-                        <img class="img-fluid header-logo" src="assets/images/arsenal-header-logo.webp" alt="Arsenal football team logo" id="arsenal-logo">
+                <div class="col-11 text-center">
+                    <img class="img-fluid header-logo" src="assets/images/arsenal-header-logo.webp" alt="Arsenal football team logo" id="arsenal-logo">
+                    <h1 class="d-inline align-middle">Derby Duel</h1>
+                    <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp" alt="Tottenham Hotspurs team logo" id="spurs-logo">
+                </div>
+                <div class="col-1 text-end">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="col-4 txt-color-1">
-                        <h1>Derby Duel</h1>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">How to Play</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-3">
-                        <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp" alt="Tottenham Hotspurs team logo" id="spurs-logo">
-                    </div>
-                    <div class="col-1">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                            <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Features</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">How to Play</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                </div>
                 </div>
             </div>
         </nav>
