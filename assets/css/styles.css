@@ -1,10 +1,15 @@
-
-body,html {
+body,
+html {
     margin: 0;
     padding: 0;
 }
+
 * {
     box-sizing: border-box;
+}
+
+body {
+    text-transform: uppercase;
 }
 
 /*----------------------------------------------------- Colors */
@@ -27,8 +32,12 @@ body,html {
 
 /*----------------------------------------------------- General */
 
-p {
+p, h2 {
     margin-bottom: 0;
+}
+
+h2 {
+    font-size: 6rem;
 }
 
 /*----------------------------------------------------- Main Section */
@@ -48,7 +57,7 @@ p {
 
 /*----------------------------------------------------- Borders */
 
-.border-danger  {
+.border-danger {
     border-color: #db0008;
 }
 

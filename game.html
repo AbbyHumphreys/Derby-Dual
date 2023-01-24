@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derby Duel</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Main Stylesheet -->
     <link href="assets/css/styles.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
             <div class="container-fluid">
                 <div class="col-10 col-md-11 text-center">
-                    <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-header-logo.webp" alt="Arsenal football team logo" id="arsenal-logo">
+                    <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-header-logo.webp"
+                        alt="Arsenal football team logo" id="arsenal-logo">
                     <h1 class="d-inline align-middle pe-2">Derby Duel</h1>
-                    <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp" alt="Tottenham Hotspurs team logo" id="spurs-logo">
+                    <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp"
+                        alt="Tottenham Hotspurs team logo" id="spurs-logo">
                 </div>
                 <div class="col-2 col-md-1 text-end">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">How to Play</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">How to Play</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 </div>
             </div>
         </nav>
@@ -55,49 +63,54 @@
     <div class="container-fluid">
         <div class="row game-area">
             <div class="col-12 col-md-6 border border-danger border-1 position-relative">
-            <div class="col-12">
-    <section class="question-section">
-        <h2 class="text-end">Q1</h2>
-        <p class="position-absolute question-paragraph">On Sol Campbell's first return to White Hart Lane after joining Arsenal, Spurs fans filled the stadium with balloons that had which word written on them?</p>
-    </section>
+                <div class="col-12">
+                    <section class="question-section">
+                        <h2 class="text-end">Q1</h2>
+                        <p class="position-absolute question-paragraph">On Sol Campbell's first return to White Hart
+                            Lane after joining Arsenal, Spurs fans filled the stadium with balloons that had which word
+                            written on them?</p>
+                    </section>
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-md-6 p-0">
-            <div class="col-12 border border-danger border-1 bg-color-2 txt-color-2 ps-2">
-                <h2>SELECT YOUR ANSWER</h2>
-            </div>
-            <div class="col-12 border border-danger border-1 ps-2">
-    <section class="answer-one">
-        Traitor
-    </section>
-            </div>
-            <div class="col-12 border border-danger border-1 ps-2">
-    <section class="answer-two">
-        Judas
-    </section>
-            </div>
-            <div class="col-12 border border-danger border-1 ps-2">
-    <section class="answer-three">
-        Loser
-    </section>
-            </div>
-        </div>
-</div>
-</div>
-<footer>
-    <div class="container-fluid">
-        <div class="row pt-5 pb-5 txt-color-1">
-            <div class="col-12 col-md-6 mb-2">
-                <p>&copy Abby Humphreys 2023</p>
-            </div>
-            <div class="col-12 col-md-6 text-md-end">
-                <p>Site created for educational purposes only</p>
+            <div class="col-12 col-md-6 p-0 border border-danger border-1">
+                <div class="col-12 bg-color-2 txt-color-2 ps-2 h-25">
+                    <h3>SELECT YOUR ANSWER</h3>
+                </div>
+                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25">
+                    <section class="answer-one">
+                        Traitor
+                    </section>
+                </div>
+                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25">
+                    <section class="answer-two">
+                        Judas
+                    </section>
+                </div>
+                <div class="col-12 ps-2 h-25">
+                    <section class="answer-three">
+                        Loser
+                    </section>
+                </div>
             </div>
         </div>
     </div>
-</footer>
+    <footer>
+        <div class="container-fluid">
+            <div class="row pt-5 pb-5 txt-color-1">
+                <div class="col-12 col-md-6 mb-2">
+                    <p>&copy Abby Humphreys 2023</p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <p>Site created for educational purposes only</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        <!-- Bootstrap Script Tag -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Bootstrap Script Tag -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
