@@ -40,14 +40,16 @@ p {
 
 /*----------------------------------------------------- Borders */
 
-.first-border {
-    margin-top: 66px;
-}
-
 .border-danger  {
     border-color: #db0008;
 }
 
 hr {
     opacity: 100%;
+}
+
+/*----------------------------------------------------- Question Section */
+
+.question-paragraph {
+    bottom: 0;
 }
