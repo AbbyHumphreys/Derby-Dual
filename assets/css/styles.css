@@ -40,6 +40,10 @@ h2 {
     font-size: 6rem;
 }
 
+.hide {
+    display: none;
+  }
+
 /*----------------------------------------------------- Main Section */
 
 .logo-row {
@@ -75,4 +79,19 @@ hr {
 
 .question-paragraph {
     bottom: 0;
+}
+
+/*----------------------------------------------------- Answer Section */
+
+.answer:hover {
+    background-color: #131f53;
+    color:#fff;
+}
+
+.confirmation-text {
+    width: 50%;
+}
+
+.confirmation-text p {
+    font-size: 5rem;
 }
