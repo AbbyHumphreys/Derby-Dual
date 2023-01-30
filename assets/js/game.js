@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const questionElement = document.getElementById('question-paragraph');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
+let acceptingAnswers = false;
 let shuffledQuestions, currentQuestionIndex;
 
 // Start the Game
@@ -27,7 +28,6 @@ function startGame() {
 function setNextQuestion() {
   console.log('next question');
   showQuestion(shuffledQuestions[currentQuestionIndex]);
-  
 }
 
 // Display question with answers
@@ -38,7 +38,20 @@ function showQuestion(question) {
     const number = choice.dataset["number"];
     choice.innerText = question["choice" + number];
   });
+
+  acceptingAnswers = true;
+  choices.forEach( choice => {
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return;
+        acceptingAnswers = false;
+
+        const selectedChoice = e.target;
+        console.log(selectedChoice);
+        const selectedAnswer = selectedChoice.dataset["number"];
+  })
 }
+
+
 
 function sum(a, b) {
     return a + b;
