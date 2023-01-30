@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Declare variables
 const questionElement = document.getElementById('question-paragraph');
-const answerOne = document.getElementById('answer-one');
-const answerTwo = document.getElementById('answer-two');
-const answerThree = document.getElementById('answer-three');
+const choices = Array.from(document.getElementsByClassName("choice-text"));
 
 let shuffledQuestions, currentQuestionIndex;
 
@@ -35,9 +33,11 @@ function setNextQuestion() {
 // Display question with answers
 function showQuestion(question) {
   questionElement.innerHTML = question.question;
-  answerOne.innerHTML = question.answers[0].text;
-  answerTwo.innerHTML = question.answers[1].text;
-  answerThree.innerHTML = question.answers[2].text;
+
+  choices.forEach(choice => {
+    const number = choice.dataset["number"];
+    choice.innerText = question["choice" + number];
+  });
 }
 
 function sum(a, b) {
@@ -47,35 +47,31 @@ function sum(a, b) {
   const questions = [
     {
       question: 'What is 2 + 2?',
-      answers: [
-        { answerNo: 'one', text: '4', correct: true },
-        { answerNo: 'two', text: '6', correct: false },
-        { answerNo: 'three', text: '10', correct: false }
-      ]
+      choice1: '4',
+      choice2: '6',
+      choice3: '10',
+      answer: 1
     },
     {
       question: 'What is 3 + 3?',
-      answers: [
-        { answerNo: 'one', text: '8', correct: false },
-        { answerNo: 'two', text: '10', correct: true },
-        { answerNo: 'three', text: '12', correct: false }
-      ]
+      choice1: '8',
+      choice2: '10',
+      choice3: '12',
+      answer: 2
     },
     {
       question: 'What is 4 + 4?',
-      answers: [
-        { answerNo: 'one', text: '2', correct: false },
-        { answerNo: 'two', text: '100', correct: false },
-        { answerNo: 'three', text: '8', correct: true }
-      ]
+      choice1: '2',
+      choice2: '100',
+      choice3: '8',
+      answer: 3
     },
     {
       question: 'What is 5 + 5?',
-      answers: [
-        { answerNo: 'one', text: '10', correct: true },
-        { answerNo: 'two', text: '20', correct: false },
-        { answerNo: 'three', text: '30', correct: false }
-      ]
+      choice1: '10',
+      choice2: '20',
+      choice3: '30',
+      answer: 1
     }
   ]
 
