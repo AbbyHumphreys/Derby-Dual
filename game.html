@@ -11,10 +11,43 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Main Stylesheet -->
     <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     
 </head>
 
 <body>
+
+    <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">How to Play</h5>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li>You will have the chance to answer 12 questions</li>
+                <li>Read the question and select an answer</li>
+                <li>If correct, your team scored a goal and you earn 3 points</li>
+                <li>At the end of the 12 questions</li>
+                <li>Results:
+                    <ul>
+                        <li>If you scored:</li>
+                        <li>25 - 36 - Champions League worthy</li>
+                        <li>13 - 24 - Premier League worthy</li>
+                        <li>12 points or less  - You have been relegated!</li>
+                    </ul>
+                </li>
+              </ul>
+              <p>Are you ready to play?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="start-btn" data-bs-dismiss="modal">Start Quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <div class="game-display">
     <header>
         <nav class="navbar">
             <div class="container-fluid">
@@ -78,24 +111,18 @@
             </div>
         
             <div class="col-12 col-md-6 p-0 border border-danger border-1 text-center">
-                <div class="col-12 bg-color-2 txt-color-2 ps-2 h-25">
-                    <h3>SELECT YOUR ANSWER</h3>
+                <div class="col-12 bg-color-2 txt-color-2 ps-2 h-15">
+                    <h3 class="select-answer">SELECT YOUR ANSWER</h3>
                 </div>
                 <div id="answer-boxes">
-                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 answer">
-                    <section class="answer-one">
-                        Traitor
-                    </section>
+                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 answer answer-one">
+                    <p>Traitor</p>
                 </div>
-                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 answer">
-                    <section class="answer-two">
-                        Judas
-                    </section>
+                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 answer answer-two">
+                    <p>Judas</p>
                 </div>
-                <div class="col-12 ps-2 h-25 answer">
-                    <section class="answer-three">
-                        Loser
-                    </section>
+                <div class="col-12 ps-2 h-25 answer answer-three">
+                    <p>Loser</p>
                 </div>
             </div>
             </div>
@@ -127,6 +154,7 @@
             </div>
         </div>
     </footer>
+</div>
 
     <!-- Bootstrap Script Tag -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -134,7 +162,15 @@
     </script>
 
     <!-- game.js Script Tag -->
-    <script defer src="./assets/js/game.js"></script>
+    <script defer src="./assets/js/game.js"></script>   
+    
+    <!-- Show Modal on Page Load -->
+    <script>
+        $(document).ready(function(){
+            $("#myModal").modal('show');
+        });
+    </script>
+
 </body>
 
 </html>
