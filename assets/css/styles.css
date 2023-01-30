@@ -72,7 +72,7 @@ hr {
 /*----------------------------------------------------- Game Section */
 
 .game-area {
-    height: calc(100vh - 194px);
+    height: calc(100vh - 186px);
 }
 
 /*----------------------------------------------------- Question Section */
@@ -82,6 +82,14 @@ hr {
 }
 
 /*----------------------------------------------------- Answer Section */
+
+.select-answer {
+    margin-bottom: 0;
+}
+
+.answer-boxes {
+    height: 85%;
+}
 
 .answer:hover {
     background-color: #131f53;
