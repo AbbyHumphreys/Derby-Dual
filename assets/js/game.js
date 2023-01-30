@@ -1,7 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const startButton = document.getElementById('start-btn');
-  startButton.addEventListener('click', startGame);
+// Wait for the DOM to finish loading before running the game
+// Get the start-btn ID and add an event listener to it
+// Run startGame function when start-btn clicked
 
+document.addEventListener("DOMContentLoaded", function() {
+  let startButton = document.getElementById('start-btn');
+  startButton.addEventListener('click', startGame);
+});
 
 const questionElement = document.getElementById('question-paragraph');
 const answerButtons = document.getElementById('answer-boxes');
@@ -17,7 +21,8 @@ function startGame() {
 
 function setNextQuestion() {
   showQuestion(shuffledQuestions[currentQuestionIndex])
-  questionElement.innerHTML = question.question
+  questionElement.innerHTML = question.question;
+  
 };
 
 function sum(a, b) {
@@ -29,11 +34,12 @@ function sum(a, b) {
       question: 'What is 2 + 2?',
       answers: [
         { text: '4', correct: true },
-        { text: '22', correct: false }
+        { text: '22', correct: false },
+        { text: '40', correct: false }
       ]
     }
   ]
 
-});
 
-  module.exports = sum;
+
+  module.exports = sum; 
