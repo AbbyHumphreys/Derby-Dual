@@ -103,3 +103,11 @@ hr {
 .confirmation-text p {
     font-size: 5rem;
 }
+
+.correct {
+    background-color: black;
+}
+
+.incorrect {
+    background-color: orange;
+}
