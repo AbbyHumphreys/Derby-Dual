@@ -11,15 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
 const questionElement = document.getElementById('question-paragraph');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
+let currentQuestion = {};
 let acceptingAnswers = false;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 let shuffledQuestions, currentQuestionIndex;
 
 // Start the Game
 // Sort the questions in a random order
 function startGame() {
-  console.log('Started');
   shuffledQuestions = questions.sort(() => Math.random() - .5);
-  console.log(shuffledQuestions);
   currentQuestionIndex = 0;
   setNextQuestion();
 }
@@ -48,9 +50,24 @@ function showQuestion(question) {
         const selectedChoice = e.target;
         console.log(selectedChoice);
         const selectedAnswer = selectedChoice.dataset["number"];
-  })
-}
+        console.log(selectedAnswer);
+        const yourAnswer = selectedAnswer == currentQuestionIndex.question ? "correct" : "incorrect";
+        console.log(yourAnswer);
+        console.log(currentQuestionIndex.question);
 
+        selectedChoice.classList.add(yourAnswer);
+        
+        choices.forEach(choice => {
+          if (choice == currentQuestionIndex.answer) {
+            choice.classList.add("correct");
+          }
+        });
+       
+
+        setNextQuestion();
+  }); 
+});
+}
 
 
 function sum(a, b) {
@@ -86,7 +103,4 @@ function sum(a, b) {
       choice3: '30',
       answer: 1
     }
-  ]
-
-
-  module.exports = sum; 
+  ];
