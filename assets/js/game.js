@@ -16,25 +16,38 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+/*
 let shuffledQuestions, currentQuestionIndex;
+*/
+
+const correctPoints = 3;
+const maxQuestion = 4;
 
 // Start the Game
-// Sort the questions in a random order
+
 function startGame() {
-  shuffledQuestions = questions.sort(() => Math.random() - .5);
-  currentQuestionIndex = 0;
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions];/*
+  shuffledQuestions = questions.sort(() => Math.random() - .5);*/
+  /*currentQuestionIndex = 0;*/
   setNextQuestion();
 }
 
-//
+// Increase question counter by 1
+// Randomly select question and ensure not chosen again
 function setNextQuestion() {
-  console.log('next question');
-  showQuestion(shuffledQuestions[currentQuestionIndex]);
+  /*showQuestion(shuffledQuestions[currentQuestionIndex]);*/
+  questionCounter ++;
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[questionIndex];
+  availableQuestions.splice(questionIndex, 1);
+  showQuestion(currentQuestion);
 }
 
 // Display question with answers
 function showQuestion(question) {
-  questionElement.innerHTML = question.question;
+  questionElement.innerHTML = currentQuestion.question;
 
   choices.forEach(choice => {
     const number = choice.dataset["number"];
@@ -42,27 +55,26 @@ function showQuestion(question) {
   });
 
   acceptingAnswers = true;
-  choices.forEach( choice => {
+
+
+  choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return;
         acceptingAnswers = false;
 
         const selectedChoice = e.target;
-        console.log(selectedChoice);
         const selectedAnswer = selectedChoice.dataset["number"];
-        console.log(selectedAnswer);
-        const yourAnswer = selectedAnswer == currentQuestionIndex.question ? "correct" : "incorrect";
-        console.log(yourAnswer);
-        console.log(currentQuestionIndex.question);
+        const yourAnswer = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
         selectedChoice.classList.add(yourAnswer);
-        
+
+        /*
         choices.forEach(choice => {
-          if (choice == currentQuestionIndex.answer) {
-            choice.classList.add("correct");
+          if (choice == currentQuestion.answer) {
+            choice.classList.add(yourAnswer);
           }
         });
-       
+       */
 
         setNextQuestion();
   }); 
