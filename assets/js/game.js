@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Declare variables
 const questionElement = document.getElementById('question-paragraph');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const counterElement = document.getElementById('');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -72,9 +73,15 @@ function showQuestion(question) {
           selectedChoice.classList.remove(yourAnswer);
         }, 1000);
 
+        displayQuestionCounter(yourAnswer);
+
         setNextQuestion();
   }); 
 });
+}
+
+function displayQuestionCounter(answer) {
+  
 }
 
 
