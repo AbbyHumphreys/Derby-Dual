@@ -68,13 +68,9 @@ function showQuestion(question) {
 
         selectedChoice.classList.add(yourAnswer);
 
-        /*
-        choices.forEach(choice => {
-          if (choice == currentQuestion.answer) {
-            choice.classList.add(yourAnswer);
-          }
-        });
-       */
+        setTimeout(() => {
+          selectedChoice.classList.remove(yourAnswer);
+        }, 1000);
 
         setNextQuestion();
   }); 
