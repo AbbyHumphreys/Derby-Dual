@@ -12,150 +12,156 @@
     <!-- Main Stylesheet -->
     <link href="assets/css/styles.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    
+
 </head>
 
 <body>
 
     <div class="modal" tabindex="-1" id="myModal">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">How to Play</h5>
-            </div>
-            <div class="modal-body">
-              <ul>
-                <li>You will have the chance to answer 12 questions</li>
-                <li>Read the question and select an answer</li>
-                <li>If correct, your team scored a goal and you earn 3 points</li>
-                <li>At the end of the 12 questions</li>
-                <li>Results:
-                    <ul>
-                        <li>If you scored:</li>
-                        <li>25 - 36 - Champions League worthy</li>
-                        <li>13 - 24 - Premier League worthy</li>
-                        <li>12 points or less  - You have been relegated!</li>
-                    </ul>
-                </li>
-              </ul>
-              <p>Are you ready to play?</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" id="start-btn" data-bs-dismiss="modal">Start Quiz</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-    <div id="game-display">
-    <header>
-        <nav class="navbar">
-            <div class="container-fluid">
-                <div class="col-10 col-md-11 text-center">
-                    <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-header-logo.webp"
-                        alt="Arsenal football team logo" id="arsenal-logo">
-                    <h1 class="d-inline align-middle pe-2">Derby Duel</h1>
-                    <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp"
-                        alt="Tottenham Hotspurs team logo" id="spurs-logo">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">How to Play</h5>
                 </div>
-                <div class="col-2 col-md-1 text-end">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Features</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">How to Play</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact</a>
-                                </li>
+                <div class="modal-body">
+                    <ul>
+                        <li>You will have the chance to answer 12 questions</li>
+                        <li>Read the question and select an answer</li>
+                        <li>If correct, your team scored a goal and you earn 3 points</li>
+                        <li>At the end of the 12 questions</li>
+                        <li>Results:
+                            <ul>
+                                <li>If you scored:</li>
+                                <li>25 - 36 - Champions League worthy</li>
+                                <li>13 - 24 - Premier League worthy</li>
+                                <li>12 points or less - You have been relegated!</li>
                             </ul>
+                        </li>
+                    </ul>
+                    <p>Are you ready to play?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="start-btn" data-bs-dismiss="modal">Start
+                        Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-display">
+        <header>
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="col-10 col-md-11 text-center">
+                        <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-header-logo.webp"
+                            alt="Arsenal football team logo" id="arsenal-logo">
+                        <h1 class="d-inline align-middle pe-2">Derby Duel</h1>
+                        <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp"
+                            alt="Tottenham Hotspurs team logo" id="spurs-logo">
+                    </div>
+                    <div class="col-2 col-md-1 text-end">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">How to Play</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container-fluid quiz-section">
+            <div class="row game-area">
+
+                <div class="col-12 col-md-6 border border-danger border-1 position-relative p-0">
+                    <div class="col-12">
+                        <section class="question-section">
+                            <div id="progress-bar">
+                                <div class="bg-color-2" id="progress-bar-indicator">
+                                    <h3 class="ms-1 mb-0"><span id="question-counter">1</span>/10</h3>
+                                </div>
+                            </div>
+                            <h3 class="m-1">Score: <span id="score">0</span></h3>
+                            <h2 class="text-end me-5">Q1</h2>
+                            <p class="position-absolute m-5" id="question-paragraph">On Sol Campbell's first return to
+                                White Hart
+                                Lane after joining Arsenal, Spurs fans filled the stadium with balloons that had which
+                                word
+                                written on them?</p>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 p-0 border border-danger border-1 text-center">
+                    <div class="col-12 bg-color-2 txt-color-2 ps-2 h-15">
+                        <h3 class="select-answer">SELECT YOUR ANSWER</h3>
+                    </div>
+                    <div id="answer-boxes">
+                        <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 choice-text" data-number="1">
+                            <p>Traitor</p>
+                        </div>
+                        <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 choice-text" data-number="2">
+                            <p>Judas</p>
+                        </div>
+                        <div class="col-12 ps-2 h-25 choice-text" data-number="3">
+                            <p>Loser</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container-fluid quiz-section">
-        <div class="row game-area">
-            
-            <div class="col-12 col-md-6 border border-danger border-1 position-relative">
-                <div class="col-12">
-                    <section class="question-section">
-                        <h3 class="m-1"><span id="question-counter">1</span>/10</h3>
-                        <h3 class="m-1">Score: <span id="score">0</span></h3>
-                        <h2 class="text-end me-5">Q1</h2>
-                        <p class="position-absolute m-5" id="question-paragraph">On Sol Campbell's first return to White Hart
-                            Lane after joining Arsenal, Spurs fans filled the stadium with balloons that had which word
-                            written on them?</p>
-                        
-                    </section>
+        </div>
+        <div class="container-fluid hide" id="true-section">
+            <div class="row game-area">
+                <div class="col d-flex align-items-center confirmation-text">
+                    <p class="mx-auto">TRUE</p>
                 </div>
-            </div>
-        
-            <div class="col-12 col-md-6 p-0 border border-danger border-1 text-center">
-                <div class="col-12 bg-color-2 txt-color-2 ps-2 h-15">
-                    <h3 class="select-answer">SELECT YOUR ANSWER</h3>
-                </div>
-                <div id="answer-boxes">
-                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 choice-text" data-number="1">
-                    <p>Traitor</p>
-                </div>
-                <div class="col-12 border-bottom border-danger border-1 ps-2 h-25 choice-text" data-number="2">
-                    <p>Judas</p>
-                </div>
-                <div class="col-12 ps-2 h-25 choice-text" data-number="3">
-                    <p>Loser</p>
-                </div>
-            </div>
             </div>
         </div>
+        <div class="container-fluid hide" id="false-section">
+            <div class="row game-area">
+                <div class="col d-flex align-items-center confirmation-text">
+                    <p class="mx-auto">FALSE</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container-fluid">
+                <div class="row pt-5 pb-5 txt-color-1">
+                    <div class="col-12 col-md-6 mb-2">
+                        <p>&copy Abby Humphreys 2023</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-md-end">
+                        <p>Site created for educational purposes only</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div class="container-fluid hide" id="true-section">
-        <div class="row game-area">
-            <div class="col d-flex align-items-center confirmation-text">
-                <p class="mx-auto">TRUE</p>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid hide" id="false-section">
-        <div class="row game-area">
-            <div class="col d-flex align-items-center confirmation-text">
-                <p class="mx-auto">FALSE</p>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div class="container-fluid">
-            <div class="row pt-5 pb-5 txt-color-1">
-                <div class="col-12 col-md-6 mb-2">
-                    <p>&copy Abby Humphreys 2023</p>
-                </div>
-                <div class="col-12 col-md-6 text-md-end">
-                    <p>Site created for educational purposes only</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
 
     <!-- Bootstrap Script Tag -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -163,11 +169,11 @@
     </script>
 
     <!-- game.js Script Tag -->
-    <script defer src="./assets/js/game.js"></script>   
-    
+    <script defer src="./assets/js/game.js"></script>
+
     <!-- Show Modal on Page Load -->
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $("#myModal").modal('show');
         });
     </script>
