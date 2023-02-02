@@ -105,9 +105,25 @@ hr {
 }
 
 .correct {
-    background-color: black;
+    background-color: green;
+    color: white;
 }
 
 .incorrect {
-    background-color: orange;
+    background-color: red;
+    color: white;
+}
+
+/*----------------------------------------------------- Progress Bar */
+
+#progress-bar {
+    height: auto;
+    width: auto;
+    border-bottom: #db0008 1px solid;
+    text-align: start;
+}
+
+.progress-bar-indicator {
+    background-color: #db0008;
+    width: 0%;
 }
