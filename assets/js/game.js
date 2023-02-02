@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // Declare variables
 const questionElement = document.getElementById('question-paragraph');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
-const counterElement = document.getElementById('');
+const counterElement = document.getElementById('question-counter');
+const scoreElement = document.getElementById('score');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -44,6 +45,7 @@ function setNextQuestion() {
   currentQuestion = availableQuestions[questionIndex];
   availableQuestions.splice(questionIndex, 1);
   showQuestion(currentQuestion);
+  updateQuestionCounter(questionCounter);
 }
 
 // Display question with answers
@@ -73,16 +75,16 @@ function showQuestion(question) {
           selectedChoice.classList.remove(yourAnswer);
         }, 1000);
 
-        displayQuestionCounter(yourAnswer);
-
         setNextQuestion();
   }); 
 });
 }
 
-function displayQuestionCounter(answer) {
-  
+function updateQuestionCounter(counter) {
+  counterElement.innerHTML = counter;
 }
+
+
 
 
 function sum(a, b) {
