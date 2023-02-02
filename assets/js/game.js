@@ -18,9 +18,6 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-/*
-let shuffledQuestions, currentQuestionIndex;
-*/
 
 const correctPoints = 3;
 const maxQuestion = 5;
@@ -31,9 +28,6 @@ function startGame() {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
-  /*
-    shuffledQuestions = questions.sort(() => Math.random() - .5);*/
-  /*currentQuestionIndex = 0;*/
   setNextQuestion();
 }
 
@@ -64,6 +58,8 @@ function showQuestion(question) {
   acceptAnswers()
 }
 
+//Listen for user's answer
+//Change answer into an Integer
 function acceptAnswers() {
   acceptingAnswers = true;
 
@@ -79,6 +75,9 @@ function acceptAnswers() {
   });
 }
 
+// Check if user's answewr is correct
+// Display answer indicator css (correct or incorrect)
+// Remove answer indicator
 function checkAnswer(userChoice, userChoiceNumber) {
   const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
 
@@ -90,13 +89,15 @@ function checkAnswer(userChoice, userChoiceNumber) {
     setNextQuestion();
   }, 1000);
 
-  
 }
 
+// Update Question Counter
 function updateQuestionCounter(counter) {
   counterElement.innerHTML = counter;
 }
 
+// Add 3 points onto score for correct answer
+// Minus 1 point on score for incorrect answer
 function updateScoreCounter(answer) {
   if (answer == "correct") {
     score += 3;
