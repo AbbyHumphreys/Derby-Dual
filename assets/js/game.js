@@ -71,14 +71,13 @@ function acceptAnswers() {
 
       const selectedChoice = e.target;
       const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
-      console.log(typeof selectedAnswer);
       checkAnswer(selectedAnswer, selectedChoice);
     });
   });
 }
 
 function checkAnswer(userChoice, userChoiceNumber) {
-  const yourAnswer = userChoice == currentQuestion.answer ? "correct" : "incorrect";
+  const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
 
   userChoiceNumber.classList.add(yourAnswer);
 
@@ -87,7 +86,6 @@ function checkAnswer(userChoice, userChoiceNumber) {
   }, 1000);
 
   updateScoreCounter(yourAnswer);
-  setNextQuestion();
 }
 
 function updateQuestionCounter(counter) {
@@ -103,6 +101,7 @@ function updateScoreCounter(answer) {
     console.log(score);
   }
   scoreElement.innerHTML = score;
+  setNextQuestion();
 }
 
 
