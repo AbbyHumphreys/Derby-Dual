@@ -12,6 +12,7 @@ const questionElement = document.getElementById('question-paragraph');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const counterElement = document.getElementById('question-counter');
 const scoreElement = document.getElementById('score');
+const progressIndicator = document.getElementById('progress-bar-indicator');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -94,6 +95,8 @@ function checkAnswer(userChoice, userChoiceNumber) {
 // Update Question Counter
 function updateQuestionCounter(counter) {
   counterElement.innerHTML = counter;
+  console.log(`${(counter / 10) * 100}%`);
+  progressIndicator.style.width = `${(counter / 10) * 100}%`;
 }
 
 // Add 3 points onto score for correct answer
