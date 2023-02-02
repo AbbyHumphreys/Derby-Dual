@@ -23,7 +23,7 @@ let shuffledQuestions, currentQuestionIndex;
 */
 
 const correctPoints = 3;
-const maxQuestion = 4;
+const maxQuestion = 5;
 
 // Start the Game
 
@@ -40,7 +40,10 @@ function startGame() {
 // Increase question counter by 1
 // Randomly select question and ensure not chosen again
 function setNextQuestion() {
-  /*showQuestion(shuffledQuestions[currentQuestionIndex]);*/
+  if (availableQuestions.length === 0 || questionCounter >= maxQuestion) {
+    //go to the end page
+    return window.location.assign("/end.html");
+  }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
@@ -83,9 +86,11 @@ function checkAnswer(userChoice, userChoiceNumber) {
 
   setTimeout(() => {
     userChoiceNumber.classList.remove(yourAnswer);
+    updateScoreCounter(yourAnswer);
+    setNextQuestion();
   }, 1000);
 
-  updateScoreCounter(yourAnswer);
+  
 }
 
 function updateQuestionCounter(counter) {
@@ -101,7 +106,7 @@ function updateScoreCounter(answer) {
     console.log(score);
   }
   scoreElement.innerHTML = score;
-  setNextQuestion();
+  
 }
 
 
