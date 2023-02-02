@@ -75,16 +75,28 @@ function showQuestion(question) {
           selectedChoice.classList.remove(yourAnswer);
         }, 1000);
 
+        checkAnswer(selectedAnswer, currentQuestion.answer);
+
         setNextQuestion();
   }); 
 });
+}
+
+function checkAnswer(userAnswer, correctAnswer) {
+  if (userAnswer == correctAnswer) {
+    console.log("correct");
+  } else {
+    console.log("incorrect");
+  }
 }
 
 function updateQuestionCounter(counter) {
   counterElement.innerHTML = counter;
 }
 
-
+function updateScoreCounter(counter) {
+  scoreElement.innerHTML = counter;
+}
 
 
 function sum(a, b) {
