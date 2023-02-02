@@ -70,8 +70,8 @@ function acceptAnswers() {
       acceptingAnswers = false;
 
       const selectedChoice = e.target;
-      const selectedAnswer = selectedChoice.dataset["number"];
-
+      const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
+      console.log(typeof selectedAnswer);
       checkAnswer(selectedAnswer, selectedChoice);
     });
   });
@@ -86,6 +86,7 @@ function checkAnswer(userChoice, userChoiceNumber) {
     userChoiceNumber.classList.remove(yourAnswer);
   }, 1000);
 
+  updateScoreCounter(yourAnswer);
   setNextQuestion();
 }
 
@@ -93,8 +94,15 @@ function updateQuestionCounter(counter) {
   counterElement.innerHTML = counter;
 }
 
-function updateScoreCounter(counter) {
-  scoreElement.innerHTML = counter;
+function updateScoreCounter(answer) {
+  if (answer == "correct") {
+    score += 3;
+    console.log(score);
+  } else if (answer == "incorrect") {
+    score -= 1;
+    console.log(score);
+  }
+  scoreElement.innerHTML = score;
 }
 
 
