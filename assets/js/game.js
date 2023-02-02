@@ -2,7 +2,7 @@
 // Get the start-btn ID and add an event listener to it
 // Run startGame function when start-btn clicked
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   let startButton = document.getElementById('start-btn');
   startButton.addEventListener('click', startGame);
 });
@@ -30,8 +30,9 @@ const maxQuestion = 4;
 function startGame() {
   questionCounter = 0;
   score = 0;
-  availableQuestions = [...questions];/*
-  shuffledQuestions = questions.sort(() => Math.random() - .5);*/
+  availableQuestions = [...questions];
+  /*
+    shuffledQuestions = questions.sort(() => Math.random() - .5);*/
   /*currentQuestionIndex = 0;*/
   setNextQuestion();
 }
@@ -40,7 +41,7 @@ function startGame() {
 // Randomly select question and ensure not chosen again
 function setNextQuestion() {
   /*showQuestion(shuffledQuestions[currentQuestionIndex]);*/
-  questionCounter ++;
+  questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   availableQuestions.splice(questionIndex, 1);
@@ -57,37 +58,35 @@ function showQuestion(question) {
     choice.innerText = question["choice" + number];
   });
 
-  acceptingAnswers = true;
+  acceptAnswers()
+}
 
+function acceptAnswers() {
+  acceptingAnswers = true;
 
   choices.forEach(choice => {
     choice.addEventListener('click', e => {
-        if(!acceptingAnswers) return;
-        acceptingAnswers = false;
+      if (!acceptingAnswers) return;
+      acceptingAnswers = false;
 
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset["number"];
-        const yourAnswer = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+      const selectedChoice = e.target;
+      const selectedAnswer = selectedChoice.dataset["number"];
 
-        selectedChoice.classList.add(yourAnswer);
-
-        setTimeout(() => {
-          selectedChoice.classList.remove(yourAnswer);
-        }, 1000);
-
-        checkAnswer(selectedAnswer, currentQuestion.answer);
-
-        setNextQuestion();
-  }); 
-});
+      checkAnswer(selectedAnswer, selectedChoice);
+    });
+  });
 }
 
-function checkAnswer(userAnswer, correctAnswer) {
-  if (userAnswer == correctAnswer) {
-    console.log("correct");
-  } else {
-    console.log("incorrect");
-  }
+function checkAnswer(userChoice, userChoiceNumber) {
+  const yourAnswer = userChoice == currentQuestion.answer ? "correct" : "incorrect";
+
+  userChoiceNumber.classList.add(yourAnswer);
+
+  setTimeout(() => {
+    userChoiceNumber.classList.remove(yourAnswer);
+  }, 1000);
+
+  setNextQuestion();
 }
 
 function updateQuestionCounter(counter) {
@@ -100,36 +99,35 @@ function updateScoreCounter(counter) {
 
 
 function sum(a, b) {
-    return a + b;
-  }
+  return a + b;
+}
 
-  const questions = [
-    {
-      question: 'What is 2 + 2?',
-      choice1: '4',
-      choice2: '6',
-      choice3: '10',
-      answer: 1
-    },
-    {
-      question: 'What is 3 + 3?',
-      choice1: '8',
-      choice2: '10',
-      choice3: '12',
-      answer: 2
-    },
-    {
-      question: 'What is 4 + 4?',
-      choice1: '2',
-      choice2: '100',
-      choice3: '8',
-      answer: 3
-    },
-    {
-      question: 'What is 5 + 5?',
-      choice1: '10',
-      choice2: '20',
-      choice3: '30',
-      answer: 1
-    }
-  ];
+const questions = [{
+    question: 'What is 2 + 2?',
+    choice1: '4',
+    choice2: '6',
+    choice3: '10',
+    answer: 1
+  },
+  {
+    question: 'What is 3 + 3?',
+    choice1: '8',
+    choice2: '10',
+    choice3: '12',
+    answer: 2
+  },
+  {
+    question: 'What is 4 + 4?',
+    choice1: '2',
+    choice2: '100',
+    choice3: '8',
+    answer: 3
+  },
+  {
+    question: 'What is 5 + 5?',
+    choice1: '10',
+    choice2: '20',
+    choice3: '30',
+    answer: 1
+  }
+];
