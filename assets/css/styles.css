@@ -83,15 +83,19 @@ hr {
 
 /*----------------------------------------------------- Answer Section */
 
+.answer-section {
+    height: 13%;
+}
+
+.choice-text {
+    height: 29%;
+}
+
 .select-answer {
     margin-bottom: 0;
 }
 
-.answer-boxes {
-    height: 85%;
-}
-
-.answer:hover {
+.choice-text:hover {
     background-color: #131f53;
     color:#fff;
 }
