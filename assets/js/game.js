@@ -3,13 +3,36 @@
 // Run startGame function when start-btn clicked
 
 document.addEventListener("DOMContentLoaded", function () {
-  let startButton = document.getElementById('start-btn');
+  let teamSelected = Array.from(document.getElementsByClassName('team-selector'));
+  selectTeam();
+
+  function selectTeam() {
+    teamSelected.forEach(team => {
+      team.addEventListener('click', e => {
+        const selectedTeam = e.target;
+        const arsenalTeam = document.getElementById('modal-arsenal-logo');
+        const spursTeam = document.getElementById('modal-spurs-logo');
+        if (selectedTeam.id == 'modal-arsenal-logo' || selectedTeam.id == 'modal-arsenal-image') {
+          arsenalTeam.style.cssText = `
+            border: #db0008 3px solid;
+            background: #131f53;
+          `;
+        } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
+          spursTeam.style.cssText = `
+            border: #131f53 3px solid;
+            background: #db0008;
+          `;
+        }
+      });
+    });
+  }
+  let startButton = document.getElementById('start-quiz');
   startButton.addEventListener('click', startGame);
 });
 
 // Declare variables
 const questionElement = document.getElementById('question-paragraph');
-const choices = Array.from(document.getElementsByClassName("choice-text"));
+const choices = Array.from(document.getElementsByClassName('choice-text'));
 const counterElement = document.getElementById('question-counter');
 const scoreElement = document.getElementById('score');
 const progressIndicator = document.getElementById('progress-bar-indicator');
@@ -76,7 +99,7 @@ function acceptAnswers() {
   });
 }
 
-// Check if user's answewr is correct
+// Check if user's answer is correct
 // Display answer indicator css (correct or incorrect)
 // Remove answer indicator
 function checkAnswer(userChoice, userChoiceNumber) {
