@@ -131,3 +131,23 @@ hr {
     background-color: #db0008;
     width: 0%;
 }
+
+
+
+#modal-arsenal-logo:hover {
+    background-color: #131f53;
+}
+
+#modal-arsenal-logo:active {
+    background-color: #131f53;
+    border: #db0008 3px solid
+}
+
+#modal-spurs-logo:hover {
+    background-color: #db0008;
+}
+
+#modal-spurs-logo:active {
+    background-color: #db0008;
+    border: #131f53 3px solid
+}
