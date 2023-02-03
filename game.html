@@ -42,7 +42,32 @@
                     <p>Are you ready to play?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="start-btn" data-bs-dismiss="modal">Start
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">Pick My Team</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pick Your Team</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-logo.webp"
+                                alt="Arsenal football team logo" id="arsenal-logo">
+                        </div>
+                        <div class="col-6">
+                            <img class="img-fluid header-logo" src="assets/images/spurs-logo.webp"
+                                alt="Tottenham Hotspurs team logo" id="spurs-logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="start-quiz" data-bs-dismiss="modal">Start
                         Quiz</button>
                 </div>
             </div>
