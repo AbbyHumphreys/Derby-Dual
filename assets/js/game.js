@@ -13,21 +13,27 @@ document.addEventListener("DOMContentLoaded", function () {
         const arsenalTeam = document.getElementById('modal-arsenal-logo');
         const spursTeam = document.getElementById('modal-spurs-logo');
         if (selectedTeam.id == 'modal-arsenal-logo' || selectedTeam.id == 'modal-arsenal-image') {
+          theTeam = "arsenal";
           arsenalTeam.style.cssText = `
             border: #db0008 3px solid;
             background: #131f53;
           `;
         } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
+          theTeam = "spurs";
           spursTeam.style.cssText = `
             border: #131f53 3px solid;
             background: #db0008;
           `;
         }
+        runGame(theTeam);
       });
     });
   }
+
+  function runGame(team){
   let startButton = document.getElementById('start-quiz');
-  startButton.addEventListener('click', startGame);
+  startButton.addEventListener('click', startGame(team));
+}
 });
 
 // Declare variables
@@ -48,7 +54,8 @@ const maxQuestion = 5;
 
 // Start the Game
 
-function startGame() {
+function startGame(team) {
+  console.log(team);
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
