@@ -71,7 +71,7 @@ const progressIndicator = document.getElementById('progress-bar-indicator');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
-let score = 0;
+let goals = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
@@ -83,7 +83,7 @@ const maxQuestion = 12;
 function startGame(team, questions) {
   console.log(team);
   questionCounter = 0;
-  score = 0;
+  goals = 0;
   availableQuestions = [...questions];
   setNextQuestion();
 }
@@ -159,13 +159,9 @@ function updateQuestionCounter(counter) {
 // Minus 1 point on score for incorrect answer
 function updateScoreCounter(answer) {
   if (answer == "correct") {
-    score += 3;
-    console.log(score);
-  } else if (answer == "incorrect") {
-    score -= 1;
-    console.log(score);
-  }
-  scoreElement.innerHTML = score;
+    goals += 1;
+  } 
+  scoreElement.innerHTML = goals;
   
 }
 
