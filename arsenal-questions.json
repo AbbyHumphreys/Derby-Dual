@@ -1,31 +1,219 @@
 [
-    {
-    "question": "What is 2 + 2?",
-    "choice1": "4",
-    "choice2": "6",
-    "choice3": "10",
-    "answer": 1
-  },
   {
-    "question": "What is 3 + 3?",
-    "choice1": "8",
-    "choice2": "10",
-    "choice3": "12",
+    "question": "Who scored the winner in Wenger's final game?",
+    "choice1": "Aaron Ramsey",
+    "choice2": "Pierre-Emerick Aubameyang",
+    "choice3": "Alexandre Lacazette",
     "answer": 2
   },
   {
-    "question": "What is 4 + 4?",
-    "choice1": "2",
-    "choice2": "100",
-    "choice3": "8",
+    "question": "Who did Thierry Henry surpass to become Arsenal's record goal scorer?",
+    "choice1": "Ian Wright",
+    "choice2": "Cliff Bastin",
+    "choice3": "Jimmy Brain",
+    "answer": 1
+  },	
+  {
+    "question": "Which of these companies has not sponsored an Arsenal jersey?",
+    "choice1": "Sega",
+    "choice2": "JVC",
+    "choice3": "Sony",
     "answer": 3
   },
   {
-    "question": "What is 5 + 5?",
-    "choice1": "10",
-    "choice2": "20",
-    "choice3": "30",
+    "question": "How many league titles have Arsenal won?",
+    "choice1": "13",
+    "choice2": "15",
+    "choice3": "11",
+    "answer": 1
+  },	
+  {
+    "question": "Who has made the most all-time appearances for Arsenal?",
+    "choice1": "David Seaman",
+    "choice2": "David O'Leary",
+    "choice3": "Tony Adams",
+    "answer": 2
+  },
+  {
+    "question": "What is the official club motto?",
+    "choice1": "E Pluribus Unum",
+    "choice2": "Arte et Labore",
+    "choice3": "Victoria Concordia Crescit",
+    "answer": 3
+  },
+  {
+    "question": "Who scored the dramatic winning goal that secured the 1989 league title?",
+    "choice1": "Michael Thomas",
+    "choice2": "Paul Merson",
+    "choice3": "Steve Bould",
     "answer": 1
   },
-  
+  {
+    "question": "In what year were Arsenal formed as ‘Dial Square’?",
+    "choice1": "1878",
+    "choice2": "1886",
+    "choice3": "1901",
+    "answer": 2
+  },
+  {
+    "question": "Arsenal lost their first ever Premier League game to which club?",
+    "choice1": "Wimbledon",
+    "choice2": "Blackburn Rovers",
+    "choice3": "Norwich City",
+    "answer": 3
+  },
+  {
+    "question": "Who did Arsenal defeat to win the 1994 European Cup Winners’ Cup?",
+    "choice1": "Parma",
+    "choice2": "Galatasaray",
+    "choice3": "Genoa",
+    "answer": 1
+  },
+  {
+    "question": "How much did Arsenal pay to sign Thierry Henry in 1999?",
+    "choice1": "Free",
+    "choice2": "£11 million",
+    "choice3": "£9 million",
+    "answer": 2
+  },
+  {
+    "question": "How many Premier League games long was the ‘Invincibles’ streak?",
+    "choice1": "48",
+    "choice2": "51",
+    "choice3": "49",
+    "answer": 3
+  },
+	{
+    "question": "Who did Arsene Wenger replace as Arsenal boss in 1996?",
+    "choice1": "George Graham",
+    "choice2": "Bruce Rioch",
+    "choice3": "Don Howe",
+    "answer": 2
+  },	
+  {
+    "question": "Arsenal’s biggest ever PL wins are 7-0 victories over which clubs?",
+    "choice1": "Everton & Middlesbrough",
+    "choice2": "Blackburn Rovers & Middlesbrough",
+    "choice3": "Everton & Blackburn Rovers",
+    "answer": 1
+  },
+  {
+    "question": "Who scored for Arsenal in the 2006 Champions League final?",
+    "choice1": "Kolo Toure",
+    "choice2": "Robert Pires",
+    "choice3": "Sol Campbell",
+    "answer": 3
+  },	
+  {
+    "question": "Who has won Arsenal’s Player of the Season award the most?",
+    "choice1": "Robin van Persie",
+    "choice2": "Cesc Fabregas",
+    "choice3": "Aaron Ramsey",
+    "answer": 2
+  },
+  {
+    "question": "Who is the longest-serving player in the current Arsenal squad?",
+    "choice1": "Hector Bellerin",
+    "choice2": "Granit Xhaka",
+    "choice3": "Rob Holding",
+    "answer": 1
+  },
+  {
+    "question": "Which club icon does NOT have a statue at Emirates Stadium?",
+    "choice1": "Herbert Chapman",
+    "choice2": "Tony Adams",
+    "choice3": "Cliff Bastin",
+    "answer": 3
+  },
+  {
+    "question": "In 2000/01, which player was sent off in the first two PL games of the season?",
+    "choice1": "Lee Dixon",
+    "choice2": "Patrick Vieira",
+    "choice3": "Martin Keown",
+    "answer": 2
+  },
+  {
+    "question": "When did Arsenal wear their iconic ‘bruised banana’ kit?",
+    "choice1": "1991-1993",
+    "choice2": "1994-1996",
+    "choice3": "1999-2001",
+    "answer": 1
+  },
+  {
+    "question": "Where do Arsenal play football?",
+    "choice1": "Anfield",
+    "choice2": "The Emirates Stadium",
+    "choice3": "Highbury Park",
+    "answer": 2
+  },
+  {
+    "question": "What is Arsenal’s club nickname?",
+    "choice1": "The Gunners",
+    "choice2": "The Gooners",
+    "choice3": "The Shooters",
+    "answer": 1
+  },
+  {
+    "question": "Before becoming Arsenal, what was the club originally called?",
+    "choice1": "Woolwich Arsenal",
+    "choice2": "Royal Woolwich",
+    "choice3": "Dial Square",
+    "answer": 1
+  },
+  {
+    "question": "In 1933-34 season the club won which trophy?",
+    "choice1": "Football League First Division",
+    "choice2": "FA Cup",
+    "choice3": "European Cup",
+    "answer": 1
+  },
+  {
+    "question": "What year was Unai Emery sacked as club manager?",
+    "choice1": "2018",
+    "choice2": "2020",
+    "choice3": "2019",
+    "answer": 3
+  },
+  {
+    "question": "David O’Leary is the club's leading appearance maker. How many games did he play?",
+    "choice1": "669",
+    "choice2": "722",
+    "choice3": "543",
+    "answer": 2
+  },
+  {
+    "question": "Which one of these pop stars is a loyal supporter?",
+    "choice1": "Elvis Presley",
+    "choice2": "Mick Jagger",
+    "choice3": "Bono",
+    "answer": 2
+  },
+  {
+    "question": "Arsenal’s biggest loss in the Premier League was against Manchester United in 2011. What was the final score?",
+    "choice1": "9-2",
+    "choice2": "8-0",
+    "choice3": "8-2",
+    "answer": 3
+  },	
+  {
+    "question": "When was the last time Arsenal were relegated?",
+    "choice1": "1912/13",
+    "choice2": "1920/21",
+    "choice3": "1901/02",
+    "answer": 1
+  },	
+  {
+    "question": "Which Arsenal player scored the final league goal at Highbury?",
+    "choice1": "Ian Wright",
+    "choice2": "Thierry Henry",
+    "choice3": "Sol Campbell",
+    "answer": 2
+  },	
+  {
+    "question": "How many FA Cups did Arsene Wenger win as Arsenal manager?",
+    "choice1": "8",
+    "choice2": "7",
+    "choice3": "6",
+    "answer": 2
+  }			
 ]

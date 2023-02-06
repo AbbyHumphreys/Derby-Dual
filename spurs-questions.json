@@ -1,1 +1,268 @@
-console.log("It's spurs!");
+[
+    {
+      "question": "What year was the club founded?",
+      "choice1": "1882",
+      "choice2": "1892",
+      "choice3": "1872",
+      "answer": 1
+    },
+    {
+        "question": "What name was the club founded as?",
+        "choice1": "Tottenham Hotspur",
+        "choice2": "Hotspur FC",
+        "choice3": "Tottenham FC",
+        "answer": 2
+    },
+    {
+        "question": "What year was the club re-named Tottenham Hotspur Football Club?",
+        "choice1": "1888",
+        "choice2": "1883",
+        "choice3": "1884",
+        "answer": 3
+    },
+    {
+        "question": "Who did Tottenham Hotspur play in their first competitive match in 1885?",
+        "choice1": "Sutton United",
+        "choice2": "St Albans",
+        "choice3": "Stoke City",
+        "answer": 2
+    },
+    {
+        "question": "Who did Tottenham beat in the FA Cup final in 1901?",
+        "choice1": "Sheffield United",
+        "choice2": "Scunthorpe United",
+        "choice3": "Sheffield Wednesday",
+        "answer": 1
+    },
+    {
+        "question": "Tottenham became the first team since Preston and Aston Villa to do the double in which year?",
+        "choice1": "1951",
+        "choice2": "1961",
+        "choice3": "1971",
+        "answer": 2
+    },
+    {
+        "question": "Who was the first million pound plus signing that Tottenham made in 1988?",
+        "choice1": "Paul Gascoigne",
+        "choice2": "Clive Allen",
+        "choice3": "Paul Stewart",
+        "answer": 3
+    },
+    {
+        "question": "Who did Tottenham play on 15 August 1992 in the clubs first Premier League match?",
+        "choice1": "Southampton",
+        "choice2": "Arsenal",
+        "choice3": "Nottingham Forest",
+        "answer": 1
+    },
+    {
+        "question": "Who did Tottenham beat 2-1 in the final game at White Hart Lane?",
+        "choice1": "Arsenal",
+        "choice2": "Chelsea",
+        "choice3": "Manchester United",
+        "answer": 3
+    },
+    {
+        "question": "How many League Cup's have Tottenham won in their history?",
+        "choice1": "4",
+        "choice2": "2",
+        "choice3": "5",
+        "answer": 3
+    },	
+    {
+        "question": "How much did Tottenham sell Gareth Bale to Real Madrid for in 2013?",
+        "choice1": "£75.9 million",
+        "choice2": "£79.4 million",
+        "choice3": "£85.3 million",
+        "answer": 3
+    },	
+    {
+        "question": "Who did Tottenham set a new club attendance record of 85,512 in 2017 at Wembley against?",
+        "choice1": "RB Leipzig",
+        "choice2": "Bayer Leverkusen",
+        "choice3": "Borussia Dortmund",
+        "answer": 2
+    },
+    {
+        "question": "What is the capacity of the Tottenham Hotspur Stadium?",
+        "choice1": "62,062",
+        "choice2": "72,062",
+        "choice3": "52,062",
+        "answer": 1
+    },
+    {
+        "question": "How many matches did Tottenham record appearance maker Steve Perryman play in?",
+        "choice1": "801",
+        "choice2": "854",
+        "choice3": "754",
+        "answer": 2
+    },
+    {
+        "question": "Who was Tottenham's first Premier League fixture in the new stadium against?",
+        "choice1": "Everton",
+        "choice2": "Southampton",
+        "choice3": "Crystal Palace",
+        "answer": 3
+    },
+    {
+        "question": "Who scored Tottenham’s first-ever Premier League goal?",
+        "choice1": "Gary Lineker",
+        "choice2": "Teddy Sheringham",
+        "choice3": "Gordon Durie",
+        "answer": 3
+    },
+    {
+        "question": "What is Tottenham’s lowest finish in the Premier League era?",
+        "choice1": "15th 1993/94",
+        "choice2": "16th 1998/99",
+        "choice3": "12th 2002/01",
+        "answer": 1
+    },
+    {
+        "question": "What pop star supports Tottenham Hotspur?",
+        "choice1": "Lilly Allen",
+        "choice2": "Adele",
+        "choice3": "Mel C",
+        "answer": 2
+    },
+    {
+        "question": "Why did Arsenal reportedly reject Harry Kane from their academy?",
+        "choice1": "Too small",
+        "choice2": "Too Slow",
+        "choice3": "Overweight",
+        "answer": 3
+    },
+    {
+        "question": "Tottenham was the first British club to win a major European competition in 1963. What trophy did they bring back to North London?",
+        "choice1": "European Cup Winners Cup",
+        "choice2": "European Super Cup",
+        "choice3": "UEFA Super Cup",
+        "answer": 1
+    },
+    {
+        "question": "Tottenham's last trophy was the Carling Cup when they beat Chelsea 2-1 at Wembley. What year was it?",
+        "choice1": "2009",
+        "choice2": "2008",
+        "choice3": "2010",
+        "answer": 2
+    },
+    {
+        "question": "Which manager signed Gareth Bale from Southampton?",
+        "choice1": "Martin Jol",
+        "choice2": "Harry Redknapp",
+        "choice3": "Juande Ramos",
+        "answer": 2
+    },
+    {
+        "question": "Which player did Tottenham pay most for?",
+        "choice1": "Davinson Sanchez",
+        "choice2": "Erik Lamela",
+        "choice3": "Lucas Moura",
+        "answer": 1
+    },	
+    {
+        "question": "Where to Tottenham play their home games?",
+        "choice1": "White Hart Lane",
+        "choice2": "Tottenham Hotspur Stadium",
+        "choice3": "London Stadium",
+        "answer": 2
+    },
+    {
+        "question": "Who was the manager for Spurs when they lifted the FA Cup in 1991?",
+        "choice1": "Terry Venables",
+        "choice2": "Harry Redknapp",
+        "choice3": "Martin Jol",
+        "answer": 1
+    },
+    {
+        "question": "How many goals did Jimmy Greaves score in the League in 1963 to become top scorer?",
+        "choice1": "29",
+        "choice2": "39",
+        "choice3": "37",
+        "answer": 3
+    },
+    {
+        "question": "Who scored Tottenham's first goal of 2022?",
+        "choice1": "Harry Winks",
+        "choice2": "Harry Kane",
+        "choice3": "Lucas Moura",
+        "answer": 1
+    },
+    {
+        "question": "Only one team scored more league goals than Tottenham in 2022, who?",
+        "choice1": "Arsenal",
+        "choice2": "Liverpool",
+        "choice3": "Man City",
+        "answer": 3
+    },
+    {
+        "question": "Who scored the most goals for Spurs in 2022?",
+        "choice1": "Lucas Moura",
+        "choice2": "Harry Kane",
+        "choice3": "Heung-min Son",
+        "answer": 2
+    },
+    {
+        "question": "The logo on the Tottenham crest reads 'Audere est Facere'. What does that mean?",
+        "choice1": "Only the Bold Succeed",
+        "choice2": "Forture Favours the Brave",
+        "choice3": "To Dare is To Do",
+        "answer": 3
+    },
+    {
+        "question": "This Spurs, Middlesbrough and Everton Premier League icon of the 90's finished his career with Hull City in 2012. Who is he?",
+        "choice1": "Stephen Carr",
+        "choice2": "Nick Barmby",
+        "choice3": "Luke Young",
+        "answer": 2
+    },
+    {
+        "question": "In the 1986/87 season, Clive Allen broke the record for the number of goals in a League Cup campaign. How many did he score?",
+        "choice1": "12",
+        "choice2": "20",
+        "choice3": "5",
+        "answer": 2
+    },	
+    {
+        "question": "Which ones of these will you find at The Tottenham Hotspurs Stadium?",
+        "choice1": "A Microbrewery",
+        "choice2": "A Butchers",
+        "choice3": "A Chapel of Rest",
+        "answer": 1
+    },
+    {
+        "question": "In 2003, which Tottenham player famously 'scored' with a 55-yard shot against Manchester United that was judged to be not over the line?",
+        "choice1": "Pedro Mendez",
+        "choice2": "Simon Davies",
+        "choice3": "Freddie Kanoute",
+        "answer": 1
+    },
+    {
+        "question": "Which former Tottenham player scored from near the halfway line in the 1995 Cup Winners Cup Final against Arsenal?",
+        "choice1": "Vinny Samways",
+        "choice2": "Chris Armstrong",
+        "choice3": "Nayim",
+        "answer": 3
+    },
+    {
+        "question": "Terry Venables had a successful playing career with Chelsea, Spurs, QPR and Crystal Palace, but what position did he play?",
+        "choice1": "Defender",
+        "choice2": "Midfielder",
+        "choice3": "Striker",
+        "answer": 2
+    },	
+    {
+        "question": "Tottenham have two matchday mascots, what are their names?",
+        "choice1": "Chirpy & Lily",
+        "choice2": "John & Alan",
+        "choice3": "Tweety & Chicky",
+        "answer": 1
+    },
+    {
+        "question": "Which of these players has not played for both sides in a North London derby??",
+        "choice1": "William Gallas",
+        "choice2": "Sol Campbell",
+        "choice3": "Scott Parker",
+        "answer": 2
+    }				
+  ]
