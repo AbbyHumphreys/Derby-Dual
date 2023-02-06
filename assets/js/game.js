@@ -8,11 +8,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function selectTeam() {
     teamSelected.forEach(team => {
+      // Add event listener on each team logo
       team.addEventListener('click', e => {
         const selectedTeam = e.target;
         const arsenalTeam = document.getElementById('modal-arsenal-logo');
         const spursTeam = document.getElementById('modal-spurs-logo');
         let questions = [];
+        // If Arsenal logo selected:
+        // theTeam becomes arsenal and is passed through to the startGame function
+        // Arsenal questions are loaded
+        // Game begins when logo selected
         if (selectedTeam.id == 'modal-arsenal-logo' || selectedTeam.id == 'modal-arsenal-image') {
           theTeam = "arsenal";
           arsenalTeam.style.cssText = `
@@ -29,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let startButton = document.getElementById('start-quiz');
             startButton.addEventListener('click', startGame(team, questions));
            });
+        // If Spurs logo selected:
+        // theTeam becomes Tottenham Hotspurs and is passed through to the startGame function
+        // Spurs questions are loaded
+        // Game begins when logo selected
         } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
           theTeam = "spurs";
           spursTeam.style.cssText = `
@@ -67,7 +76,7 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 const correctPoints = 3;
-const maxQuestion = 5;
+const maxQuestion = 12;
 
 // Start the Game
 
@@ -87,7 +96,7 @@ function setNextQuestion() {
     return window.location.assign("/end.html");
   }
   questionCounter++;
-  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  const questionIndex = Math.floor(Math.random() * 12);
   currentQuestion = availableQuestions[questionIndex];
   availableQuestions.splice(questionIndex, 1);
   showQuestion(currentQuestion);
