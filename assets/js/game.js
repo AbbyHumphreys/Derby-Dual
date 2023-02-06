@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             border: #131f53 3px solid;
             background: #db0008;
           `;
-          fetch('arsenal-questions.json')
+          fetch('spurs-questions.json')
             .then(res => {
               console.log(res);
               return res.json();
