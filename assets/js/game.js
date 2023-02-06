@@ -12,28 +12,45 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedTeam = e.target;
         const arsenalTeam = document.getElementById('modal-arsenal-logo');
         const spursTeam = document.getElementById('modal-spurs-logo');
+        let questions = [];
         if (selectedTeam.id == 'modal-arsenal-logo' || selectedTeam.id == 'modal-arsenal-image') {
           theTeam = "arsenal";
           arsenalTeam.style.cssText = `
             border: #db0008 3px solid;
             background: #131f53;
           `;
+          fetch('arsenal-questions.json')
+            .then(res => {
+              console.log(res);
+              return res.json();
+           }).then(loadedQuestions => {
+            console.log(loadedQuestions);
+            questions = loadedQuestions;
+            let startButton = document.getElementById('start-quiz');
+            startButton.addEventListener('click', startGame(team, questions));
+           });
         } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
           theTeam = "spurs";
           spursTeam.style.cssText = `
             border: #131f53 3px solid;
             background: #db0008;
           `;
+          fetch('arsenal-questions.json')
+            .then(res => {
+              console.log(res);
+              return res.json();
+           }).then(loadedQuestions => {
+            console.log(loadedQuestions);
+            questions = loadedQuestions;
+            let startButton = document.getElementById('start-quiz');
+            startButton.addEventListener('click', startGame(team, questions));
+           });
         }
-        runGame(theTeam);
+        
       });
     });
   }
 
-  function runGame(team){
-  let startButton = document.getElementById('start-quiz');
-  startButton.addEventListener('click', startGame(team));
-}
 });
 
 // Declare variables
@@ -54,7 +71,7 @@ const maxQuestion = 5;
 
 // Start the Game
 
-function startGame(team) {
+function startGame(team, questions) {
   console.log(team);
   questionCounter = 0;
   score = 0;
@@ -147,33 +164,3 @@ function updateScoreCounter(answer) {
 function sum(a, b) {
   return a + b;
 }
-
-const questions = [{
-    question: 'What is 2 + 2?',
-    choice1: '4',
-    choice2: '6',
-    choice3: '10',
-    answer: 1
-  },
-  {
-    question: 'What is 3 + 3?',
-    choice1: '8',
-    choice2: '10',
-    choice3: '12',
-    answer: 2
-  },
-  {
-    question: 'What is 4 + 4?',
-    choice1: '2',
-    choice2: '100',
-    choice3: '8',
-    answer: 3
-  },
-  {
-    question: 'What is 5 + 5?',
-    choice1: '10',
-    choice2: '20',
-    choice3: '30',
-    answer: 1
-  }
-];
