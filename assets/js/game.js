@@ -28,16 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(res => {
               console.log(res);
               return res.json();
-           }).then(loadedQuestions => {
-            console.log(loadedQuestions);
-            questions = loadedQuestions;
-            let startButton = document.getElementById('start-quiz');
-            startButton.addEventListener('click', startGame(team, questions));
-           });
-        // If Spurs logo selected:
-        // theTeam becomes Tottenham Hotspurs and is passed through to the startGame function
-        // Spurs questions are loaded
-        // Game begins when logo selected
+            }).then(loadedQuestions => {
+              console.log(loadedQuestions);
+              questions = loadedQuestions;
+              let startButton = document.getElementById('start-quiz');
+              startButton.addEventListener('click', startGame(team, questions));
+            });
+          // If Spurs logo selected:
+          // theTeam becomes Tottenham Hotspurs and is passed through to the startGame function
+          // Spurs questions are loaded
+          // Game begins when logo selected
         } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
           theTeam = "spurs";
           spursTeam.style.cssText = `
@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(res => {
               console.log(res);
               return res.json();
-           }).then(loadedQuestions => {
-            console.log(loadedQuestions);
-            questions = loadedQuestions;
-            let startButton = document.getElementById('start-quiz');
-            startButton.addEventListener('click', startGame(team, questions));
-           });
+            }).then(loadedQuestions => {
+              console.log(loadedQuestions);
+              questions = loadedQuestions;
+              let startButton = document.getElementById('start-quiz');
+              startButton.addEventListener('click', startGame(team, questions));
+            });
         }
-        
+
       });
     });
   }
@@ -98,7 +98,7 @@ function startGame(team, questions) {
 // Increase question counter by 1
 // Randomly select question and ensure not chosen again
 function setNextQuestion() {
-  
+
   if (questionCounter == 4) {
     matchResults();
   } else if (questionCounter == 8) {
@@ -117,10 +117,10 @@ function setNextQuestion() {
 }
 
 // Increase matches played result
-// Display maches played
+// Display matches played
 function matchResults() {
   console.log('Match 1 played');
-  played ++
+  played++
   playedElement.innerHTML = played;
 
   showQuestion(currentQuestion);
@@ -137,7 +137,7 @@ function showQuestion(question) {
   });
 
   // Add football to right hand side match display for each question displayed
-  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol"></i>'; 
+  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol"></i>';
   matchOne[`${games}`].style.color = '#685631';
   acceptAnswers()
 }
@@ -171,13 +171,13 @@ function checkAnswer(userChoice) {
     matchOne[`${games}`].children[0].style.color = '#131f53';
   }
 
-  games ++;
+  games++;
 
   setTimeout(() => {
     updateScoreCounter(yourAnswer);
     setNextQuestion();
   }, 1000);
-  
+
 }
 
 // Update Question Counter
@@ -191,7 +191,7 @@ function updateScoreCounter(answer) {
   if (answer == "correct") {
     goals += 1;
     points += 1;
-  } 
+  }
   scoreElement.innerHTML = goals;
   pointsElement.innerHTML = points;
 }
