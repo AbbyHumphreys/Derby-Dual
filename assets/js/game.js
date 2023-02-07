@@ -96,7 +96,12 @@ function startGame(team, questions) {
 // Increase question counter by 1
 // Randomly select question and ensure not chosen again
 function setNextQuestion() {
-  if (availableQuestions.length === 0 || questionCounter >= maxQuestion) {
+  
+  if (questionCounter == 4) {
+    matchResults();
+  } else if (questionCounter == 8) {
+    console.log('Match 2 played');
+  } else if (availableQuestions.length === 0 || questionCounter >= maxQuestion) {
     //go to the end page
     return window.location.assign("/end.html");
   }
@@ -104,6 +109,15 @@ function setNextQuestion() {
   const questionIndex = Math.floor(Math.random() * 12);
   currentQuestion = availableQuestions[questionIndex];
   availableQuestions.splice(questionIndex, 1);
+  showQuestion(currentQuestion);
+  updateQuestionCounter(questionCounter);
+}
+
+function matchResults() {
+  console.log('Match 1 played');
+
+  
+
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
