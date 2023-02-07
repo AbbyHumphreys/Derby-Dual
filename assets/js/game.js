@@ -68,6 +68,7 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
 const counterElement = document.getElementById('question-counter');
 const scoreElement = document.getElementById('score');
 const pointsElement = document.getElementById('points');
+const playedElement = document.getElementById('played');
 const progressIndicator = document.getElementById('progress-bar-indicator');
 const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
 
@@ -78,6 +79,7 @@ let questionCounter = 0;
 let availableQuestions = [];
 let games = 0;
 let points = 0;
+let played = 0;
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -113,10 +115,12 @@ function setNextQuestion() {
   updateQuestionCounter(questionCounter);
 }
 
+// Increase matches played result
+// Display maches played
 function matchResults() {
   console.log('Match 1 played');
-
-  
+  played ++
+  playedElement.innerHTML = played;
 
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
