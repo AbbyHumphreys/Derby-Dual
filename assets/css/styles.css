@@ -108,31 +108,7 @@ hr {
     font-size: 5rem;
 }
 
-.correct {
-    background-color: green;
-    color: white;
-}
-
-.incorrect {
-    background-color: red;
-    color: white;
-}
-
-/*----------------------------------------------------- Progress Bar */
-
-#progress-bar {
-    height: auto;
-    width: auto;
-    border-bottom: #db0008 1px solid;
-    text-align: start;
-}
-
-.progress-bar-indicator {
-    background-color: #db0008;
-    width: 0%;
-}
-
-
+/*----------------------------------------------------- myModal2 */
 
 #modal-arsenal-logo:hover {
     background-color: #131f53;

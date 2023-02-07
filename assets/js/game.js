@@ -114,12 +114,9 @@ function showQuestion(question) {
     choice.innerText = question["choice" + number];
   });
 
-  console.log(matchOne[0]);
-
+  // Add football to right hand side match display for each question displayed
   matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol"></i>'; 
-
-  games ++;
-
+  matchOne[`${games}`].style.color = '#685631';
   acceptAnswers()
 }
 
@@ -135,7 +132,7 @@ function acceptAnswers() {
 
       const selectedChoice = e.target;
       const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
-      checkAnswer(selectedAnswer, selectedChoice);
+      checkAnswer(selectedAnswer);
     });
   });
 }
@@ -143,17 +140,22 @@ function acceptAnswers() {
 // Check if user's answer is correct
 // Display answer indicator css (correct or incorrect)
 // Remove answer indicator
-function checkAnswer(userChoice, userChoiceNumber) {
+function checkAnswer(userChoice) {
   const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
 
-  userChoiceNumber.classList.add(yourAnswer);
+  if (yourAnswer == "correct") {
+    matchOne[`${games}`].children[0].style.color = '#db0008';
+  } else if (yourAnswer == "incorrect") {
+    matchOne[`${games}`].children[0].style.color = '#131f53';
+  }
+
+  games ++;
 
   setTimeout(() => {
-    userChoiceNumber.classList.remove(yourAnswer);
     updateScoreCounter(yourAnswer);
     setNextQuestion();
   }, 1000);
-
+  
 }
 
 // Update Question Counter
