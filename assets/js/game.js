@@ -67,6 +67,7 @@ const questionElement = document.getElementById('question-paragraph');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const counterElement = document.getElementById('question-counter');
 const scoreElement = document.getElementById('score');
+const pointsElement = document.getElementById('points');
 const progressIndicator = document.getElementById('progress-bar-indicator');
 const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
 
@@ -76,6 +77,7 @@ let goals = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let games = 0;
+let points = 0;
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -86,6 +88,7 @@ function startGame(team, questions) {
   console.log(team);
   questionCounter = 0;
   goals = 0;
+  points = 0;
   availableQuestions = [...questions];
   setNextQuestion();
 }
@@ -168,9 +171,10 @@ function updateQuestionCounter(counter) {
 function updateScoreCounter(answer) {
   if (answer == "correct") {
     goals += 1;
+    points += 1;
   } 
   scoreElement.innerHTML = goals;
-  
+  pointsElement.innerHTML = points;
 }
 
 
