@@ -68,14 +68,14 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
 const counterElement = document.getElementById('question-counter');
 const scoreElement = document.getElementById('score');
 const progressIndicator = document.getElementById('progress-bar-indicator');
-const matchOne = Array.from(document.getElementById('match-one')).childNodes;
-console.log(matchOne);
+const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
 
 let currentQuestion = {};
 let acceptingAnswers = false;
 let goals = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let games = 0;
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -113,6 +113,12 @@ function showQuestion(question) {
     const number = choice.dataset["number"];
     choice.innerText = question["choice" + number];
   });
+
+  console.log(matchOne[0]);
+
+  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol"></i>'; 
+
+  games ++;
 
   acceptAnswers()
 }
