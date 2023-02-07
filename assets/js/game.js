@@ -103,6 +103,7 @@ function setNextQuestion() {
     matchResults();
   } else if (questionCounter == 8) {
     console.log('Match 2 played');
+    matchResults();
   } else if (availableQuestions.length === 0 || questionCounter >= maxQuestion) {
     //go to the end page
     return window.location.assign("/end.html");
