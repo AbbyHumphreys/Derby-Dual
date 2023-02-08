@@ -71,6 +71,7 @@ const pointsElement = document.getElementById('points');
 const playedElement = document.getElementById('played');
 const progressIndicator = document.getElementById('progress-bar-indicator');
 const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
+const matchToastElement = document.getElementById('matchToast');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -102,7 +103,6 @@ function setNextQuestion() {
   if (questionCounter == 4) {
     matchResults();
   } else if (questionCounter == 8) {
-    console.log('Match 2 played');
     matchResults();
   } else if (availableQuestions.length === 0 || questionCounter >= maxQuestion) {
     //go to the end page
@@ -119,9 +119,12 @@ function setNextQuestion() {
 // Increase matches played result
 // Display matches played
 function matchResults() {
-  console.log('Match 1 played');
   played++
   playedElement.innerHTML = played;
+  console.log(played);
+
+  const toast = new bootstrap.Toast(matchToastElement)
+    toast.show();
 
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
