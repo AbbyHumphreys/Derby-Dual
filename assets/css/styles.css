@@ -127,3 +127,9 @@ hr {
     background-color: #db0008;
     border: #131f53 3px solid
 }
+
+/*----------------------------------------------------- Match Toast */
+
+#quotes {
+    font-size: 3rem;
+}
