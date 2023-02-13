@@ -71,6 +71,10 @@ const pointsElement = document.getElementById('points');
 const playedElement = document.getElementById('played');
 const toastHeadMatch = document.getElementById('toast-header-match');
 const toastBodyMatch = document.getElementById('toast-body-match');
+const toastResults = document.getElementById('toast-body-result');
+const wonElement = document.getElementById('won');
+const drawnElement = document.getElementById('drawn');
+const lostElement = document.getElementById('lost');
 const progressIndicator = document.getElementById('progress-bar-indicator');
 const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
 const matchToastElement = document.getElementById('matchToast');
@@ -78,11 +82,15 @@ const matchToastElement = document.getElementById('matchToast');
 let currentQuestion = {};
 let acceptingAnswers = false;
 let goals = 0;
+let matchGoals = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let games = 0;
 let points = 0;
 let played = 0;
+let matchesWon = 0;
+let matchesDrawn = 0;
+let matchesLost = 0;
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -93,6 +101,7 @@ function startGame(team, questions) {
   console.log(team);
   questionCounter = 0;
   goals = 0;
+  matchGoals = 0;
   points = 0;
   availableQuestions = [...questions];
   setNextQuestion();
@@ -103,9 +112,9 @@ function startGame(team, questions) {
 function setNextQuestion() {
 
   if (questionCounter == 4) {
-    matchResults();
+    displayMatchResults();
   } else if (questionCounter == 8) {
-    matchResults();
+    displayMatchResults();
   } else if (availableQuestions.length === 0 || questionCounter >= maxQuestion) {
     //go to the end page
     return window.location.assign("/end.html");
@@ -120,16 +129,34 @@ function setNextQuestion() {
 
 // Increase matches played result
 // Display matches played
-function matchResults() {
+function displayMatchResults() {
   played++
   playedElement.innerHTML = played;
   console.log(played);
 
   const toast = new bootstrap.Toast(matchToastElement)
     toast.show();
+  
+  let matchResults = '';
 
   toastHeadMatch.innerHTML = played;
   toastBodyMatch.innerHTML = played;
+
+  if (matchGoals >= 3) {
+    matchResults = 'won';
+    matchesWon += 1;
+    wonElement.innerHTML = matchesWon
+  } else if (matchGoals == 2) {
+    matchResults = 'drew';
+    matchesDrawn += 1;
+    drawnElement.innerHTML = matchesDrawn;
+  } else if (matchGoals == 1) {
+    matchResults = 'lost';
+    matchesLost += 1;
+    lostElement.innerHTML = matchesLost;
+  }
+
+  toastResults.innerHTML = matchResults;
 
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
@@ -137,6 +164,10 @@ function matchResults() {
 
 // Display question with answers
 function showQuestion(question) {
+
+  if ((questionCounter === 5) || (questionCounter === 9)) {
+    matchGoals = 0;
+  }
   questionElement.innerHTML = currentQuestion.question;
 
   choices.forEach(choice => {
@@ -186,6 +217,20 @@ function checkAnswer(userChoice) {
     setNextQuestion();
   }, 1000);
 
+  checkMatchResults(yourAnswer);
+}
+
+function checkMatchResults(result) {
+  if (questionCounter == 4) {
+    if (result == "correct") {
+      console.log(matchGoals);
+    }
+  
+  } else if (questionCounter == 8) {
+    console.log("match 2");
+  } else if (questionCounter == 12) {
+    console.log("match 3");
+  }
 }
 
 // Update Question Counter
@@ -198,6 +243,7 @@ function updateQuestionCounter(counter) {
 function updateScoreCounter(answer) {
   if (answer == "correct") {
     goals += 1;
+    matchGoals += 1;
     points += 1;
   }
   scoreElement.innerHTML = goals;
