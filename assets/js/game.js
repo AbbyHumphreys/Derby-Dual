@@ -69,6 +69,8 @@ const counterElement = document.getElementById('question-counter');
 const scoreElement = document.getElementById('score');
 const pointsElement = document.getElementById('points');
 const playedElement = document.getElementById('played');
+const toastHeadMatch = document.getElementById('toast-header-match');
+const toastBodyMatch = document.getElementById('toast-body-match');
 const progressIndicator = document.getElementById('progress-bar-indicator');
 const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
 const matchToastElement = document.getElementById('matchToast');
@@ -125,6 +127,9 @@ function matchResults() {
 
   const toast = new bootstrap.Toast(matchToastElement)
     toast.show();
+
+  toastHeadMatch.innerHTML = played;
+  toastBodyMatch.innerHTML = played;
 
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
