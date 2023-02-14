@@ -77,7 +77,8 @@ const drawnElement = document.getElementById('drawn');
 const lostElement = document.getElementById('lost');
 const progressIndicator = document.getElementById('progress-bar-indicator');
 const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
-const matchToastElement = document.getElementById('matchToast');
+const matchToastElement = document.getElementById('match-toast');
+const matchQuoteElement = document.getElementById('match-quote');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -91,6 +92,7 @@ let played = 0;
 let matchesWon = 0;
 let matchesDrawn = 0;
 let matchesLost = 0;
+let matchQuote = '';
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -145,18 +147,24 @@ function displayMatchResults() {
 
   if (matchGoals >= 3) {
     matchResults = 'won';
+    matchQuote = 'Take a bow, son!'
     matchesWon += 1;
     points += 3;
     wonElement.innerHTML = matchesWon
+    matchQuoteElement.innerHTML = matchQuote;
   } else if (matchGoals == 2) {
     matchResults = 'drew';
+    matchQuote = 'They\'ve somehow clung on for a point'
     matchesDrawn += 1;
     points += 1;
     drawnElement.innerHTML = matchesDrawn;
+    matchQuoteElement.innerHTML = matchQuote;
   } else if (matchGoals == 1) {
     matchResults = 'lost';
+    matchQuote = 'I wouldn\'t want to be in that dressing room.'
     matchesLost += 1;
     lostElement.innerHTML = matchesLost;
+    matchQuoteElement.innerHTML = matchQuote;
   }
 
   pointsElement.innerHTML = points;
