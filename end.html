@@ -1,1 +1,152 @@
-The End
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derby Duel</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Main Stylesheet -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/2d6908b6f2.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div id="game-display">
+        <header>
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-2 border-end border-danger border-1">
+                                <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-header-logo.webp"
+                                alt="Arsenal football team logo" id="arsenal-logo">
+                            </div>
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-2 border-end border-danger border-1">Played</div>
+                                    <div class="col-2 border-end border-danger border-1">Won</div>
+                                    <div class="col-2 border-end border-danger border-1">Drawn</div>
+                                    <div class="col-2 border-end border-danger border-1">Lost</div>
+                                    <div class="col-2 border-end border-danger border-1">Goals</div>
+                                    <div class="col-2 border-end border-danger border-1">Points</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2 border-end border-danger border-1" id="played">0</div>
+                                    <div class="col-2 border-end border-danger border-1" id="won">0</div>
+                                    <div class="col-2 border-end border-danger border-1" id="drawn">0</div>
+                                    <div class="col-2 border-end border-danger border-1" id="lost">0</div>
+                                    <div class="col-2 border-end border-danger border-1" id="score">0</div>
+                                    <div class="col-2 border-end border-danger border-1" id="points">0</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-2">
+                                <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp"
+                                alt="Tottenham Hotspurs team logo" id="spurs-logo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row border-start border-danger border-1">
+                            <div class="col-9">
+                                <div class="row border-bottom border-danger border-1">
+                                    <div class="col-4 border-end border-danger border-3">Match 1</div>
+                                    <div class="col-4 border-end border-danger border-3">Match 2</div>
+                                    <div class="col-4"> Match 3</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 border-end border-danger border-3">
+                                        <div class="row" id="match-one">
+                                            <div class="col-3 question-indicator" data-game="0">
+                                                1
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="1">2</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="2">3</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="3">4</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border-end border-danger border-3">
+                                        <div class="row">
+                                            <div class="col-3 question-indicator" data-game="4">1</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="5">2</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="6">3</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="7">4</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-3 question-indicator" data-game="8">1</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="9">2</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="10">3</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="11">4</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 border-start border-danger border-3">
+                                <h6 class="d-inline align-middle pe-2">Derby Duel</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container-fluid quiz-section">
+            <div class="row game-area">
+                <div class="col-12 col-md-6 border border-danger border-1 d-flex align-items-center p-0">
+                    <div class="col-12">
+                        <section class="text-center">
+                            <h3>You have been relegated</h3>
+                            <i class="fa-solid fa-thumbs-down"></i>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 p-0 border border-danger border-1 d-flex align-items-center bg-color-2 txt-color-2 text-center">
+                    <div class="col-12">
+                        <h3 class="">Oops!</h3>
+                        <p>You scored 12 points</p>
+                        <p>You have been relagated to league one</p>
+                        <a href="game.html">
+                            <button type="button" class="btn btn-primary txt-color-2">
+                                Re-take Quiz
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-fluid">
+                <div class="row pt-5 pb-5 txt-color-1">
+                    <div class="col-12 col-md-6 mb-2">
+                        <p>&copy Abby Humphreys 2023</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-md-end">
+                        <p>Site created for educational purposes only</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap Script Tag -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+    <!-- game.js Script Tag -->
+    <script defer src="./assets/js/game.js"></script>
+
+</body>
+
+</html>
