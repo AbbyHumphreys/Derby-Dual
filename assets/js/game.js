@@ -119,10 +119,8 @@ function setNextQuestion() {
     displayMatchResults();
   } else if (questionCounter == 12) {
     displayMatchResults();
-  } else if (availableQuestions.length === 0 || questionCounter >= maxQuestion) {
-    //go to the end page
-    return window.location.assign("/end.html");
   }
+
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * 12);
   currentQuestion = availableQuestions[questionIndex];
@@ -139,6 +137,13 @@ function displayMatchResults() {
 
   const toast = new bootstrap.Toast(matchToastElement)
     toast.show();
+
+    if (questionCounter == 12) {
+      setTimeout(() => {
+        //go to the end page
+        return window.location.assign("/end.html");
+      }, 3000);
+    }
   
   let matchResults = '';
 
