@@ -145,10 +145,12 @@ function displayMatchResults() {
   if (matchGoals >= 3) {
     matchResults = 'won';
     matchesWon += 1;
+    points += 3;
     wonElement.innerHTML = matchesWon
   } else if (matchGoals == 2) {
     matchResults = 'drew';
     matchesDrawn += 1;
+    points += 1;
     drawnElement.innerHTML = matchesDrawn;
   } else if (matchGoals == 1) {
     matchResults = 'lost';
@@ -156,6 +158,7 @@ function displayMatchResults() {
     lostElement.innerHTML = matchesLost;
   }
 
+  pointsElement.innerHTML = points;
   toastResults.innerHTML = matchResults;
 
   showQuestion(currentQuestion);
