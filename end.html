@@ -102,18 +102,16 @@
         <div class="container-fluid quiz-section">
             <div class="row game-area">
                 <div class="col-12 col-md-6 border border-danger border-1 d-flex align-items-center p-0">
-                    <div class="col-12">
-                        <section class="text-center">
+                    <div class="col-12 text-center" id="left-side-results">
                             <h3>You have been relegated</h3>
                             <i class="fa-solid fa-thumbs-down"></i>
-                        </section>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 p-0 border border-danger border-1 d-flex align-items-center bg-color-2 txt-color-2 text-center">
-                    <div class="col-12">
+                    <div class="col-12" id="right-side-results">
                         <h3 class="">Oops!</h3>
-                        <p>You scored 12 points</p>
+                        <p>You scored <span id="end-points">12</span> points</p>
                         <p>You have been relagated to league one</p>
                         <a href="game.html">
                             <button type="button" class="btn btn-primary txt-color-2">
@@ -145,7 +143,7 @@
     </script>
 
     <!-- game.js Script Tag -->
-    <script defer src="./assets/js/game.js"></script>
+    <script defer src="./assets/js/end.js"></script>
 
 </body>
 
