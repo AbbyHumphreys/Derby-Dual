@@ -100,7 +100,6 @@ const maxQuestion = 12;
 // Start the Game
 
 function startGame(team, questions) {
-  console.log(team);
   questionCounter = 0;
   goals = 0;
   matchGoals = 0;
@@ -140,6 +139,7 @@ function displayMatchResults() {
 
     if (questionCounter == 12) {
       setTimeout(() => {
+        localStorage.setItem('mostRecentPoints', points);
         //go to the end page
         return window.location.assign("/end.html");
       }, 3000);
@@ -179,9 +179,13 @@ function displayMatchResults() {
   updateQuestionCounter(questionCounter);
 }
 
+function displayGameResults() {
+  console.log('end game');
+}
+
 // Display question with answers
 function showQuestion(question) {
-
+  // Reset match goals counter after each match played
   if ((questionCounter === 5) || (questionCounter === 9)) {
     matchGoals = 0;
   }
@@ -255,8 +259,8 @@ function updateQuestionCounter(counter) {
   counterElement.innerHTML = counter;
 }
 
-// Add 3 points onto score for correct answer
-// Minus 1 point on score for incorrect answer
+// Add 1 to goals, matchGoals and points
+// Display goals and points
 function updateScoreCounter(answer) {
   if (answer == "correct") {
     goals += 1;
