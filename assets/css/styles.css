@@ -134,7 +134,8 @@ hr {
     font-size: 3rem;
 }
 
+/*----------------------------------------------------- Icons */
 
-.fa-thumbs-down {
+.fa-thumbs-down, .fa-trophy {
     font-size: 10rem;
 }
