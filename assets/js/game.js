@@ -26,10 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
           `;
           fetch('arsenal-questions.json')
             .then(res => {
-              console.log(res);
               return res.json();
             }).then(loadedQuestions => {
-              console.log(loadedQuestions);
               questions = loadedQuestions;
               let startButton = document.getElementById('start-quiz');
               startButton.addEventListener('click', startGame(team, questions));
@@ -46,10 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
           `;
           fetch('spurs-questions.json')
             .then(res => {
-              console.log(res);
               return res.json();
             }).then(loadedQuestions => {
-              console.log(loadedQuestions);
               questions = loadedQuestions;
               let startButton = document.getElementById('start-quiz');
               startButton.addEventListener('click', startGame(team, questions));
@@ -93,6 +89,10 @@ let matchesWon = 0;
 let matchesDrawn = 0;
 let matchesLost = 0;
 let matchQuote = '';
+let availableQuotes = [];
+let currentWinQuote = {};
+let currentDrawQuote = {};
+let currentLostQuote = {};
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -146,34 +146,68 @@ function displayMatchResults() {
     }
   
   let matchResults = '';
+  let quotes = [];
 
   toastHeadMatch.innerHTML = played;
   toastBodyMatch.innerHTML = played;
 
-  if (matchGoals >= 3) {
-    matchResults = 'won';
-    matchQuote = 'Take a bow, son!'
-    matchesWon += 1;
-    points += 3;
-    wonElement.innerHTML = matchesWon
-    matchQuoteElement.innerHTML = matchQuote;
-  } else if (matchGoals == 2) {
-    matchResults = 'drew';
-    matchQuote = 'They\'ve somehow clung on for a point'
-    matchesDrawn += 1;
-    points += 1;
-    drawnElement.innerHTML = matchesDrawn;
-    matchQuoteElement.innerHTML = matchQuote;
-  } else if (matchGoals == 1) {
-    matchResults = 'lost';
-    matchQuote = 'I wouldn\'t want to be in that dressing room.'
-    matchesLost += 1;
-    lostElement.innerHTML = matchesLost;
-    matchQuoteElement.innerHTML = matchQuote;
-  }
+  fetch('quotes.json')
+    .then(res => {
+      return res.json();
+    }).then(loadedQuotes => {
+      quotes = loadedQuotes;
+      console.log(quotes);
+      availableQuotes = [...quotes];
 
-  pointsElement.innerHTML = points;
-  toastResults.innerHTML = matchResults;
+      // Randomly choose a quote for winning a match
+      const winQuotes = availableQuotes.filter(quote => quote.result == 'win');
+      console.log(winQuotes);
+      const winQuotesIndex = Math.floor(Math.random() * winQuotes.length);
+      currentWinQuote = winQuotes[winQuotesIndex].quote;
+      winQuotes.splice(winQuotesIndex, 1);
+      console.log(currentWinQuote);
+
+      // Randomly choose a quote for drawing a match
+      const drawQuotes = availableQuotes.filter(quote => quote.result == 'draw');
+      console.log(drawQuotes);
+      const drawQuotesIndex = Math.floor(Math.random() * drawQuotes.length);
+      currentDrawQuote = drawQuotes[drawQuotesIndex].quote;
+      drawQuotes.splice(drawQuotesIndex, 1);
+
+      // Randomly choose a quote for losing a match
+      const lostQuotes = availableQuotes.filter(quote => quote.result == 'lost');
+      console.log(lostQuotes);
+      const lostQuotesIndex = Math.floor(Math.random() * lostQuotes.length);
+      currentLostQuote = lostQuotes[lostQuotesIndex].quote;
+      lostQuotes.splice(lostQuotesIndex, 1);
+
+      if (matchGoals >= 3) {
+        matchResults = 'won';
+        matchesWon += 1;
+        points += 3;
+        wonElement.innerHTML = matchesWon
+        matchQuoteElement.innerHTML = currentWinQuote;
+      } else if (matchGoals == 2) {
+        matchResults = 'drew';
+        matchQuote = currentDrawQuote;
+        matchesDrawn += 1;
+        points += 1;
+        drawnElement.innerHTML = matchesDrawn;
+        matchQuoteElement.innerHTML = matchQuote;
+      } else if (matchGoals == 1) {
+        matchResults = 'lost';
+        matchQuote = currentLostQuote;
+        matchesLost += 1;
+        lostElement.innerHTML = matchesLost;
+        matchQuoteElement.innerHTML = matchQuote;
+      }
+      
+    pointsElement.innerHTML = points;
+    toastResults.innerHTML = matchResults;
+
+      });
+
+    
 
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
