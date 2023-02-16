@@ -1,0 +1,66 @@
+[
+    {
+      "quote": "That point keeps them in the race.",
+      "result": "draw"
+    },
+    {
+        "quote": "It's not going to count.",
+        "result": "lost"
+    },
+    {
+        "quote": "That's wide of the post!",
+        "result": "lost"
+    },
+    {
+        "quote": "He's got his flag up.",
+        "result": "lost"
+    },
+    {
+        "quote": "It did appear that they might be onto something but not so.",
+        "result": "lost"
+    },
+    {
+        "quote": "It's up for grabs now.",
+        "result": "win"
+    },
+    {
+        "quote": "Oooh, that's a painful one.",
+        "result": "lost"
+    },
+    {
+        "quote": "That's a dive in the box.",
+        "result": "lost"
+    },
+    {
+        "quote": "I think they'll be happy with a point.",
+        "result": "draw"
+    },
+    {
+        "quote": "Take a bow, son.",
+        "result": "win"
+    },
+    {
+        "quote": "I wouldn't want to be in that dressing room.",
+        "result": "lost"
+    },
+    {
+        "quote": "He used the inside of his head well, but outside, not so much.",
+        "result": "lost"
+    },
+    {
+        "quote": "The goals keep going in for them.",
+        "result": "win"
+    },
+    {
+        "quote": "And that’s a goal for this side!",
+        "result": "win"
+    },
+    {
+        "quote": "It didn't go over the line",
+        "result": "lose"
+    },
+    {
+        "quote": "He brushes off the pressure for a point!",
+        "result": "draw"
+    }
+]
