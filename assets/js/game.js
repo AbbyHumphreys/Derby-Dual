@@ -187,6 +187,7 @@ function displayMatchResults() {
         points += 3;
         wonElement.innerHTML = matchesWon
         matchQuoteElement.innerHTML = currentWinQuote;
+        console.log(currentWinQuote);
       } else if (matchGoals == 2) {
         matchResults = 'drew';
         matchQuote = currentDrawQuote;
