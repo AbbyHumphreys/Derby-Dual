@@ -170,16 +170,18 @@ function chooseQuote(currentResult) {
         }
       });
       
-  const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
-  currentQuote = currentAvailableQuotes[quoteIndex];
-  currentAvailableQuotes.splice(quoteIndex, 1);
-  console.log(currentQuote);
-    })
+    const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
+    currentQuote = currentAvailableQuotes[quoteIndex];
+    currentAvailableQuotes.splice(quoteIndex, 1);
+    console.log(currentQuote);
+  })
+  displayMatchResults(currentResult);
+  showToast(currentResult, currentQuote);
 }
 
 // Increase matches played result
 // Display matches played
-function displayMatchResults() {
+function displayMatchResults(currentResult) {
   playedElement.innerHTML = played;
 
   const toast = new bootstrap.Toast(matchToastElement)
@@ -192,78 +194,30 @@ function displayMatchResults() {
         return window.location.assign("/end.html");
       }, 3000);
     }
-  
-  let matchResults = '';
-  let quotes = [];
 
-  toastHeadMatch.innerHTML = played;
-  toastBodyMatch.innerHTML = played;
-
-  fetch('quotes.json')
-    .then(res => {
-      return res.json();
-    }).then(loadedQuotes => {
-      quotes = loadedQuotes;
-      console.log(quotes);
-      availableQuotes = [...quotes];
-
-      // Randomly choose a quote for winning a match
-      const winQuotes = availableQuotes.filter(quote => quote.result == 'win');
-      console.log(winQuotes);
-      const winQuotesIndex = Math.floor(Math.random() * winQuotes.length);
-      currentWinQuote = winQuotes[winQuotesIndex].quote;
-      winQuotes.splice(winQuotesIndex, 1);
-      console.log(currentWinQuote);
-
-      // Randomly choose a quote for drawing a match
-      const drawQuotes = availableQuotes.filter(quote => quote.result == 'draw');
-      console.log(drawQuotes);
-      const drawQuotesIndex = Math.floor(Math.random() * drawQuotes.length);
-      currentDrawQuote = drawQuotes[drawQuotesIndex].quote;
-      drawQuotes.splice(drawQuotesIndex, 1);
-
-      // Randomly choose a quote for losing a match
-      const lostQuotes = availableQuotes.filter(quote => quote.result == 'lost');
-      console.log(lostQuotes);
-      const lostQuotesIndex = Math.floor(Math.random() * lostQuotes.length);
-      currentLostQuote = lostQuotes[lostQuotesIndex].quote;
-      lostQuotes.splice(lostQuotesIndex, 1);
-
-      if (matchGoals >= 3) {
-        matchResults = 'won';
+      if (currentResult === 'win') {
         matchesWon += 1;
         points += 3;
         wonElement.innerHTML = matchesWon
-        matchQuoteElement.innerHTML = currentWinQuote;
-        console.log(currentWinQuote);
-      } else if (matchGoals == 2) {
-        matchResults = 'drew';
-        matchQuote = currentDrawQuote;
+      } else if (currentResult === 'draw') {
         matchesDrawn += 1;
         points += 1;
         drawnElement.innerHTML = matchesDrawn;
-        matchQuoteElement.innerHTML = matchQuote;
-      } else if (matchGoals == 1) {
-        matchResults = 'lost';
-        matchQuote = currentLostQuote;
+      } else if (currentResult === 'draw') {
         matchesLost += 1;
         lostElement.innerHTML = matchesLost;
-        matchQuoteElement.innerHTML = matchQuote;
       }
       
     pointsElement.innerHTML = points;
-    toastResults.innerHTML = matchResults;
-
-      });
-
-    
-
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
 
-function displayGameResults() {
-  console.log('end game');
+function showToast(currentResult, currentQuote) {
+  toastHeadMatch.innerHTML = played;
+  toastBodyMatch.innerHTML = played;
+  matchQuoteElement.innerHTML = currentQuote;
+  toastResults.innerHTML = currentResult;
 }
 
 // Display question with answers
