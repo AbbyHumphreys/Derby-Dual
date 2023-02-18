@@ -112,11 +112,7 @@ function startGame(team, questions) {
 // Randomly select question and ensure not chosen again
 function setNextQuestion() {
 
-  if (questionCounter == 4) {
-    displayMatchResults();
-  } else if (questionCounter == 8) {
-    displayMatchResults();
-  } else if (questionCounter == 12) {
+  if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
     displayMatchResults();
   }
 
