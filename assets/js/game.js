@@ -125,6 +125,7 @@ function setNextQuestion() {
   updateQuestionCounter(questionCounter);
 }
 
+// Determine if match won, lost or drawn
 function checkMatchResult() {
   if (matchGoals >= 3) {
     matchResults = 'won';
@@ -138,7 +139,19 @@ function checkMatchResult() {
   chooseQuote(matchResults);
 }
 
-
+// update won, drawn, lost and total points for the current match
+function updateMatchPoints(result) {
+  if (result === 'won') {
+    matchesWon += 1;
+    points += 3;
+  } else if (result === 'draw') {
+    matchesDrawn += 1;
+    points += 1;
+  } else if (result === 'lost') {
+    matchesLost += 1;
+  }
+  console.log(matchesWon, matchesDrawn, matchesLost, points);
+}
 
 // Increase matches played result
 // Display matches played
