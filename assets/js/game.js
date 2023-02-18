@@ -113,7 +113,8 @@ function startGame(team, questions) {
 function setNextQuestion() {
 
   if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
-    displayMatchResults();
+    played++
+    checkMatchResult();
   }
 
   questionCounter++;
@@ -124,10 +125,24 @@ function setNextQuestion() {
   updateQuestionCounter(questionCounter);
 }
 
+function checkMatchResult() {
+  if (matchGoals >= 3) {
+    matchResults = 'won';
+  } else if (matchGoals == 2) {
+    matchResults = 'draw';
+  } else if (matchGoals == 1) {
+    matchResults = 'lost';
+  }
+  console.log(matchResults);
+  updateMatchPoints(matchResults);
+  chooseQuote(matchResults);
+}
+
+
+
 // Increase matches played result
 // Display matches played
 function displayMatchResults() {
-  played++
   playedElement.innerHTML = played;
 
   const toast = new bootstrap.Toast(matchToastElement)
