@@ -90,9 +90,7 @@ let matchesDrawn = 0;
 let matchesLost = 0;
 let matchQuote = '';
 let availableQuotes = [];
-let currentWinQuote = {};
-let currentDrawQuote = {};
-let currentLostQuote = {};
+let currentQuote = {};
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -128,10 +126,10 @@ function setNextQuestion() {
 // Determine if match won, lost or drawn
 function checkMatchResult() {
   if (matchGoals >= 3) {
-    matchResults = 'won';
+    matchResults = 'win';
   } else if (matchGoals == 2) {
     matchResults = 'draw';
-  } else if (matchGoals == 1) {
+  } else if (matchGoals <= 1) {
     matchResults = 'lost';
   }
   console.log(matchResults);
@@ -141,7 +139,7 @@ function checkMatchResult() {
 
 // update won, drawn, lost and total points for the current match
 function updateMatchPoints(result) {
-  if (result === 'won') {
+  if (result === 'win') {
     matchesWon += 1;
     points += 3;
   } else if (result === 'draw') {
@@ -153,20 +151,30 @@ function updateMatchPoints(result) {
   console.log(matchesWon, matchesDrawn, matchesLost, points);
 }
 
-chooseQuote(currentResult) {
+let currentAvailableQuotes = [];
+
+function chooseQuote(currentResult) {
   // Fetch quotes
   fetch('quotes.json')
     .then(res => {
       return res.json();
     }).then(loadedQuotes => {
       quotes = loadedQuotes;
-      console.log(quotes);
       availableQuotes = [...quotes];
-    }
-    
-  let matchResult = currentResult;
-  const matchQuotes = availableQuotes.filter(quote => quote.result == )
-
+      console.log(availableQuotes);
+      availableQuotes.forEach(quote => {
+        if (quote.result === currentResult) {
+          console.log('I am the result');
+          currentAvailableQuotes.push(quote);
+          console.log(currentAvailableQuotes);
+        }
+      });
+      
+  const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
+  currentQuote = currentAvailableQuotes[quoteIndex];
+  currentAvailableQuotes.splice(quoteIndex, 1);
+  console.log(currentQuote);
+    })
 }
 
 // Increase matches played result
