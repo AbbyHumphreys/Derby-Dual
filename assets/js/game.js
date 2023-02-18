@@ -185,8 +185,7 @@ function chooseQuote(currentResult) {
 function displayMatchResults(currentResult) {
   playedElement.innerHTML = played;
 
-  const toast = new bootstrap.Toast(matchToastElement)
-    toast.show();
+  
 
     if (questionCounter == 12) {
       setTimeout(() => {
@@ -211,9 +210,11 @@ function displayMatchResults(currentResult) {
 }
 
 function showToast(currentResult, currentQuote) {
+  const toast = new bootstrap.Toast(matchToastElement)
+    toast.show();
   toastHeadMatch.innerHTML = played;
   toastBodyMatch.innerHTML = played;
-  matchQuoteElement.innerHTML = currentQuote;
+  matchQuoteElement.innerHTML = quotes[currentQuote.quote];
   toastResults.innerHTML = currentResult;
 }
 
