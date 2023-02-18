@@ -134,7 +134,7 @@ function checkMatchResult() {
   }
   console.log(matchResults);
   updateMatchPoints(matchResults);
-  chooseQuote(matchResults);
+  
 }
 
 // update won, drawn, lost and total points for the current match
@@ -149,6 +149,7 @@ function updateMatchPoints(result) {
     matchesLost += 1;
   }
   console.log(matchesWon, matchesDrawn, matchesLost, points);
+  chooseQuote(result);
 }
 
 let currentAvailableQuotes = [];
@@ -195,20 +196,16 @@ function displayMatchResults(currentResult) {
       }, 3000);
     }
 
-      if (currentResult === 'win') {
-        matchesWon += 1;
-        points += 3;
-        wonElement.innerHTML = matchesWon
-      } else if (currentResult === 'draw') {
-        matchesDrawn += 1;
-        points += 1;
-        drawnElement.innerHTML = matchesDrawn;
-      } else if (currentResult === 'draw') {
-        matchesLost += 1;
-        lostElement.innerHTML = matchesLost;
-      }
+    if (currentResult === 'win') {
+      wonElement.innerHTML = matchesWon
+    } else if (currentResult === 'draw') {
+      drawnElement.innerHTML = matchesDrawn;
+    } else if (currentResult === 'draw') {
+      lostElement.innerHTML = matchesLost;
+    }
       
-    pointsElement.innerHTML = points;
+  pointsElement.innerHTML = points;
+
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
@@ -274,21 +271,6 @@ function checkAnswer(userChoice) {
     updateScoreCounter(yourAnswer);
     setNextQuestion();
   }, 1000);
-
-  checkMatchResults(yourAnswer);
-}
-
-function checkMatchResults(result) {
-  if (questionCounter == 4) {
-    if (result == "correct") {
-      console.log(matchGoals);
-    }
-  
-  } else if (questionCounter == 8) {
-    console.log("match 2");
-  } else if (questionCounter == 12) {
-    console.log("match 3");
-  }
 }
 
 // Update Question Counter
