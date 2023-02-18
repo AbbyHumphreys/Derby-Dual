@@ -153,6 +153,22 @@ function updateMatchPoints(result) {
   console.log(matchesWon, matchesDrawn, matchesLost, points);
 }
 
+chooseQuote(currentResult) {
+  // Fetch quotes
+  fetch('quotes.json')
+    .then(res => {
+      return res.json();
+    }).then(loadedQuotes => {
+      quotes = loadedQuotes;
+      console.log(quotes);
+      availableQuotes = [...quotes];
+    }
+    
+  let matchResult = currentResult;
+  const matchQuotes = availableQuotes.filter(quote => quote.result == )
+
+}
+
 // Increase matches played result
 // Display matches played
 function displayMatchResults() {
