@@ -178,22 +178,18 @@ function chooseQuote(currentResult) {
     console.log(currentQuote);
     const toast = new bootstrap.Toast(matchToastElement);
     toast.show();
-  toastHeadMatch.innerHTML = played;
-  toastBodyMatch.innerHTML = played;
-  matchQuoteElement.innerHTML = currentQuote;
-  toastResults.innerHTML = currentResult;
+    toastHeadMatch.innerHTML = played;
+    toastBodyMatch.innerHTML = played;
+    matchQuoteElement.innerHTML = currentQuote;
+    toastResults.innerHTML = currentResult;
   });
   displayMatchResults(currentResult);
-  /*showToast(currentResult, currentQuote);*/
 }
 
 // Increase matches played result
 // Display matches played
 function displayMatchResults(currentResult) {
   playedElement.innerHTML = played;
-
-  
-
     if (questionCounter == 12) {
       setTimeout(() => {
         localStorage.setItem('mostRecentPoints', points);
@@ -215,16 +211,7 @@ function displayMatchResults(currentResult) {
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
-/*
-function showToast(currentResult, currentQuote) {
-  const toast = new bootstrap.Toast(matchToastElement);
-    toast.show();
-  toastHeadMatch.innerHTML = played;
-  toastBodyMatch.innerHTML = played;
-  matchQuoteElement.innerHTML = currentQuote;
-  toastResults.innerHTML = currentResult;
-}
-*/
+
 // Display question with answer
 function showQuestion(question) {
   // Reset match goals counter after each match played
