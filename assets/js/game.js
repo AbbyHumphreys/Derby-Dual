@@ -91,6 +91,7 @@ let matchesLost = 0;
 let matchQuote = '';
 let availableQuotes = [];
 let currentQuote = {};
+let quotes = [];
 
 const correctPoints = 3;
 const maxQuestion = 12;
@@ -166,7 +167,7 @@ function chooseQuote(currentResult) {
       availableQuotes.forEach(quote => {
         if (quote.result === currentResult) {
           console.log('I am the result');
-          currentAvailableQuotes.push(quote);
+          currentAvailableQuotes.push(quote.quote);
           console.log(currentAvailableQuotes);
         }
       });
@@ -175,9 +176,15 @@ function chooseQuote(currentResult) {
     currentQuote = currentAvailableQuotes[quoteIndex];
     currentAvailableQuotes.splice(quoteIndex, 1);
     console.log(currentQuote);
-  })
+    const toast = new bootstrap.Toast(matchToastElement);
+    toast.show();
+  toastHeadMatch.innerHTML = played;
+  toastBodyMatch.innerHTML = played;
+  matchQuoteElement.innerHTML = currentQuote;
+  toastResults.innerHTML = currentResult;
+  });
   displayMatchResults(currentResult);
-  showToast(currentResult, currentQuote);
+  /*showToast(currentResult, currentQuote);*/
 }
 
 // Increase matches played result
@@ -196,7 +203,7 @@ function displayMatchResults(currentResult) {
     }
 
     if (currentResult === 'win') {
-      wonElement.innerHTML = matchesWon
+      wonElement.innerHTML = matchesWon;
     } else if (currentResult === 'draw') {
       drawnElement.innerHTML = matchesDrawn;
     } else if (currentResult === 'draw') {
@@ -208,17 +215,17 @@ function displayMatchResults(currentResult) {
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
-
+/*
 function showToast(currentResult, currentQuote) {
-  const toast = new bootstrap.Toast(matchToastElement)
+  const toast = new bootstrap.Toast(matchToastElement);
     toast.show();
   toastHeadMatch.innerHTML = played;
   toastBodyMatch.innerHTML = played;
-  matchQuoteElement.innerHTML = quotes[currentQuote.quote];
+  matchQuoteElement.innerHTML = currentQuote;
   toastResults.innerHTML = currentResult;
 }
-
-// Display question with answers
+*/
+// Display question with answer
 function showQuestion(question) {
   // Reset match goals counter after each match played
   if ((questionCounter === 5) || (questionCounter === 9)) {
@@ -234,7 +241,7 @@ function showQuestion(question) {
   // Add football to right hand side match display for each question displayed
   matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol"></i>';
   matchOne[`${games}`].style.color = '#685631';
-  acceptAnswers()
+  acceptAnswers();
 }
 
 //Listen for user's answer
