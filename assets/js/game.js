@@ -133,7 +133,6 @@ function checkMatchResult() {
   } else if (matchGoals <= 1) {
     matchResults = 'lost';
   }
-  console.log(matchResults);
   updateMatchPoints(matchResults);
   
 }
@@ -149,7 +148,6 @@ function updateMatchPoints(result) {
   } else if (result === 'lost') {
     matchesLost += 1;
   }
-  console.log(matchesWon, matchesDrawn, matchesLost, points);
   chooseQuote(result);
 }
 
@@ -163,19 +161,15 @@ function chooseQuote(currentResult) {
     }).then(loadedQuotes => {
       quotes = loadedQuotes;
       availableQuotes = [...quotes];
-      console.log(availableQuotes);
       availableQuotes.forEach(quote => {
         if (quote.result === currentResult) {
-          console.log('I am the result');
           currentAvailableQuotes.push(quote.quote);
-          console.log(currentAvailableQuotes);
         }
       });
       
     const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
     currentQuote = currentAvailableQuotes[quoteIndex];
     currentAvailableQuotes.splice(quoteIndex, 1);
-    console.log(currentQuote);
     const toast = new bootstrap.Toast(matchToastElement);
     toast.show();
     toastHeadMatch.innerHTML = played;
@@ -192,7 +186,13 @@ function displayMatchResults(currentResult) {
   playedElement.innerHTML = played;
     if (questionCounter == 12) {
       setTimeout(() => {
-        localStorage.setItem('mostRecentPoints', points);
+        localStorage.setItem('totalPoints', points);
+        localStorage.setItem('totalPlayed', played);
+        localStorage.setItem('totalWon', matchesWon);
+        localStorage.setItem('totalDrawn', matchesDrawn);
+        localStorage.setItem('totalLost', matchesLost);
+        localStorage.setItem('totalGoals', goals);
+
         //go to the end page
         return window.location.assign("/end.html");
       }, 3000);
