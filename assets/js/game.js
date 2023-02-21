@@ -227,7 +227,8 @@ function showQuestion(question) {
 
   // Add football to right hand side match display for each question displayed
   matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol"></i>';
-  matchOne[`${games}`].style.color = '#685631';
+  matchOne[`${games}`].style.color = '#fff';
+  matchOne[`${games}`].style.backgroundColor = '#131f53';
   acceptAnswers();
 }
 
@@ -256,8 +257,10 @@ function checkAnswer(userChoice) {
 
   if (yourAnswer == "correct") {
     matchOne[`${games}`].children[0].style.color = '#db0008';
+    matchOne[`${games}`].style.backgroundColor = '#fff';
   } else if (yourAnswer == "incorrect") {
     matchOne[`${games}`].children[0].style.color = '#131f53';
+    matchOne[`${games}`].style.backgroundColor = '#fff';
   }
 
   games++;
