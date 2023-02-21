@@ -42,7 +42,8 @@
                     <p>Are you ready to play?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">Pick My Team</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">Pick
+                        My Team</button>
                 </div>
             </div>
         </div>
@@ -57,39 +58,42 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6 team-selector" id="modal-arsenal-logo">
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
-                            <button type="button" class="btn" id="start-quiz" data-bs-dismiss="modal">
-                                <img class="img-fluid" src="assets/images/arsenal-logo.webp"
-                                alt="Arsenal football team logo" id="modal-arsenal-image">
-                            </button>
-                        </span>
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip"
+                                data-bs-title="Disabled tooltip">
+                                <button type="button" class="btn" id="start-quiz" data-bs-dismiss="modal">
+                                    <img class="img-fluid" src="assets/images/arsenal-logo.webp"
+                                        alt="Arsenal football team logo" id="modal-arsenal-image">
+                                </button>
+                            </span>
+                        </div>
+                        <div class="col-6 team-selector" id="modal-spurs-logo">
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip"
+                                data-bs-title="Disabled tooltip">
+                                <button type="button" class="btn" id="start-quiz" data-bs-dismiss="modal">
+                                    <img class="img-fluid" src="assets/images/spurs-logo.webp"
+                                        alt="Tottenham Hotspurs team logo" id="modal-spurs-image">
+                                </button>
+                            </span>
+                        </div>
                     </div>
-                    <div class="col-6 team-selector" id="modal-spurs-logo">
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
-                            <button type="button" class="btn" id="start-quiz" data-bs-dismiss="modal">
-                                <img class="img-fluid" src="assets/images/spurs-logo.webp"
-                                alt="Tottenham Hotspurs team logo" id="modal-spurs-image">
-                            </button>
-                        </span>
-                    </div>
-                    </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
 
     <div class="toast-container position-fixed top-50 start-50 translate-middle p-3">
-        <div id="match-toast" class="toast vh-100 vw-100" data-bs-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <strong class="me-auto text-center">Match <span id="toast-header-match">2</span></strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body text-center">
-            <span id="match-quote">Take a bow, son!</span>
-            <p>You <span id="toast-body-result">won/lost</span> match <span id="toast-body-match">2</span></p>
-          </div>
+        <div id="match-toast" class="toast vh-100 vw-100" data-bs-autohide="false" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto text-center">Match <span id="toast-header-match">2</span></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-center">
+                <span id="match-quote">Take a bow, son!</span>
+                <p>You <span id="toast-body-result">won/lost</span> match <span id="toast-body-match">2</span></p>
+            </div>
         </div>
-      </div>
+    </div>
 
     <div id="game-display">
         <header>
@@ -99,7 +103,7 @@
                         <div class="row">
                             <div class="col-2 border-end border-danger border-1">
                                 <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-header-logo.webp"
-                                alt="Arsenal football team logo" id="arsenal-logo">
+                                    alt="Arsenal football team logo" id="arsenal-logo">
                             </div>
                             <div class="col-8">
                                 <div class="row">
@@ -119,10 +123,10 @@
                                     <div class="col-2 border-end border-danger border-1" id="points">0</div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-2">
                                 <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp"
-                                alt="Tottenham Hotspurs team logo" id="spurs-logo">
+                                    alt="Tottenham Hotspurs team logo" id="spurs-logo">
                             </div>
                         </div>
                     </div>
@@ -140,25 +144,34 @@
                                             <div class="col-3 question-indicator" data-game="0">
                                                 1
                                             </div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="1">2</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="2">3</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="3">4</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="1">2</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="2">3</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="3">4</div>
                                         </div>
                                     </div>
                                     <div class="col-4 border-end border-danger border-3">
                                         <div class="row">
                                             <div class="col-3 question-indicator" data-game="4">1</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="5">2</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="6">3</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="7">4</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="5">2</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="6">3</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="7">4</div>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="row">
                                             <div class="col-3 question-indicator" data-game="8">1</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="9">2</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="10">3</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="11">4</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="9">2</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="10">3</div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="11">4</div>
                                         </div>
                                     </div>
                                 </div>
@@ -171,50 +184,34 @@
                 </div>
             </div>
         </header>
-        <div class="container-fluid quiz-section">
-            <div class="row game-area">
+        <section class="game-section">
+            <div class="container-fluid quiz-section">
+                <div class="row game-area">
 
-                <div class="col-12 col-md-6 border border-danger border-1 position-relative p-0">
-                    <div class="col-12">
-                        <section class="question-section">
+                    <div class="col-12 col-md-6 border border-danger border-1 position-relative p-0">
+                        <div class="col-12">
                             <h2 class="text-end me-5 question-number">Q<span id="question-counter">0</span></h2>
                             <p class="position-absolute m-5" id="question-paragraph"></p>
-                        </section>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-12 col-md-6 p-0 border border-danger border-1 text-center">
-                    <div class="col-12 bg-color-2 txt-color-2 ps-2 h-13 answer-section">
-                        <h3 class="select-answer">SELECT YOUR ANSWER</h3>
-                    </div>
-                    
+                    <div class="col-12 col-md-6 p-0 border border-danger border-1 text-center">
+                        <div class="col-12 bg-color-2 txt-color-2 ps-2 h-13 answer-section">
+                            <h3 class="select-answer">SELECT YOUR ANSWER</h3>
+                        </div>
                         <div class="col-12 border-bottom border-danger border-1 ps-2 h-29 choice-text" data-number="1">
-                            <p>Traitor</p>
+                            <p></p>
                         </div>
                         <div class="col-12 border-bottom border-danger border-1 ps-2 h-29 choice-text" data-number="2">
-                            <p>Judas</p>
+                            <p></p>
                         </div>
                         <div class="col-12 ps-2 h-29 choice-text" data-number="3">
-                            <p>Loser</p>
+                            <p></p>
                         </div>
-                    
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid hide" id="true-section">
-            <div class="row game-area">
-                <div class="col d-flex align-items-center confirmation-text">
-                    <p class="mx-auto">TRUE</p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid hide" id="false-section">
-            <div class="row game-area">
-                <div class="col d-flex align-items-center confirmation-text">
-                    <p class="mx-auto">FALSE</p>
-                </div>
-            </div>
-        </div>
+        </section>
         <footer>
             <div class="container-fluid">
                 <div class="row pt-5 pb-5 txt-color-1">
