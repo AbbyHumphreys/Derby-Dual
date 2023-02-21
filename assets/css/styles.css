@@ -32,12 +32,16 @@ body {
 
 /*----------------------------------------------------- General */
 
+h1 { 
+    font-size: 4rem;
+}
+
 p, h2 {
     margin-bottom: 0;
 }
 
 h2 {
-    font-size: 6rem;
+    font-size: 3rem;
 }
 
 .hide {
@@ -77,10 +81,14 @@ hr {
 
 /*----------------------------------------------------- Question Section */
 
+.question-number {
+    font-size: 6rem;
+}
+/*
 .question-paragraph {
     bottom: 0;
 }
-
+*/
 /*----------------------------------------------------- Answer Section */
 
 .answer-section {
