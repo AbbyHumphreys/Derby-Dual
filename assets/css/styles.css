@@ -35,7 +35,11 @@ body {
 
 /*----------------------------------------------------- General */
 
-h1, h2, h3, .game-header, .question-indicator {
+h1, h2, h3, h5, 
+footer, 
+.modal-footer, 
+.game-header, 
+.question-indicator {
     font-family: 'Share Tech Mono', monospace;
 }
 
@@ -84,6 +88,10 @@ hr {
 
 .game-area {
     height: calc(100vh - 186px);
+}
+
+.match-header {
+    min-height: 3rem;
 }
 
 /*----------------------------------------------------- Question Section */
@@ -171,4 +179,8 @@ hr {
     text-align: center;
     width: 100%;
     left: 0px;
+}
+
+.title {
+    font-size: 1.5rem;
 }
