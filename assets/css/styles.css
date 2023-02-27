@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Share+Tech+Mono&display=swap');
+
 body,
 html {
     margin: 0;
@@ -10,6 +12,7 @@ html {
 
 body {
     text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*----------------------------------------------------- Colors */
@@ -31,6 +34,10 @@ body {
 }
 
 /*----------------------------------------------------- General */
+
+h1, h2, h3, .game-header, .question-indicator {
+    font-family: 'Share Tech Mono', monospace;
+}
 
 h1 { 
     font-size: 4rem;
