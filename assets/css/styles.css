@@ -92,6 +92,10 @@ hr {
     font-size: 6rem;
 }
 
+.question-indicator {
+    position: relative;
+}
+
 /*----------------------------------------------------- Answer Section */
 
 .answer-section {
@@ -145,11 +149,13 @@ hr {
     font-size: 3rem;
 }
 
-/*----------------------------------------------------- Icons */
+
 
 .fa-thumbs-down, .fa-trophy {
     font-size: 10rem;
 }
+
+/*----------------------------------------------------- Spacing */
 
 /* Snippet taken from https://www.w3schools.com/howto/howto_css_center-vertical.asp */
 .vertical-center {
@@ -159,3 +165,10 @@ hr {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
+
+/* Snippet taken from https://stackoverflow.com/questions/18147642/css-centering-absolute-positioned-text-inside-relative-parent */
+.center-text {
+    text-align: center;
+    width: 100%;
+    left: 0px;
+}
