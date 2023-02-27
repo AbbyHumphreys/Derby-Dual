@@ -221,16 +221,14 @@ function showQuestion(question) {
   questionElement.innerHTML = currentQuestion.question;
 
   choices.forEach(choice => {
+    choice.innerHTML = '';
     const number = choice.dataset["number"];
     
     let p = document.createElement("p");
     p.classList.add('vertical-center');
+    p.classList.add('center-text')
     p.innerText = question["choice" + number];
     choice.appendChild(p);
-    
-    /*
-    choice.innerText = question["choice" + number]; 
-    */
   });
 
   // Add football to right hand side match display for each question displayed
