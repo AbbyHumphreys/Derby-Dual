@@ -91,11 +91,7 @@ hr {
 .question-number {
     font-size: 6rem;
 }
-/*
-.question-paragraph {
-    bottom: 0;
-}
-*/
+
 /*----------------------------------------------------- Answer Section */
 
 .answer-section {
@@ -111,8 +107,8 @@ hr {
 }
 
 .choice-text:hover {
-    background-color: #131f53;
-    color:#fff;
+    background-color: #fff;
+    color:#131f53;
 }
 
 .confirmation-text {
