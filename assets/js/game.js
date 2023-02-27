@@ -232,7 +232,7 @@ function showQuestion(question) {
   });
 
   // Add football to right hand side match display for each question displayed
-  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol"></i>';
+  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
   matchOne[`${games}`].style.color = '#fff';
   matchOne[`${games}`].style.backgroundColor = '#131f53';
   acceptAnswers();
@@ -247,8 +247,10 @@ function acceptAnswers() {
     choice.addEventListener('click', e => {
       if (!acceptingAnswers) return;
       acceptingAnswers = false;
-
-      const selectedChoice = e.target;
+      let selectedChoice = e.target;
+      if (selectedChoice != this){
+        selectedChoice = e.target.parentNode;
+      }
       const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
       checkAnswer(selectedAnswer);
     });
