@@ -222,7 +222,15 @@ function showQuestion(question) {
 
   choices.forEach(choice => {
     const number = choice.dataset["number"];
-    choice.innerText = question["choice" + number];
+    
+    let p = document.createElement("p");
+    p.classList.add('vertical-center');
+    p.innerText = question["choice" + number];
+    choice.appendChild(p);
+    
+    /*
+    choice.innerText = question["choice" + number]; 
+    */
   });
 
   // Add football to right hand side match display for each question displayed

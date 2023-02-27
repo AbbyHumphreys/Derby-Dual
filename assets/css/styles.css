@@ -150,3 +150,12 @@ hr {
 .fa-thumbs-down, .fa-trophy {
     font-size: 10rem;
 }
+
+/* Snippet taken from https://www.w3schools.com/howto/howto_css_center-vertical.asp */
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
