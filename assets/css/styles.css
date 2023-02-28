@@ -25,12 +25,20 @@ body {
     color: #ffffff;
 }
 
+.txt-color-3 {
+    color: #db0008;
+}
+
 .bg-color-1 {
     background-color: #131f53;
 }
 
 .bg-color-2 {
     background-color: #db0008;
+}
+
+.bg-color-3 {
+    background-color: #fff;
 }
 
 /*----------------------------------------------------- General */
