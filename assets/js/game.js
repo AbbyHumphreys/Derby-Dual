@@ -3,10 +3,22 @@
 // Run startGame function when start-btn clicked
 
 document.addEventListener("DOMContentLoaded", function () {
+
   let teamSelected = Array.from(document.getElementsByClassName('team-selector'));
   selectTeam();
 
   function selectTeam() {
+
+    // Arsenal questions chosen as default incase user clicks off modal
+    fetch('arsenal-questions.json')
+    .then(res => {
+      return res.json();
+    }).then(loadedQuestions => {
+      questions = loadedQuestions;
+      let startButton = document.getElementById('start-quiz');
+      startButton.addEventListener('click', startGame(theTeam, questions));
+    });
+
     teamSelected.forEach(team => {
       // Add event listener on each team logo
       team.addEventListener('click', e => {
@@ -92,6 +104,7 @@ let matchQuote = '';
 let availableQuotes = [];
 let currentQuote = {};
 let quotes = [];
+let theTeam = 'arsenal';
 
 const correctPoints = 3;
 const maxQuestion = 12;
