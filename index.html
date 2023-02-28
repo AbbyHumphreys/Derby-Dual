@@ -11,7 +11,20 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Main Stylesheet -->
     <link href="assets/css/styles.css" rel="stylesheet">
-    
+    <!-- Email JS Script Tag -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        let templateParams = {
+            name: 'James',
+            notes: 'Check this out!'
+        };
+        (function(){
+            emailjs.init("lOit3QM5Exl4CLX_f"); //Public Key
+            emailjs.send("service_v2xkqij", "template_9398qf9", templateParams, "lOit3QM5Exl4CLX_f"); //serviceID, templateId, templateParams, publicKey
+        })();
+    </script>
 </head>
 
 <body>
@@ -116,7 +129,7 @@
             <div class="row">
                 <div class="d-none d-md-block col-md-4"></div>
                 <div class="col-12 col-md-4 mt-3">
-                    <form>
+                    <form onsubmit="return sendMail(this);">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name:</label>
                             <input type="text" class="form-control" id="name" aria-describedby="name">
@@ -159,6 +172,9 @@
     <!-- game.js Script Tag -->
     <script defer src="./assets/js/game.js"></script>
 
+    
+
+    <script src="assets/js/sendEmail.js"></script>
 </body>
 
 </html>
