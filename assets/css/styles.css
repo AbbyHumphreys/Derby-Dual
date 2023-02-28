@@ -192,3 +192,26 @@ hr {
 .title {
     font-size: 1.5rem;
 }
+
+.end-btn {
+    background-color: #131f53;
+    color:#fff;
+    margin-top: 1rem;
+}
+
+.end-btn:hover {
+    background-color: #fff;
+    color: #131f53;
+}
+
+.end-btn:active {
+    bottom: #fff;
+    color:#131f53;
+    border: 1px solid #db0008;
+}
+
+.home-page ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
