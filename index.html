@@ -11,20 +11,6 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Main Stylesheet -->
     <link href="assets/css/styles.css" rel="stylesheet">
-    <!-- Email JS Script Tag -->
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        let templateParams = {
-            name: 'James',
-            notes: 'Check this out!'
-        };
-        (function(){
-            emailjs.init("lOit3QM5Exl4CLX_f"); //Public Key
-            emailjs.send("service_v2xkqij", "template_9398qf9", templateParams, "lOit3QM5Exl4CLX_f"); //serviceID, templateId, templateParams, publicKey
-        })();
-    </script>
 </head>
 
 <body>
@@ -144,6 +130,12 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <div class="col-12 mt-3 bg-color-3 rounded hide" id="success-element">
+                        <p class="txt-color-3 p-2">Your message has been sent.</p>
+                    </div>
+                    <div class="col-12 mt-3 bg-color-3 rounded hide" id="failed-element">
+                        <p class="txt-color-3 p-2">There is a problem with your message being sent. Try again later</p>
+                    </div>
                 </div>
                 <div class="d-none d-md-block col-md-4"></div>
             </div>
@@ -172,8 +164,15 @@
     <!-- game.js Script Tag -->
     <script defer src="./assets/js/game.js"></script>
 
-    
-
+    <!-- Email JS Script Tag -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("lOit3QM5Exl4CLX_f"); //Public Key
+        })();
+    </script>
     <script src="assets/js/sendEmail.js"></script>
 </body>
 
