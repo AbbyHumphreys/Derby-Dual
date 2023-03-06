@@ -177,7 +177,10 @@ hr {
     font-size: 3rem;
 }
 
-
+.toast {
+    background-color: #fff;
+    opacity: 1;
+}
 
 .fa-thumbs-down, .fa-trophy {
     font-size: 10rem;
@@ -227,3 +230,4 @@ hr {
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
 }
+
