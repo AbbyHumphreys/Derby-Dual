@@ -29,71 +29,104 @@
                     <div class="col-12 col-md-6">
                         <div class="row">
                             <div class="col-2 border-end border-danger border-1">
-                                <img class="img-fluid header-logo pe-2" src="assets/images/arsenal-header-logo.webp"
+                                <img class="img-fluid header-logo pt-1 pb-1 pe-2" src="assets/images/arsenal-header-logo.webp"
                                 alt="Arsenal football team logo" id="arsenal-logo">
                             </div>
                             <div class="col-8">
-                                <div class="row">
-                                    <div class="col-2 border-end border-danger border-1">Played</div>
-                                    <div class="col-2 border-end border-danger border-1">Won</div>
-                                    <div class="col-2 border-end border-danger border-1">Drawn</div>
-                                    <div class="col-2 border-end border-danger border-1">Lost</div>
-                                    <div class="col-2 border-end border-danger border-1">Goals</div>
-                                    <div class="col-2 border-end border-danger border-1">Points</div>
+                                <div class="row h-50">
+                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-md-inline-block">layed</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">W<span class="d-none d-md-inline-block">on</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">D<span class="d-none d-md-inline-block">rawn</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">L<span class="d-none d-md-inline-block">ost</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">G<span class="d-none d-md-inline-block">oals</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-md-inline-block">oints</span></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-2 border-end border-danger border-1" id="total-played">0</div>
-                                    <div class="col-2 border-end border-danger border-1" id="total-won">0</div>
-                                    <div class="col-2 border-end border-danger border-1" id="total-drawn">0</div>
-                                    <div class="col-2 border-end border-danger border-1" id="total-lost">0</div>
-                                    <div class="col-2 border-end border-danger border-1" id="total-score">0</div>
-                                    <div class="col-2 border-end border-danger border-1" id="total-points">0</div>
+                                <div class="row h-50">
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="total-played">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="total-won">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="total-drawn">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="total-lost">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="total-score">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="total-points">0</div>
                                 </div>
                             </div>
                             
                             <div class="col-2">
-                                <img class="img-fluid header-logo" src="assets/images/spurs-header-logo.webp"
+                                <img class="img-fluid header-logo pt-1 pb-1" src="assets/images/spurs-header-logo.webp"
                                 alt="Tottenham Hotspurs team logo" id="spurs-logo">
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="row border-start border-danger border-1">
-                            <div class="col-9">
-                                <div class="row border-bottom border-danger border-1">
-                                    <div class="col-4 border-end border-danger border-3">Match 1</div>
-                                    <div class="col-4 border-end border-danger border-3">Match 2</div>
-                                    <div class="col-4"> Match 3</div>
+                        <div class="row border-start border-danger border-1 h-100 match-header">
+                            <div class="col-12 col-md-9">
+                                <div class="row border-top border-bottom border-danger border-1 h-50">
+                                    <div class="col-4 border-end border-danger border-3 game-header">Match 1</div>
+                                    <div class="col-4 border-end border-danger border-3 game-header">Match 2</div>
+                                    <div class="col-4 game-header"> Match 3</div>
                                 </div>
-                                <div class="row">
+                                <div class="row h-50">
                                     <div class="col-4 border-end border-danger border-3">
-                                        <div class="row" id="match-one">
-                                            <div class="col-3 question-indicator" data-game="0">1</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="1">2</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="2">3</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="3">4</div>
+                                        <div class="row h-100" id="match-one">
+                                            <div class="col-3 question-indicator" data-game="0">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="1">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="2">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="3">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-4 border-end border-danger border-3">
-                                        <div class="row">
-                                            <div class="col-3 question-indicator" data-game="4">1</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="5">2</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="6">3</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="7">4</div>
+                                        <div class="row h-100">
+                                            <div class="col-3 question-indicator" data-game="4">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="5">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="6">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="7">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
-                                        <div class="row">
-                                            <div class="col-3 question-indicator" data-game="8">1</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="9">2</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="10">3</div>
-                                            <div class="col-3 border-start border-danger border-1 question-indicator" data-game="11">4</div>
+                                        <div class="row h-100">
+                                            <div class="col-3 question-indicator" data-game="8">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="9">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="10">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="11">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 border-start border-danger border-3">
-                                <h6 class="d-inline align-middle pe-2">Derby Duel</h6>
+                            <div class="d-none d-md-inline-block col-3 border-start border-danger border-3 position-relative">
+                                <h6 class="d-inline pe-2 game-header vertical-center center-text title">Derby Duel</h6>
                             </div>
                         </div>
                     </div>
