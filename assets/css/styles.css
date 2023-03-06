@@ -94,6 +94,15 @@ button.navbar-toggler:focus {
     border-color: #db0008;
 }
 
+.btn-primary:hover {
+    background-color: #131f53;
+}
+
+.btn-primary:active {
+    background-color: #131f53;
+    border-color: #db0008;
+}
+
 /*----------------------------------------------------- Borders */
 
 .border-danger {
