@@ -215,7 +215,7 @@ function displayMatchResults(currentResult) {
       wonElement.innerHTML = matchesWon;
     } else if (currentResult === 'draw') {
       drawnElement.innerHTML = matchesDrawn;
-    } else if (currentResult === 'draw') {
+    } else if (currentResult === 'lost') {
       lostElement.innerHTML = matchesLost;
     }
       
@@ -260,10 +260,13 @@ function acceptAnswers() {
     choice.addEventListener('click', e => {
       if (!acceptingAnswers) return;
       acceptingAnswers = false;
+
       let selectedChoice = e.target;
-      if (selectedChoice != this){
-        selectedChoice = e.target.parentNode;
+      
+      if (selectedChoice != choice.child){
+        selectedChoice = choice; 
       }
+
       const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
       checkAnswer(selectedAnswer);
     });
