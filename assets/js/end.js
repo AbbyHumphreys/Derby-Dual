@@ -44,7 +44,7 @@ if (totalPoints <= 3) {
         <p id="result-paragraph">You have been relegated to league one</p>
         <a href="game.html">
             <button type="button" class="btn btn-primary txt-color-2 end-btn">
-                Try Again
+                Play Again
             </button>
         </a>
     `
@@ -60,7 +60,7 @@ if (totalPoints <= 3) {
         <p>You have won the premiership</p>
         <a href="game.html">
             <button type="button" class="btn btn-primary txt-color-2 end-btn">
-                Try Again
+                Play Again
             </button>
         </a>
     `
@@ -76,7 +76,7 @@ if (totalPoints <= 3) {
         <p>You have won the Europa League</p>
         <a href="game.html">
             <button type="button" class="btn btn-primary txt-color-2 end-btn">
-                Try Again
+                Play Again
             </button>
         </a>
     `
@@ -92,7 +92,7 @@ if (totalPoints <= 3) {
         <p>You have won the Champions League</p>
         <a href="game.html">
             <button type="button" class="btn btn-primary txt-color-2 end-btn">
-                Try Again
+                Play Again
             </button>
         </a>
     `
