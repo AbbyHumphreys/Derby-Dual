@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }).then(loadedQuestions => {
               questions = loadedQuestions;
               let startButton = document.getElementById('start-quiz');
-              startButton.addEventListener('click', startGame(team, questions));
+              startButton.addEventListener('click', startGame(theTeam, questions));
             });
           // If Spurs logo selected:
           // theTeam becomes Tottenham Hotspurs and is passed through to the startGame function
@@ -60,21 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }).then(loadedQuestions => {
               questions = loadedQuestions;
               let startButton = document.getElementById('start-quiz');
-              startButton.addEventListener('click', startGame(team, questions));
+              startButton.addEventListener('click', startGame(theTeam, questions));
             });
         }
-
       });
     });
   }
-
 });
 
 // Declare variables
-const questionElement = document.getElementById('question-paragraph');
+
 const choices = Array.from(document.getElementsByClassName('choice-text'));
-const counterElement = document.getElementById('question-counter');
-const scoreElement = document.getElementById('score');
 const pointsElement = document.getElementById('points');
 const playedElement = document.getElementById('played');
 const toastHeadMatch = document.getElementById('toast-header-match');
@@ -105,12 +101,10 @@ let availableQuotes = [];
 let currentQuote = {};
 let quotes = [];
 let theTeam = 'arsenal';
-
-const correctPoints = 3;
-const maxQuestion = 12;
+let currentAvailableQuotes = [];
 
 // Start the Game
-
+// Reset score points
 function startGame(team, questions) {
   questionCounter = 0;
   goals = 0;
@@ -120,21 +114,122 @@ function startGame(team, questions) {
   setNextQuestion();
 }
 
-// Increase question counter by 1
-// Randomly select question and ensure not chosen again
 function setNextQuestion() {
 
+  // Check if a match has been played (each match is 4 questions)
+  // If it has, display match results
   if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
     played++
     checkMatchResult();
   }
 
+  // Increase question counter by 1
+  // Randomly select question and ensure not chosen again
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * 12);
   currentQuestion = availableQuestions[questionIndex];
   availableQuestions.splice(questionIndex, 1);
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
+}
+
+// Display question with related answers choices
+function showQuestion(question) {
+  // Reset match goals counter after each match played
+  if ((questionCounter === 5) || (questionCounter === 9)) {
+    matchGoals = 0;
+  }
+
+  //Display the current question
+  const questionElement = document.getElementById('question-paragraph');
+  questionElement.innerHTML = currentQuestion.question;
+
+  // Loop through each answer box
+  // Insert the current question answers(one in each box)
+  // Display each answer in the center
+  choices.forEach(choice => {
+    choice.innerHTML = '';
+    const number = choice.dataset["number"];
+    
+    let p = document.createElement("p");
+    p.classList.add('vertical-center');
+    p.classList.add('center-text')
+    p.innerText = question["choice" + number];
+    choice.appendChild(p);
+  });
+
+  // Style football to show current question number
+  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
+  matchOne[`${games}`].style.color = '#fff';
+  matchOne[`${games}`].style.backgroundColor = '#131f53';
+  acceptAnswers();
+}
+
+//Listen for user's answer
+function acceptAnswers() {
+  acceptingAnswers = true;
+
+  choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+      if (!acceptingAnswers) return;
+      acceptingAnswers = false;
+
+      let selectedChoice = e.target;
+      // Make whole answer box clickable as answer
+      if (selectedChoice != choice.child){
+        selectedChoice = choice; 
+      }
+
+      //Change answer into an Integer
+      const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
+      checkAnswer(selectedAnswer);
+    });
+  });
+}
+
+// Check if user's answer is correct
+// Display answer indicator css (correct or incorrect)
+// Remove answer indicator
+function checkAnswer(userChoice) {
+  const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
+
+  if (yourAnswer == "correct") {
+    matchOne[`${games}`].children[0].style.color = '#db0008';
+    matchOne[`${games}`].style.backgroundColor = '#fff';
+  } else if (yourAnswer == "incorrect") {
+    matchOne[`${games}`].children[0].style.color = '#131f53';
+    matchOne[`${games}`].style.backgroundColor = '#fff';
+  }
+
+  // Increase amount of games played by 1
+  games++;
+
+  // Delay game play so user can check where he's up to
+  setTimeout(() => {
+    updateScoreCounter(yourAnswer);
+    setNextQuestion();
+  }, 1000);
+}
+
+// Update Question Counter
+function updateQuestionCounter(counter) {
+  const counterElement = document.getElementById('question-counter');
+  counterElement.innerHTML = counter;
+}
+
+// Add 1 to goals, matchGoals and points
+function updateScoreCounter(answer) {
+  if (answer == "correct") {
+    goals += 1;
+    matchGoals += 1;
+    points += 1;
+  }
+
+  // Display current amount of goals
+  const scoreElement = document.getElementById('score');
+  scoreElement.innerHTML = goals;
+  // Display current amount of points
+  pointsElement.innerHTML = points;
 }
 
 // Determine if match won, lost or drawn
@@ -147,7 +242,6 @@ function checkMatchResult() {
     matchResults = 'lost';
   }
   updateMatchPoints(matchResults);
-  
 }
 
 // update won, drawn, lost and total points for the current match
@@ -164,8 +258,6 @@ function updateMatchPoints(result) {
   chooseQuote(result);
 }
 
-let currentAvailableQuotes = [];
-
 function chooseQuote(currentResult) {
   // Fetch quotes
   fetch('quotes.json')
@@ -174,6 +266,7 @@ function chooseQuote(currentResult) {
     }).then(loadedQuotes => {
       quotes = loadedQuotes;
       availableQuotes = [...quotes];
+      // Ensure only relevant quotes selected for current match result
       availableQuotes.forEach(quote => {
         if (quote.result === currentResult) {
           currentAvailableQuotes.push(quote.quote);
@@ -224,94 +317,6 @@ function displayMatchResults(currentResult) {
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
-
-// Display question with answer
-function showQuestion(question) {
-  // Reset match goals counter after each match played
-  if ((questionCounter === 5) || (questionCounter === 9)) {
-    matchGoals = 0;
-  }
-  questionElement.innerHTML = currentQuestion.question;
-
-  choices.forEach(choice => {
-    choice.innerHTML = '';
-    const number = choice.dataset["number"];
-    
-    let p = document.createElement("p");
-    p.classList.add('vertical-center');
-    p.classList.add('center-text')
-    p.innerText = question["choice" + number];
-    choice.appendChild(p);
-  });
-
-  // Add football to right hand side match display for each question displayed
-  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
-  matchOne[`${games}`].style.color = '#fff';
-  matchOne[`${games}`].style.backgroundColor = '#131f53';
-  acceptAnswers();
-}
-
-//Listen for user's answer
-//Change answer into an Integer
-function acceptAnswers() {
-  acceptingAnswers = true;
-
-  choices.forEach(choice => {
-    choice.addEventListener('click', e => {
-      if (!acceptingAnswers) return;
-      acceptingAnswers = false;
-
-      let selectedChoice = e.target;
-      
-      if (selectedChoice != choice.child){
-        selectedChoice = choice; 
-      }
-
-      const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
-      checkAnswer(selectedAnswer);
-    });
-  });
-}
-
-// Check if user's answer is correct
-// Display answer indicator css (correct or incorrect)
-// Remove answer indicator
-function checkAnswer(userChoice) {
-  const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
-
-  if (yourAnswer == "correct") {
-    matchOne[`${games}`].children[0].style.color = '#db0008';
-    matchOne[`${games}`].style.backgroundColor = '#fff';
-  } else if (yourAnswer == "incorrect") {
-    matchOne[`${games}`].children[0].style.color = '#131f53';
-    matchOne[`${games}`].style.backgroundColor = '#fff';
-  }
-
-  games++;
-
-  setTimeout(() => {
-    updateScoreCounter(yourAnswer);
-    setNextQuestion();
-  }, 1000);
-}
-
-// Update Question Counter
-function updateQuestionCounter(counter) {
-  counterElement.innerHTML = counter;
-}
-
-// Add 1 to goals, matchGoals and points
-// Display goals and points
-function updateScoreCounter(answer) {
-  if (answer == "correct") {
-    goals += 1;
-    matchGoals += 1;
-    points += 1;
-  }
-  scoreElement.innerHTML = goals;
-  pointsElement.innerHTML = points;
-}
-
 
 function sum(a, b) {
   return a + b;
