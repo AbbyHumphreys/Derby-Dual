@@ -199,6 +199,7 @@ function checkAnswer(userChoice, selectedChoice) {
     selectedChoice.classList.add('correct', 'correct-hover');
     selectedChoice.classList.remove('hover-color');
   } else if (yourAnswer == "incorrect") {
+    matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-x vertical-center center-text"></i>';
     matchOne[`${games}`].children[0].style.color = '#131f53';
     matchOne[`${games}`].style.backgroundColor = '#fff';
     selectedChoice.classList.add('incorrect', 'incorrect-hover');
