@@ -313,7 +313,7 @@ function displayMatchResults(currentResult) {
         localStorage.setItem('totalGoals', goals);
 
         //go to the end page
-        return window.location.assign("../../end.html");
+        return window.location.assign("https://abbyhumphreys.github.io/Derby-Dual/end.html");
       }, 3000);
     }
 
