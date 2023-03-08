@@ -289,6 +289,8 @@ function chooseQuote(currentResult) {
     const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
     currentQuote = currentAvailableQuotes[quoteIndex];
     currentAvailableQuotes.splice(quoteIndex, 1);
+
+    // Display bootstrap toast annoucing the match results
     const toast = new bootstrap.Toast(matchToastElement);
     toast.show();
     toastHeadMatch.innerHTML = played;
