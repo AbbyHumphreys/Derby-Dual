@@ -41,7 +41,7 @@ if (totalPoints <= 3) {
     rightSideResults.innerHTML = `
         <h3 id="result-exclamation">Oops!</h3>
         <p>You scored ${totalPoints} points</p>
-        <p id="result-paragraph">You have been relegated to league one</p>
+        <p id="result-paragraph">You have been relegated!</p>
         <a href="game.html">
             <button type="button" class="btn btn-primary txt-color-2 end-btn">
                 Play Again
