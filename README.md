@@ -1,110 +1,109 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Derby Duel
 
-Live Site: (https://abbyhumphreys.github.io/Derby-Dual/);
+![Image showing the Derby Duel website on various devices](/assets/images/readme-images/derby-duel-responsive.webp "Derby Duel")
 
-Welcome Abby Humphreys,
+View the deployed site: [Derby Duel](https://abbyhumphreys.github.io/Derby-Dual/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This is Derby Duel, a quiz website for North London football lovers or football trivia fanatics. The website will enable users to pick a football team to answer questions about.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The aim of this project is to provide a fun and engaging quiz website using Javascript for interactivity
 
-## Gitpod Reminders
+Javascript, HTML and CSS will be the languages used to create this website.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Table of Contents
 
-`python3 -m http.server`
+- [`User Experience`](#user-experience)
+    - [`Project Goals`](#project-goals)
+    - [`User Experience`](#user-experience)
+    - [`User Stories`](#user-stories)
+- [`Design`](#design)
+    - [`Wireframes`](#wireframes)
+    - [`Colour`](#colour)
+    - [`Typography`](#typography)
+    - [`Code Structure`](#code-structure)
+    - [`Structure`](#structure)
 
-A blue button should appear to click: _Make Public_,
+# User Experience (UX)
 
-Another blue button should appear to click: _Open Browser_.
+## Project Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User Goals:
 
-A blue button should appear to click: _Make Public_,
+- access a user-friendly and easily navigable website
+- enjoy playing a quiz
+- clear instructions on how to play
+- the ability to play again
+- a question counter to keep track of how many questions have been played
+- score counters to enable track of how well the user is playing
+- the ability to contact the site owner
 
-Another blue button should appear to click: _Open Browser_.
+### Site Owner Goals:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Allow users to experience an awesome quiz site
+- Encourage user interaction
+- Enable easy access to the site and a smoothness to navigation
 
-To log into the Heroku toolbelt CLI:
+## User Experience
+### Target Audience
+* Arsenal and Tottenham Hotspur supporters
+* Football fans
+* Trivia fanatics
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### User Requirements and Expectations
+* A simple and intuitive navigation system
+* Clear instructions
+* Game play that works as expected
+* Good presentation and a visually appealing design regardless of screen size
+* An easy way to contact the business
+* Accessible for all users
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Stories
+### User
+As a user, I want to:
 
-------
+1. Know what the game is about
+2. Know how to play the game
+3. Be able to play the game
+4. Know where I am up to in the game and have real-time score updates
 
-## Release History
+### Site Owner
+As a site owner I want users to:
+1. Know what the game is about
+2. Know how to play the game
+3. Be able to contact the game creator
+4. Enjoy themselves and have a positive user experience
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Wireframes
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The following wireframes were created near the beginning of the design process with [Balsamiq](https://balsamiq.com/wireframes/?gclid=CjwKCAiAhKycBhAQEiwAgf19etPR1ccdA0Aiezm63MsBy4PezCLSlN1T14ubQH1pMB7oa7Hz9YqWHhoC-VEQAvD_BwE).
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Colour
+The colour palette was taken from the infamous logos of the North London derby teams. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* Red #db0008
+* Blue #131f53
+* White #fff
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![The colour palette chosen for the website](/assets/images/readme-images/color-palette.webp "Colour Palette")
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Typography
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[Google Fonts](https://fonts.google.com/) was used to obtain both fonts used.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The Poppins font is the main font used throughout the site. It is used frequently by many web developers and is easy on the eye. Sans Serif is set as a backup should the Poppins font fail to load.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Share Tech Mono is used mainly for headers. It is the style of font used on many football websites (including Arsenal) and will be familiar and fun for users. Monospace is set as a backup should Share Tech Mono font fail to load.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Code Structure
+Bootstrap grid system and responsiveness were used throughout the site and the HTML was organised in an effective way according to bootstrap useability. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The CSS file was written in a way to utilise the cascading nature of CSS and in such a manner that general styles including colors are found at the top, then styles for each section as found in their defined order (as found when browsing the site) and then media queries at the bottom.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Javascript was utilised to create game interactivity which greatly increases satisfaction and a great user experience. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Structure
+This website was designed with mobile users foremost in mind as most users will access it using their mobile phones. With this in mind, simple layouts were used throughout to achieve an easy on the eye look. The site is structured in a familiar, user friendly way. A navigation menu is included in the single page layout of homepage. The menu is hidden using a hamburger menu icon as a toggle. This is because the page is short and it is likely users will scroll rather use the menu links.It was excluded from the game area to avoid distraction or accidently clicking away from the game. In the game pages, the homepage can be accessed using the Derby Duel logo or from a button on the end page.  The pages of the website are accessible using buttons. For example, on the home page, the ‘Take Quiz’ button links directly through to the game. The website consists of the following sections:
+* A home page consisting of an about us section, a how to play section and a contact us section. 
+* A game page is dynamically filled using javascript to create the interactive quiz with updating scores
+* An end page is also dynamically populated using javascript to inform the user of their end result
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
