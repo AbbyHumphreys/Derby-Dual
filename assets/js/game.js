@@ -313,7 +313,7 @@ function displayMatchResults(currentResult) {
         localStorage.setItem('totalGoals', goals);
 
         //go to the end page
-        return window.location.assign("/end.html");
+        return window.location.replace("/end.html");
       }, 3000);
     }
 
