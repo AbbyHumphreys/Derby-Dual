@@ -182,7 +182,7 @@ function acceptAnswers() {
 
       //Change answer into an Integer
       const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
-      checkAnswer(selectedAnswer);
+      checkAnswer(selectedAnswer, selectedChoice);
     });
   });
 }
@@ -190,15 +190,19 @@ function acceptAnswers() {
 // Check if user's answer is correct
 // Display answer indicator css (correct or incorrect)
 // Remove answer indicator
-function checkAnswer(userChoice) {
+function checkAnswer(userChoice, selectedChoice) {
   const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
 
   if (yourAnswer == "correct") {
     matchOne[`${games}`].children[0].style.color = '#db0008';
     matchOne[`${games}`].style.backgroundColor = '#fff';
+    selectedChoice.classList.add('correct', 'correct-hover');
+    selectedChoice.classList.remove('hover-color');
   } else if (yourAnswer == "incorrect") {
     matchOne[`${games}`].children[0].style.color = '#131f53';
     matchOne[`${games}`].style.backgroundColor = '#fff';
+    selectedChoice.classList.add('incorrect', 'incorrect-hover');
+    selectedChoice.classList.remove('hover-color');
   }
 
   // Increase amount of games played by 1
@@ -208,7 +212,15 @@ function checkAnswer(userChoice) {
   setTimeout(() => {
     updateScoreCounter(yourAnswer);
     setNextQuestion();
-  }, 1000);
+    if (yourAnswer === "correct"){
+      selectedChoice.classList.remove('correct');
+      selectedChoice.classList.add('hover-color');
+    } else if (yourAnswer === "incorrect") {
+      selectedChoice.classList.remove('incorrect');
+      selectedChoice.classList.add('hover-color');
+    }
+  }, 3000);
+  
 }
 
 // Update Question Counter

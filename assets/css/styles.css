@@ -103,6 +103,14 @@ button.navbar-toggler:focus {
     border-color: #db0008;
 }
 
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: orange;
+}
+
 /*----------------------------------------------------- Borders */
 
 .border-danger {
@@ -147,7 +155,7 @@ hr {
     margin-bottom: 0;
 }
 
-.choice-text:hover {
+.hover-color:hover {
     background-color: #fff;
     color:#131f53;
 }
