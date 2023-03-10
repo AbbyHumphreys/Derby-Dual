@@ -1,8 +1,88 @@
-console.log('i am connected');
+const newsItems = Array.from(document.getElementsByClassName('news-item'));
+let newsRetrieved = [];
+let newNews = {};
+let currentAvailableNews = [];
+let currentNewsItem = {};
+let currentNews = [];
+let myNewsItem = [];
 
-fetch('https://newsapi.org/v2/everything?q=Arsenal&from=2023-03-10&sortBy=popularity&apiKey=a022ad022e86407da8d88d58b285790f')
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '3e16868377msh1ad7988b3d30406p1aefdejsn7a657dae1018',
+		'X-RapidAPI-Host': 'news67.p.rapidapi.com'
+	}
+};
+
+function fetchNews(){
+fetch('https://news67.p.rapidapi.com/v2/topic-search?languages=en&search=arsenal%20tottenham&batchSize=3', options)
+	.then(response => response.json())
+	.then(getNews => {
+        newsRetrieved = getNews.news;
+        availableNews = [...newsRetrieved];
+        console.log(availableNews[0]);
+        const keys = Object.keys(availableNews)
+        console.log(keys);
+        keys.forEach((key, index) => {
+            console.log(`${key}: ${availableNews[key]}`);
+        });
+        availableNews.forEach((newsArticle) => {
+            currentAvailableNews.push(newsArticle)
+        })
+    })
+	.catch(err => console.error(err));
+    return getNews(currentAvailableNews); 
+}
+
+function getNews(newsArray) {
+    console.log(newsArray[0]);
+    newsArray.forEach((newsArrayArticle) => {
+        myNewsItem.push(newsArrayArticle);
+    })
+    console.log(myNewsItem);
+    const newsIndex = newsArray.length;
+    console.log(newsIndex);
+    currentNewsItem = currentNews[newsIndex];
+
+    console.log(currentNewsItem);
+
+    newsItems.forEach((item) => {
+        item.innerHTML = '';
+        const number = item.dataset["news-number"];
+        
+        let p = document.createElement("p");
+        p.classList.add('vertical-center');
+        p.classList.add('center-text')
+        p.innerText = currentNewsItem[0];
+        item.appendChild(p);
+      });
+    }
+
+    fetchNews();
+/*
+    fetch('quotes.json')
     .then(res => {
       return res.json();
-    }).then(myFunction => {
-        console.log(res.json);
-    });
+    }).then(loadedQuotes => {
+      quotes = loadedQuotes;
+      availableQuotes = [...quotes];
+      // Ensure only relevant quotes selected for current match result
+      availableQuotes.forEach(quote => {
+        if (quote.result === currentResult) {
+          currentAvailableQuotes.push(quote.quote);
+        }
+      });
+const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
+    currentQuote = currentAvailableQuotes[quoteIndex];
+    currentAvailableQuotes.splice(quoteIndex, 1);
+
+    // Display bootstrap toast annoucing the match results
+    const toast = new bootstrap.Toast(matchToastElement);
+    toast.show();
+    toastHeadMatch.innerHTML = played;
+    toastBodyMatch.innerHTML = played;
+    matchQuoteElement.innerHTML = currentQuote;
+    toastResults.innerHTML = currentResult;
+  });
+  displayMatchResults(currentResult);
+    */
