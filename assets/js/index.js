@@ -5,6 +5,7 @@ let currentAvailableNews = [];
 let currentNewsItem = {};
 let currentNews = [];
 let myNewsItem = [];
+let availableNews = [];
 
 const options = {
 	method: 'GET',
@@ -19,21 +20,15 @@ fetch('https://news67.p.rapidapi.com/v2/topic-search?languages=en&search=arsenal
 	.then(response => response.json())
 	.then(getNews => {
         newsRetrieved = getNews.news;
-        availableNews = [...newsRetrieved];
-        console.log(availableNews[0]);
-        const keys = Object.keys(availableNews)
-        console.log(keys);
-        keys.forEach((key, index) => {
-            console.log(`${key}: ${availableNews[key]}`);
-        });
-        availableNews.forEach((newsArticle) => {
-            currentAvailableNews.push(newsArticle)
+        newsRetrieved.forEach((element, index) => {
+            console.log(`Summary: ${element.Summary}`);
+            currentAvailableNews.push(element); 
+          });
         })
-    })
-	.catch(err => console.error(err));
-    return getNews(currentAvailableNews); 
-}
-
+          .catch(err => console.error(err));
+        return getNews(currentAvailableNews); 
+      }
+/*
 function getNews(newsArray) {
     console.log(newsArray[0]);
     newsArray.forEach((newsArrayArticle) => {
@@ -56,7 +51,7 @@ function getNews(newsArray) {
         p.innerText = currentNewsItem[0];
         item.appendChild(p);
       });
-    }
+    }*/
 
     fetchNews();
 /*
