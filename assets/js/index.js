@@ -1,8 +1,12 @@
 const newsItems = Array.from(document.getElementsByClassName('news-item'));
+
 let newsRetrieved = [];
+let availableNewsItems = [];
+let newsIndex = 0;
+let currentNewsItem = {};
+
 let newNews = {};
 let currentAvailableNews = [];
-let currentNewsItem = {};
 let currentNews = [];
 let myNewsItem = [];
 let availableNews = [];
@@ -15,69 +19,69 @@ const options = {
 	}
 };
 
+
 function fetchNews(){
 fetch('https://news67.p.rapidapi.com/v2/topic-search?languages=en&search=arsenal%20tottenham&batchSize=3', options)
 	.then(response => response.json())
 	.then(getNews => {
-        newsRetrieved = getNews.news;
-        newsRetrieved.forEach((element, index) => {
-            console.log(`Summary: ${element.Summary}`);
-            currentAvailableNews.push(element); 
-          });
-        })
-          .catch(err => console.error(err));
-        return getNews(currentAvailableNews); 
-      }
-/*
-function getNews(newsArray) {
-    console.log(newsArray[0]);
-    newsArray.forEach((newsArrayArticle) => {
-        myNewsItem.push(newsArrayArticle);
+    
+    newsRetrieved = getNews.news;
+    console.log(newsRetrieved)
+    //newsRetrieved.forEach((element, index) => {
+      //console.log(`Summary: ${element.Title}`);
+      //currentAvailableNews.push(element.Title, element.Image, element.Description); 
+      //console.log(currentAvailableNews);
+      displayNews()
     })
-    console.log(myNewsItem);
-    const newsIndex = newsArray.length;
-    console.log(newsIndex);
-    currentNewsItem = currentNews[newsIndex];
+    
+  }
 
-    console.log(currentNewsItem);
+function setNews(news) {
+  console.log(news);
+  availableNewsItems = [...news];
+  console.log(availableNewsItems);
+  newsIndex = 0;
+  console.log(newsIndex);
+  currentNewsItem = availableNewsItems[newsIndex];
+  console.log(currentNewsItem);
+  newsIndex ++
+  //displayNews(currentNewsItem);
+}
 
-    newsItems.forEach((item) => {
-        item.innerHTML = '';
-        const number = item.dataset["news-number"];
+function displayNews() {
+  newsItems.forEach(item => {
+    setNews(currentNews);
+    console.log(currentNews);
+  })
+  }
+
+
+/*
+    newsItems.forEach(item => {
+      console.log(newsRetrieved.Title);
+            //const number = 0;
+            //item[number].innerHTML = element.Title;
+           // number ++;
+          })
+        //})
+      }
+          //.catch(err => console.error(err));
+
+  newsItems.forEach(item => {
+    item.innerHTML = '';
+    const number = item.dataset["news-number"];
         
-        let p = document.createElement("p");
-        p.classList.add('vertical-center');
-        p.classList.add('center-text')
-        p.innerText = currentNewsItem[0];
-        item.appendChild(p);
-      });
-    }*/
+    let p = document.createElement("p");
+    p.classList.add('vertical-center');
+    p.classList.add('center-text')
+    p.innerText = currentAvailableNews['item'+number].Title.value;
+    console.log(currentAvailableNews['item'+number].Title.value);
+    item.appendChild(p);
+  })
+       // return getNews(currentAvailableNews); 
+})
+}
+
+*/
 
     fetchNews();
-/*
-    fetch('quotes.json')
-    .then(res => {
-      return res.json();
-    }).then(loadedQuotes => {
-      quotes = loadedQuotes;
-      availableQuotes = [...quotes];
-      // Ensure only relevant quotes selected for current match result
-      availableQuotes.forEach(quote => {
-        if (quote.result === currentResult) {
-          currentAvailableQuotes.push(quote.quote);
-        }
-      });
-const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
-    currentQuote = currentAvailableQuotes[quoteIndex];
-    currentAvailableQuotes.splice(quoteIndex, 1);
-
-    // Display bootstrap toast annoucing the match results
-    const toast = new bootstrap.Toast(matchToastElement);
-    toast.show();
-    toastHeadMatch.innerHTML = played;
-    toastBodyMatch.innerHTML = played;
-    matchQuoteElement.innerHTML = currentQuote;
-    toastResults.innerHTML = currentResult;
-  });
-  displayMatchResults(currentResult);
-    */
