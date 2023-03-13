@@ -1,15 +1,4 @@
-const newsItems = document.getElementById('news-container');
-let newsRetrieved = [];
-let availableNewsItems = [];
-let newsIndex = 0;
-let currentNewsItem = {};
-
-let newNews = {};
-let currentAvailableNews = [];
-let currentNews = [];
-let myNewsItem = [];
-let availableNews = [];
-
+// Variable object to confirm identity with Rapid API
 const options = {
 	method: 'GET',
 	headers: {
@@ -18,64 +7,33 @@ const options = {
 	}
 };
 
-
+// Retrieve 3 news items from news67 API via Rapid API
 function fetchNews(){
-fetch('https://news67.p.rapidapi.com/v2/topic-search?languages=en&search=arsenal%20tottenham&batchSize=3', options)
-	.then(response => response.json())
-	.then(getNews => {
-    newsRetrieved = getNews.news;
-    //newsRetrieved.forEach((element, index) => {
-      //console.log(`Summary: ${element.Title}`);
-      //currentAvailableNews.push(element.Title, element.Image, element.Description); 
-      //console.log(currentAvailableNews);
+  let newsRetrieved = [];
+  fetch('https://news67.p.rapidapi.com/v2/topic-search?languages=en&search=arsenal%20tottenham&batchSize=3', options)
+    .then(response => response.json())
+    .then(getNews => {
+      newsRetrieved = getNews.news;
       displayNews(newsRetrieved);
-    })
-    
-  }
-/*
-function setNews(news) {
-  console.log(news);
-  availableNewsItems = [...news];
-  console.log(availableNewsItems);
-  newsIndex = 0;
-  console.log(newsIndex);
-  currentNewsItem = availableNewsItems[newsIndex];
-  console.log(currentNewsItem);
-  newsIndex ++
-  //displayNews(currentNewsItem);
-}
-*/
-function displayNews(news) {
-  console.log(news);
-  }
-
-
-/*
-    newsItems.forEach(item => {
-      console.log(newsRetrieved.Title);
-            //const number = 0;
-            //item[number].innerHTML = element.Title;
-           // number ++;
-          })
-        //})
-      }
-          //.catch(err => console.error(err));
-
-  newsItems.forEach(item => {
-    item.innerHTML = '';
-    const number = item.dataset["news-number"];
-        
-    let p = document.createElement("p");
-    p.classList.add('vertical-center');
-    p.classList.add('center-text')
-    p.innerText = currentAvailableNews['item'+number].Title.value;
-    console.log(currentAvailableNews['item'+number].Title.value);
-    item.appendChild(p);
   })
-       // return getNews(currentAvailableNews); 
-})
 }
 
-*/
+// Create new div to display each news item
+function displayNews(news) {
+  const newsItems = document.getElementById('news-container');
+  news.forEach(item => {
+    const newNewsArticle = `
+    <a href="${item.Url}" target="_blank">
+    <h5>${item.Title}</h2>
+    <img src="${item.Image}" class="img-fluid">
+    <p>${item.Summary}</p>
+    </a>
+    `
+    let newDiv = document.createElement('div');
+    newDiv.classList.add('col-12', 'col-md-4', 'p-5', 'txt-color-1');
+    newsItems.appendChild(newDiv);
+    newDiv.innerHTML = newNewsArticle;
+  })
+}
 
-    fetchNews();
+fetchNews()
