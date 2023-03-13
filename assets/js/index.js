@@ -1,5 +1,4 @@
-const newsItems = Array.from(document.getElementsByClassName('news-item'));
-
+const newsItems = document.getElementById('news-container');
 let newsRetrieved = [];
 let availableNewsItems = [];
 let newsIndex = 0;
@@ -24,18 +23,16 @@ function fetchNews(){
 fetch('https://news67.p.rapidapi.com/v2/topic-search?languages=en&search=arsenal%20tottenham&batchSize=3', options)
 	.then(response => response.json())
 	.then(getNews => {
-    
     newsRetrieved = getNews.news;
-    console.log(newsRetrieved)
     //newsRetrieved.forEach((element, index) => {
       //console.log(`Summary: ${element.Title}`);
       //currentAvailableNews.push(element.Title, element.Image, element.Description); 
       //console.log(currentAvailableNews);
-      displayNews()
+      displayNews(newsRetrieved);
     })
     
   }
-
+/*
 function setNews(news) {
   console.log(news);
   availableNewsItems = [...news];
@@ -47,12 +44,9 @@ function setNews(news) {
   newsIndex ++
   //displayNews(currentNewsItem);
 }
-
-function displayNews() {
-  newsItems.forEach(item => {
-    setNews(currentNews);
-    console.log(currentNews);
-  })
+*/
+function displayNews(news) {
+  console.log(news);
   }
 
 
