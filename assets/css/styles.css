@@ -264,3 +264,15 @@ hr {
     }
 }
 
+
+/*----------------------------------------------------- News Section */
+
+.news-summary {
+    font-size: 0.8rem;
+}
+
+.news-item:hover {
+    border: 3px solid #db0008;
+    background-color: #131f53;
+    color: #fff;
+}

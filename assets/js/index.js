@@ -24,13 +24,13 @@ function displayNews(news) {
   news.forEach(item => {
     const newNewsArticle = `
     <a href="${item.Url}" target="_blank">
-    <h5>${item.Title}</h2>
+    <h5 class="news-text">${item.Title}</h2>
     <img src="${item.Image}" class="img-fluid">
-    <p>${item.Summary}</p>
+    <p class="mt-4 news-text news-summary">${item.Summary}</p>
     </a>
     `
     let newDiv = document.createElement('div');
-    newDiv.classList.add('col-12', 'col-md-4', 'p-5', 'txt-color-1');
+    newDiv.classList.add('col-12', 'col-md-4', 'ps-5', 'pe-5', 'mt-2', 'pt-2', 'news-item');
     newsItems.appendChild(newDiv);
     newDiv.innerHTML = newNewsArticle;
   })
