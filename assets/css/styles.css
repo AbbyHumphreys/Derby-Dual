@@ -274,5 +274,8 @@ hr {
 .news-item:hover {
     border: 3px solid #db0008;
     background-color: #131f53;
+}
+
+.news-item:hover .news-text {
     color: #fff;
 }
