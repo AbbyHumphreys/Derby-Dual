@@ -337,3 +337,5 @@ function displayMatchResults(currentResult) {
 function sum(a, b) {
   return a + b;
 }
+
+module.exports = { sum, startGame };
