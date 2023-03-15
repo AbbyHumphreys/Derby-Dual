@@ -3,6 +3,7 @@
  */
 
 const { sum, startGame } = require("../game");
+const fetch = require('node-fetch');
 
 jest.spyOn(window, "alert").mockImplementation(() => { });
 
