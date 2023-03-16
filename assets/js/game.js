@@ -8,24 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
   selectTeam();
 
   function selectTeam() {
-
+    let arsenalQuestions = 'arsenal-questions.json';
+    let spursQuestions = 'spurs-questions.json';
+    
     // Arsenal questions chosen as default incase user clicks off modal
-    fetch('arsenal-questions.json')
-    .then(res => {
-      return res.json();
-    }).then(loadedQuestions => {
-      questions = loadedQuestions;
-      let startButton = document.getElementById('start-quiz');
-      startButton.addEventListener('click', startGame(theTeam, questions));
-    });
-
+    useFetch(arsenalQuestions);
+    
     teamSelected.forEach(team => {
       // Add event listener on each team logo
       team.addEventListener('click', e => {
         const selectedTeam = e.target;
         const arsenalTeam = document.getElementById('modal-arsenal-logo');
         const spursTeam = document.getElementById('modal-spurs-logo');
-        let questions = [];
+        
         // If Arsenal logo selected:
         // theTeam becomes arsenal and is passed through to the startGame function
         // Arsenal questions are loaded
@@ -36,14 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             border: #db0008 3px solid;
             background: #131f53;
           `;
-          fetch('arsenal-questions.json')
-            .then(res => {
-              return res.json();
-            }).then(loadedQuestions => {
-              questions = loadedQuestions;
-              let startButton = document.getElementById('start-quiz');
-              startButton.addEventListener('click', startGame(theTeam, questions));
-            });
+          useFetch(arsenalQuestions);
+
           // If Spurs logo selected:
           // theTeam becomes Tottenham Hotspurs and is passed through to the startGame function
           // Spurs questions are loaded
@@ -54,19 +43,23 @@ document.addEventListener("DOMContentLoaded", function () {
             border: #131f53 3px solid;
             background: #db0008;
           `;
-          fetch('spurs-questions.json')
-            .then(res => {
-              return res.json();
-            }).then(loadedQuestions => {
-              questions = loadedQuestions;
-              let startButton = document.getElementById('start-quiz');
-              startButton.addEventListener('click', startGame(theTeam, questions));
-            });
+          useFetch(spursQuestions);
         }
       });
     });
   }
 });
+
+function useFetch(team) {
+  fetch(team)
+    .then(res => {
+      return res.json();
+    }).then(loadedQuestions => {
+      questions = loadedQuestions;
+      let startButton = document.getElementById('start-quiz');
+      startButton.addEventListener('click', startGame(theTeam, questions));
+    });
+}
 
 // Declare variables
 
@@ -84,6 +77,7 @@ const matchOne = Array.from(document.getElementsByClassName('question-indicator'
 const matchToastElement = document.getElementById('match-toast');
 const matchQuoteElement = document.getElementById('match-quote');
 
+let questions = [];
 let currentQuestion = {};
 let acceptingAnswers = false;
 let goals = 0;
