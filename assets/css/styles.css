@@ -1,5 +1,9 @@
+/*----------------------------------------------------- Imports */
+
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Share+Tech+Mono&display=swap');
 
+/*----------------------------------------------------- General */
 body,
 html {
     margin: 0;
@@ -15,9 +19,21 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+h1, h2, h3, h5, 
+footer, 
+.modal-footer, 
+.game-header, 
+.question-indicator {
+    font-family: 'Share Tech Mono', monospace;
+}
+
 a {
     text-decoration: none;
     color: #131f53;
+}
+
+.hide {
+    display: none;
 }
 
 /*----------------------------------------------------- Colors */
@@ -46,15 +62,35 @@ a {
     background-color: #fff;
 }
 
-/*----------------------------------------------------- General */
+/*----------------------------------------------------- Spacing */
 
-h1, h2, h3, h5, 
-footer, 
-.modal-footer, 
-.game-header, 
-.question-indicator {
-    font-family: 'Share Tech Mono', monospace;
+/* Snippet taken from https://www.w3schools.com/howto/howto_css_center-vertical.asp */
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+/* Snippet taken from https://stackoverflow.com/questions/18147642/css-centering-absolute-positioned-text-inside-relative-parent */
+.center-text {
+    text-align: center;
+    width: 100%;
+    left: 0px;
 }
+
+/*----------------------------------------------------- Borders */
+
+.border-danger {
+    border-color: #db0008;
+}
+
+hr {
+    opacity: 100%;
+}
+
+/*----------------------------------------------------- Headings */
 
 h1 { 
     font-size: 4rem;
@@ -68,9 +104,19 @@ h2 {
     font-size: 3rem;
 }
 
-.hide {
-    display: none;
-  }
+.title {
+    font-size: 1.5rem;
+}
+
+/*----------------------------------------------------- HOME PAGE */
+
+.home-page ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+/*----------------------------------------------------- Hamburger Menu */
 
 .navbar-toggler-icon {
     background-image: url(../images/hamburger-menu-icon.png);
@@ -83,6 +129,24 @@ button.navbar-toggler {
 button.navbar-toggler:focus {
     box-shadow: none;
 }
+
+/*----------------------------------------------------- News Section */
+
+.news-summary {
+    font-size: 0.8rem;
+}
+
+/* Indicates current news item */
+.news-item:hover {
+    border: 3px solid #db0008;
+    background-color: #131f53;
+}
+
+.news-item:hover .news-text {
+    color: #fff;
+}
+
+/*----------------------------------------------------- GAME PAGE */
 
 /*----------------------------------------------------- Main Section */
 
@@ -108,26 +172,19 @@ button.navbar-toggler:focus {
     border-color: #db0008;
 }
 
+/* Indicates correct answer */
 .correct {
     background-color: green;
 }
 
+/* Indicates correct answer */
 .incorrect {
     background-color: orange;
 }
 
-/*----------------------------------------------------- Borders */
-
-.border-danger {
-    border-color: #db0008;
-}
-
-hr {
-    opacity: 100%;
-}
-
 /*----------------------------------------------------- Game Section */
 
+/* Keeps game area in viewport at all times */
 .game-area {
     height: calc(100vh - 186px);
 }
@@ -204,30 +261,10 @@ hr {
     opacity: 1;
 }
 
+/*----------------------------------------------------- END PAGE */
+
 .fa-thumbs-down, .fa-trophy {
     font-size: 10rem;
-}
-
-/*----------------------------------------------------- Spacing */
-
-/* Snippet taken from https://www.w3schools.com/howto/howto_css_center-vertical.asp */
-.vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-
-/* Snippet taken from https://stackoverflow.com/questions/18147642/css-centering-absolute-positioned-text-inside-relative-parent */
-.center-text {
-    text-align: center;
-    width: 100%;
-    left: 0px;
-}
-
-.title {
-    font-size: 1.5rem;
 }
 
 .end-btn {
@@ -247,35 +284,13 @@ hr {
     border: 1px solid #db0008;
 }
 
-.home-page ul {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
-}
-
-
 /*----------------------------------------------------- Media Queries */
 
+/* Removes hover on small devices
 /* Breakpoint taken from bootstrap for consistency */
 @media only screen and (max-width: 768px) {
     .hover-color:hover {
         background-color: #131f53;
         color: #fff;
     }
-}
-
-
-/*----------------------------------------------------- News Section */
-
-.news-summary {
-    font-size: 0.8rem;
-}
-
-.news-item:hover {
-    border: 3px solid #db0008;
-    background-color: #131f53;
-}
-
-.news-item:hover .news-text {
-    color: #fff;
 }
