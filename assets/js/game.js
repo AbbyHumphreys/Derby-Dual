@@ -1,10 +1,15 @@
+/**
+ * Javascript for game play
+ * For use with game.html
+ * */
+
 // Wait for the DOM to finish loading before running the game
 // Get the start-btn ID and add an event listener to it
 // Run startGame function when start-btn clicked
-
 document.addEventListener("DOMContentLoaded", function () {
-
+  
   fetchQuotes();
+
   let teamSelected = Array.from(document.getElementsByClassName('team-selector'));
   selectTeam();
 
@@ -12,9 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let arsenalQuestions = 'arsenal-questions.json';
     let spursQuestions = 'spurs-questions.json';
     
-    // Arsenal questions chosen as default incase user clicks off modal
-    useFetch(arsenalQuestions);
+    // Arsenal questions chosen as default if user clicks off modals
+    fetchQuestions(arsenalQuestions);
     
+    // SELECT TEAM
     teamSelected.forEach(team => {
       // Add event listener on each team logo
       team.addEventListener('click', e => {
@@ -22,35 +28,32 @@ document.addEventListener("DOMContentLoaded", function () {
         const arsenalTeam = document.getElementById('modal-arsenal-logo');
         const spursTeam = document.getElementById('modal-spurs-logo');
         
-        // If Arsenal logo selected:
-        // theTeam becomes arsenal and is passed through to the startGame function
-        // Arsenal questions are loaded
-        // Game begins when logo selected
+        // Arsenal selected
         if (selectedTeam.id == 'modal-arsenal-logo' || selectedTeam.id == 'modal-arsenal-image') {
           theTeam = "arsenal";
           arsenalTeam.style.cssText = `
             border: #db0008 3px solid;
             background: #131f53;
           `;
-          useFetch(arsenalQuestions);
+          // Fetch Arsenal questions
+          fetchQuestions(arsenalQuestions);
 
-          // If Spurs logo selected:
-          // theTeam becomes Tottenham Hotspurs and is passed through to the startGame function
-          // Spurs questions are loaded
-          // Game begins when logo selected
+        // Spurs selected 
         } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
           theTeam = "spurs";
           spursTeam.style.cssText = `
             border: #131f53 3px solid;
             background: #db0008;
           `;
-          useFetch(spursQuestions);
+          // Fetch Spurs Questions
+          fetchQuestions(spursQuestions);
         }
       });
     });
   }
 });
 
+// FETCH QUOTES FUNCTION
 function fetchQuotes() {
   fetch('quotes.json')
     .then(res => {
@@ -58,7 +61,7 @@ function fetchQuotes() {
     }).then(loadedQuotes => {
       quotes = loadedQuotes;
       availableQuotes = [...quotes];
-      // Ensure only relevant quotes selected for current match result
+      // Spilt quotes into arrays by results
       availableQuotes.forEach(quote => {
         if (quote.result === "win") {
           winQuotes.push(quote.quote);
@@ -74,61 +77,69 @@ function fetchQuotes() {
               lostQuotes.push(quote.quote);
             }
       });
-      console.log(winQuotes);
-      console.log(drawQuotes);
-      console.log(lostQuotes);
   })
 }
 
-function useFetch(team) {
+// FETCH QUESTIONS FUNCTION
+function fetchQuestions(team) {
   fetch(team)
     .then(res => {
-      return res.json();
+      return res.json(); // return in json format
     }).then(loadedQuestions => {
       questions = loadedQuestions;
       let startButton = document.getElementById('start-quiz');
-      startButton.addEventListener('click', startGame(theTeam, questions));
+      startButton.addEventListener('click', startGame(theTeam, questions)); // begin quiz
     });
 }
 
-// Declare variables
+// VARIABLES DECLARED
+let theTeam = 'arsenal';
 
-const choices = Array.from(document.getElementsByClassName('choice-text'));
+// Results Area (header)
 const pointsElement = document.getElementById('points');
 const playedElement = document.getElementById('played');
-const toastHeadMatch = document.getElementById('toast-header-match');
-const toastBodyMatch = document.getElementById('toast-body-match');
-const toastResults = document.getElementById('toast-body-result');
 const wonElement = document.getElementById('won');
 const drawnElement = document.getElementById('drawn');
 const lostElement = document.getElementById('lost');
-const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
-const matchToastElement = document.getElementById('match-toast');
-const matchQuoteElement = document.getElementById('match-quote');
-
-let questions = [];
-let currentQuestion = {};
-let acceptingAnswers = false;
 let goals = 0;
-let matchGoals = 0;
-let questionCounter = 0;
-let availableQuestions = [];
 let games = 0;
 let points = 0;
 let played = 0;
 let matchesWon = 0;
 let matchesDrawn = 0;
 let matchesLost = 0;
+
+// Question Indicator Area
+const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
+let questionCounter = 0;
+
+// Toast Resuls
+const toastHeadMatch = document.getElementById('toast-header-match');
+const toastBodyMatch = document.getElementById('toast-body-match');
+const toastResults = document.getElementById('toast-body-result');
+const matchToastElement = document.getElementById('match-toast');
+let matchGoals = 0;
+
+// Toast Quotes
+const matchQuoteElement = document.getElementById('match-quote');
 let availableQuotes = [];
 let currentQuote = {};
 let quotes = [];
-let theTeam = 'arsenal';
 let currentAvailableQuotes = [];
 let winQuotes = [];
 let drawQuotes = [];
 let lostQuotes = [];
 
-// Start the Game
+// Question Area
+let questions = [];
+let currentQuestion = {};
+let availableQuestions = [];
+
+// Answer Area
+const choices = Array.from(document.getElementsByClassName('choice-text'));
+let acceptingAnswers = false;
+
+// START GAME FUNCTION
 // Reset score points
 function startGame(team, questions) {
   questionCounter = 0;
@@ -139,10 +150,9 @@ function startGame(team, questions) {
   setNextQuestion();
 }
 
+// SET NEXT QUESTION FUNCTION
 function setNextQuestion() {
-
   // Check if a match has been played (each match is 4 questions)
-  // If it has, display match results
   if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
     played++
     checkMatchResult();
@@ -158,6 +168,7 @@ function setNextQuestion() {
   updateQuestionCounter(questionCounter);
 }
 
+// SHOW QUESTION FUNCTION
 // Display question with related answers choices
 function showQuestion(question) {
   // Reset match goals counter after each match played
@@ -170,7 +181,7 @@ function showQuestion(question) {
   questionElement.innerHTML = currentQuestion.question;
 
   // Loop through each answer box
-  // Insert the current question answers(one in each box)
+  // Insert the current question's answers(one in each box)
   // Display each answer in the center
   choices.forEach(choice => {
     choice.innerHTML = '';
@@ -183,14 +194,15 @@ function showQuestion(question) {
     choice.appendChild(p);
   });
 
-  // Style football to show current question number
+  // Style football question indicator to show quiz progress
   matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
   matchOne[`${games}`].style.color = '#fff';
   matchOne[`${games}`].style.backgroundColor = '#131f53';
   acceptAnswers();
 }
 
-//Listen for user's answer
+// ACCEPT ANSWERS FUNCTION
+// Listen for user's answer
 function acceptAnswers() {
   acceptingAnswers = true;
 
@@ -205,19 +217,19 @@ function acceptAnswers() {
         selectedChoice = choice; 
       }
 
-      //Change answer into an Integer
+      // Change answer into an Integer
       const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
       checkAnswer(selectedAnswer, selectedChoice);
     });
   });
 }
 
-// Check if user's answer is correct
-// Display answer indicator css (correct or incorrect)
-// Remove answer indicator
+// CHECK ANSWER FUNCTION
 function checkAnswer(userChoice, selectedChoice) {
+  // Check if user's answer is correct
   const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
 
+  // Display indicator for correct of incorrect answer
   if (yourAnswer == "correct") {
     matchOne[`${games}`].children[0].style.color = '#db0008';
     matchOne[`${games}`].style.backgroundColor = '#fff';
@@ -234,7 +246,8 @@ function checkAnswer(userChoice, selectedChoice) {
   // Increase amount of games played by 1
   games++;
 
-  // Delay game play so user can check where he's up to
+  // Delay game play so user can check where they're up to
+  // Remove answer indicator
   setTimeout(() => {
     updateScoreCounter(yourAnswer);
     setNextQuestion();
@@ -249,12 +262,14 @@ function checkAnswer(userChoice, selectedChoice) {
   
 }
 
-// Update Question Counter
+// QUESTION COUNTER FUNCTION
+// Update question counter
 function updateQuestionCounter(counter) {
   const counterElement = document.getElementById('question-counter');
   counterElement.innerHTML = counter;
 }
 
+// UPDATE SCORE COUNTER
 // Add 1 to goals, matchGoals and points
 function updateScoreCounter(answer) {
   if (answer == "correct") {
@@ -270,6 +285,7 @@ function updateScoreCounter(answer) {
   pointsElement.innerHTML = points;
 }
 
+// CHECK MATCH RESULT FUNCTION
 // Determine if match won, lost or drawn
 function checkMatchResult() {
   if (matchGoals >= 3) {
@@ -287,6 +303,8 @@ function checkMatchResult() {
   chooseQuote(matchResults);
 }
 
+// CHOOSE QUOTE FUNCTION
+// Draw random quote based on the match result
 function chooseQuote(currentResult) {
   if (currentResult === "win") {
     currentAvailableQuotes = winQuotes;
@@ -296,6 +314,7 @@ function chooseQuote(currentResult) {
     currentAvailableQuotes = lostQuotes;
   }
 
+    // Remove used quotes
     const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
     currentQuote = currentAvailableQuotes[quoteIndex];
     currentAvailableQuotes.splice(quoteIndex, 1);
@@ -311,11 +330,15 @@ function chooseQuote(currentResult) {
   displayMatchResults(currentResult);
 }
 
+// DISPLAY MATCH RESULTS FUNCTION
 // Increase matches played result
 // Display matches played
 function displayMatchResults(currentResult) {
   playedElement.innerHTML = played;
+    // Game ends after 12 questions
+    // Scores saved in local storage
     if (questionCounter == 12) {
+      // Delay allows user to view last match results
       setTimeout(() => {
         localStorage.setItem('totalPoints', points);
         localStorage.setItem('totalPlayed', played);
@@ -330,6 +353,7 @@ function displayMatchResults(currentResult) {
       }, 3000);
     }
 
+    // update win, draw, lost counters in main game play
     if (currentResult === 'win') {
       wonElement.innerHTML = matchesWon;
     } else if (currentResult === 'draw') {
