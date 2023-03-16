@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derby Duel</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Main Stylesheet -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2d6908b6f2.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="game-display">
+        <header>
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-2 border-end border-danger border-1">
+                                <img class="img-fluid header-logo pt-1 pb-1 pe-2" src="assets/images/arsenal-header-logo.webp"
+                                    alt="Arsenal football team logo" id="arsenal-logo">
+                            </div>
+                            <div class="col-8">
+                                <div class="row h-50">
+                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-xxl-inline-block">layed</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">W<span class="d-none d-xxl-inline-block">on</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">D<span class="d-none d-xxl-inline-block">rawn</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">L<span class="d-none d-xxl-inline-block">ost</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">G<span class="d-none d-xxl-inline-block">oals</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-xxl-inline-block">oints</span></div>
+                                </div>
+                                <div class="row h-50">
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="played">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="won">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="drawn">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="lost">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="score">0</div>
+                                    <div class="col-2 border-end border-danger border-1 game-header" id="points">0</div>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <img class="img-fluid header-logo pt-1 pb-1" src="assets/images/spurs-header-logo.webp"
+                                    alt="Tottenham Hotspurs team logo" id="spurs-logo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row border-start border-danger border-1 h-100 match-header">
+                            <div class="col-12 col-md-9">
+                                <div class="row border-top border-bottom border-danger border-1 h-50">
+                                    <div class="col-4 border-end border-danger border-3 game-header">Match 1</div>
+                                    <div class="col-4 border-end border-danger border-3 game-header">Match 2</div>
+                                    <div class="col-4 game-header">Match 3</div>
+                                </div>
+                                <div class="row h-50">
+                                    <div class="col-4 border-end border-danger border-3">
+                                        <div class="row h-100" id="match-one">
+                                            <div class="col-3 question-indicator" data-game="0">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="1">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="2">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="3">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border-end border-danger border-3">
+                                        <div class="row h-100">
+                                            <div class="col-3 question-indicator" data-game="4">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="5">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="6">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="7">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row h-100">
+                                            <div class="col-3 question-indicator" data-game="8">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="9">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="10">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                            <div class="col-3 border-start border-danger border-1 question-indicator"
+                                                data-game="11">
+                                                <i class="fa-solid fa-futbol vertical-center center-text"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-inline-block col-3 border-start border-danger border-3 position-relative">
+                                <h6 class="d-inline pe-2 game-header vertical-center center-text title">Derby Duel</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="game-section">
+            <div class="container-fluid quiz-section">
+                <div class="row game-area">
+                    <div class="col-12 col-md-6 border border-bottom-danger border-1 position-relative p-0 bg-color-2 txt-color-2">
+                        <div class="col-12">
+                            <h2 class="text-end me-5 question-number">Oops!</h2>
+                            <p class="vertical-center m-5" id="question-paragraph"> The page you're looking for doesn't seem to be here. What would you like to do next?</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 p-0 border border-1 text-center bg-color-1 txt-color-2">
+                        <div class="col-12 bg-color-2 txt-color-2 ps-2 h-13 answer-section border-bottom border-1 position-relative">
+                            <h3 class="select-answer vertical-center center-text">SELECT YOUR ANSWER</h3>
+                        </div>
+                        <a href="index.html">
+                            <div class="col-12 border-bottom border-1 ps-2 h-29 choice-text hover-color position-relative">
+                                <p class="vertical-center center-text txt-color-2">Go Home</p>
+                            </div>
+                        </a>
+                        <a href="game.html">
+                            <div class="col-12 border-bottom border-1 ps-2 h-29 choice-text hover-color position-relative">
+                                <p class="vertical-center center-text txt-color-2">Play Quiz</p>
+                            </div>
+                        </a>
+                        <a href="index.html#form-section">
+                            <div class="col-12 ps-2 h-29 choice-text hover-color position-relative">
+                                <p class="vertical-center center-text txt-color-2">Contact Quiz Owner</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container-fluid">
+                <div class="row pt-5 pb-5 txt-color-1">
+                    <div class="col-12 col-md-6 mb-2">
+                        <p>&copy Abby Humphreys 2023</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-md-end">
+                        <p>Site created for educational purposes only</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap Script Tag -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>   
+</body>
+</html>
