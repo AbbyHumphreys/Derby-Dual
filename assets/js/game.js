@@ -72,7 +72,6 @@ const toastResults = document.getElementById('toast-body-result');
 const wonElement = document.getElementById('won');
 const drawnElement = document.getElementById('drawn');
 const lostElement = document.getElementById('lost');
-const progressIndicator = document.getElementById('progress-bar-indicator');
 const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
 const matchToastElement = document.getElementById('match-toast');
 const matchQuoteElement = document.getElementById('match-quote');
@@ -90,7 +89,6 @@ let played = 0;
 let matchesWon = 0;
 let matchesDrawn = 0;
 let matchesLost = 0;
-let matchQuote = '';
 let availableQuotes = [];
 let currentQuote = {};
 let quotes = [];
@@ -242,27 +240,18 @@ function updateScoreCounter(answer) {
 // Determine if match won, lost or drawn
 function checkMatchResult() {
   if (matchGoals >= 3) {
-    matchResults = 'win';
-  } else if (matchGoals == 2) {
-    matchResults = 'draw';
-  } else if (matchGoals <= 1) {
-    matchResults = 'lost';
-  }
-  updateMatchPoints(matchResults);
-}
-
-// update won, drawn, lost and total points for the current match
-function updateMatchPoints(result) {
-  if (result === 'win') {
+    matchResults = "win";
     matchesWon += 1;
     points += 3;
-  } else if (result === 'draw') {
+  } else if (matchGoals == 2) {
+    matchResults = "draw";
     matchesDrawn += 1;
     points += 1;
-  } else if (result === 'lost') {
+  } else if (matchGoals <= 1) {
+    matchResults = "lost";
     matchesLost += 1;
   }
-  chooseQuote(result);
+  chooseQuote(matchResults);
 }
 
 function chooseQuote(currentResult) {
@@ -282,7 +271,9 @@ function chooseQuote(currentResult) {
       
     const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
     currentQuote = currentAvailableQuotes[quoteIndex];
+    console.log(currentAvailableQuotes);
     currentAvailableQuotes.splice(quoteIndex, 1);
+    console.log(currentAvailableQuotes);
 
     // Display bootstrap toast annoucing the match results
     const toast = new bootstrap.Toast(matchToastElement);
