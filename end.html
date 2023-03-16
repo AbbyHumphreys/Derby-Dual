@@ -21,8 +21,9 @@
 </head>
 
 <body>
-
+    <!-- GAME DISPLAY -->
     <div id="game-display">
+        <!-- HEADER -->
         <header>
             <div class="container-fluid">
                 <div class="row text-center">
@@ -32,14 +33,16 @@
                                 <img class="img-fluid header-logo pt-1 pb-1 pe-2" src="assets/images/arsenal-header-logo.webp"
                                 alt="Arsenal football team logo" id="arsenal-logo">
                             </div>
+                            <!-- Displays end results in Premiership styling -->
                             <div class="col-8">
                                 <div class="row h-50">
-                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-md-inline-block">layed</span></div>
-                                    <div class="col-2 border-end border-danger border-1 game-header">W<span class="d-none d-md-inline-block">on</span></div>
-                                    <div class="col-2 border-end border-danger border-1 game-header">D<span class="d-none d-md-inline-block">rawn</span></div>
-                                    <div class="col-2 border-end border-danger border-1 game-header">L<span class="d-none d-md-inline-block">ost</span></div>
-                                    <div class="col-2 border-end border-danger border-1 game-header">G<span class="d-none d-md-inline-block">oals</span></div>
-                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-md-inline-block">oints</span></div>
+                                    <!-- Single letters displayed for small medium and large devices -->
+                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-xxl-inline-block">layed</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">W<span class="d-none d-xxl-inline-block">on</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">D<span class="d-none d-xxl-inline-block">rawn</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">L<span class="d-none d-xxl-inline-block">ost</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">G<span class="d-none d-xxl-inline-block">oals</span></div>
+                                    <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-xxl-inline-block">oints</span></div>
                                 </div>
                                 <div class="row h-50">
                                     <div class="col-2 border-end border-danger border-1 game-header" id="total-played">0</div>
@@ -134,6 +137,8 @@
             </div>
         </header>
 
+        <!-- GAME SECTION -->
+        <!-- Displays results -->
         <div class="container-fluid quiz-section">
             <div class="row game-area">
                 <div class="col-12 col-md-6 border border-danger border-1 d-flex align-items-center p-0">
@@ -142,7 +147,6 @@
                             <i class="fa-solid fa-thumbs-down"></i>
                     </div>
                 </div>
-
                 <div class="col-12 col-md-6 p-0 border border-danger border-1 d-flex align-items-center bg-color-2 txt-color-2 text-center">
                     <div class="col-12" id="right-side-results">
                         <h3 id="result-exclamation">Oops!</h3>
@@ -158,6 +162,7 @@
             </div>
         </div>
 
+        <!-- FOOTER SECTION -->
         <footer>
             <div class="container-fluid">
                 <div class="row pt-5 pb-5 txt-color-1">
@@ -177,7 +182,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
 
-    <!-- game.js Script Tag -->
+    <!-- end.js Script Tag -->
     <script defer src="./assets/js/end.js"></script>
 
 </body>
