@@ -4,6 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+  fetchQuotes();
   let teamSelected = Array.from(document.getElementsByClassName('team-selector'));
   selectTeam();
 
@@ -50,6 +51,35 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+function fetchQuotes() {
+  fetch('quotes.json')
+    .then(res => {
+      return res.json();
+    }).then(loadedQuotes => {
+      quotes = loadedQuotes;
+      availableQuotes = [...quotes];
+      // Ensure only relevant quotes selected for current match result
+      availableQuotes.forEach(quote => {
+        if (quote.result === "win") {
+          winQuotes.push(quote.quote);
+        } 
+      });
+        availableQuotes.forEach(quote => {
+          if (quote.result === "draw") {
+            drawQuotes.push(quote.quote);
+          }
+        });
+          availableQuotes.forEach(quote => {
+            if (quote.result === "lost") {
+              lostQuotes.push(quote.quote);
+            }
+      });
+      console.log(winQuotes);
+      console.log(drawQuotes);
+      console.log(lostQuotes);
+  })
+}
+
 function useFetch(team) {
   fetch(team)
     .then(res => {
@@ -94,6 +124,9 @@ let currentQuote = {};
 let quotes = [];
 let theTeam = 'arsenal';
 let currentAvailableQuotes = [];
+let winQuotes = [];
+let drawQuotes = [];
+let lostQuotes = [];
 
 // Start the Game
 // Reset score points
@@ -255,25 +288,17 @@ function checkMatchResult() {
 }
 
 function chooseQuote(currentResult) {
-  // Fetch quotes
-  fetch('quotes.json')
-    .then(res => {
-      return res.json();
-    }).then(loadedQuotes => {
-      quotes = loadedQuotes;
-      availableQuotes = [...quotes];
-      // Ensure only relevant quotes selected for current match result
-      availableQuotes.forEach(quote => {
-        if (quote.result === currentResult) {
-          currentAvailableQuotes.push(quote.quote);
-        }
-      });
-      
+  if (currentResult === "win") {
+    currentAvailableQuotes = winQuotes;
+  } else if (currentResult === "draw") {
+    currentAvailableQuotes = drawQuotes;
+  } else if (currentResult === "lost") {
+    currentAvailableQuotes = lostQuotes;
+  }
+
     const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
     currentQuote = currentAvailableQuotes[quoteIndex];
-    console.log(currentAvailableQuotes);
     currentAvailableQuotes.splice(quoteIndex, 1);
-    console.log(currentAvailableQuotes);
 
     // Display bootstrap toast annoucing the match results
     const toast = new bootstrap.Toast(matchToastElement);
@@ -282,7 +307,7 @@ function chooseQuote(currentResult) {
     toastBodyMatch.innerHTML = played;
     matchQuoteElement.innerHTML = currentQuote;
     toastResults.innerHTML = currentResult;
-  });
+  
   displayMatchResults(currentResult);
 }
 
