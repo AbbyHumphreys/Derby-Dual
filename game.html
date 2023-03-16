@@ -17,7 +17,8 @@
 </head>
 
 <body>
-
+    <!-- MODAL 1 -->
+    <!-- Displays rules and starts game play -->
     <div class="modal" tabindex="-1" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -42,6 +43,7 @@
                     <p>Are you ready to play?</p>
                 </div>
                 <div class="modal-footer">
+                    <!-- Button links to second modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">Pick
                         My Team</button>
                 </div>
@@ -49,6 +51,8 @@
         </div>
     </div>
 
+    <!-- MODAL 2 -->
+    <!-- Displays team logos for user to pick team questions to answer -->
     <div class="modal" tabindex="-1" id="myModal2">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -57,6 +61,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
+                        <!-- Arsenal Logo -->
                         <div class="col-6 team-selector" id="modal-arsenal-logo">
                             <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip"
                                 data-bs-title="Disabled tooltip">
@@ -66,6 +71,7 @@
                                 </button>
                             </span>
                         </div>
+                        <!-- Spurs Logo -->
                         <div class="col-6 team-selector" id="modal-spurs-logo">
                             <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip"
                                 data-bs-title="Disabled tooltip">
@@ -81,6 +87,8 @@
         </div>
     </div>
 
+    <!-- MATCH TOASTS -->
+    <!-- Displays match results after every 4 questions -->
     <div class="toast-container position-fixed top-50 start-50 translate-middle p-3">
         <div id="match-toast" class="toast vh-100 vw-100" data-bs-autohide="false" data-bs-delay="2" role="alert" aria-live="assertive"
             aria-atomic="true">
@@ -96,7 +104,9 @@
         </div>
     </div>
 
+    <!-- GAME DISPLAY -->
     <div id="game-display">
+        <!-- HEADER -->
         <header>
             <div class="container-fluid">
                 <div class="row text-center">
@@ -106,8 +116,10 @@
                                 <img class="img-fluid header-logo pt-1 pb-1 pe-2" src="assets/images/arsenal-header-logo.webp"
                                     alt="Arsenal football team logo" id="arsenal-logo">
                             </div>
+                            <!-- Displays users results in Premiership styling -->
                             <div class="col-8">
                                 <div class="row h-50">
+                                    <!-- Single letters displayed for small medium and large devices -->
                                     <div class="col-2 border-end border-danger border-1 game-header">P<span class="d-none d-xxl-inline-block">layed</span></div>
                                     <div class="col-2 border-end border-danger border-1 game-header">W<span class="d-none d-xxl-inline-block">on</span></div>
                                     <div class="col-2 border-end border-danger border-1 game-header">D<span class="d-none d-xxl-inline-block">rawn</span></div>
@@ -131,6 +143,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Indicates progress and correct answers in each match -->
                     <div class="col-12 col-md-6">
                         <div class="row border-start border-danger border-1 h-100 match-header">
                             <div class="col-12 col-md-9">
@@ -139,6 +152,7 @@
                                     <div class="col-4 border-end border-danger border-3 game-header">Match 2</div>
                                     <div class="col-4 game-header"> Match 3</div>
                                 </div>
+                                <!-- Match 1 indicators -->
                                 <div class="row h-50">
                                     <div class="col-4 border-end border-danger border-3">
                                         <div class="row h-100" id="match-one">
@@ -159,6 +173,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Match 2 indicators -->
                                     <div class="col-4 border-end border-danger border-3">
                                         <div class="row h-100">
                                             <div class="col-3 question-indicator" data-game="4">
@@ -178,6 +193,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Match 3 indicators -->
                                     <div class="col-4">
                                         <div class="row h-100">
                                             <div class="col-3 question-indicator" data-game="8">
@@ -207,15 +223,22 @@
                 </div>
             </div>
         </header>
+
+        <!-- GAME SECTION -->
+        <!-- Displays questions and answers -->
         <section class="game-section">
             <div class="container-fluid quiz-section">
                 <div class="row game-area">
+                    <!-- Questions displayed on the left for medium and larger devices -->
+                    <!-- Questions displayed on top for small devices -->
                     <div class="col-12 col-md-6 border border-bottom-danger border-1 position-relative p-0 bg-color-2 txt-color-2">
                         <div class="col-12">
                             <h2 class="text-end me-5 question-number">Q<span id="question-counter">0</span></h2>
                             <p class="vertical-center m-5" id="question-paragraph"></p>
                         </div>
                     </div>
+                    <!-- Answers displayed on the right for medium and larger devices -->
+                    <!-- Answers displayed on bottom for small devices -->
                     <div class="col-12 col-md-6 p-0 border border-1 text-center bg-color-1 txt-color-2">
                         <div class="col-12 bg-color-2 txt-color-2 ps-2 h-13 answer-section border-bottom border-1 position-relative">
                             <h3 class="select-answer vertical-center center-text">SELECT YOUR ANSWER</h3>
@@ -230,6 +253,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- FOOTER SECTION -->
         <footer>
             <div class="container-fluid">
                 <div class="row pt-5 pb-5 txt-color-1">
@@ -251,15 +276,10 @@
 
     <!-- game.js Script Tag -->
     <script defer src="./assets/js/game.js"></script>
+
+    <!-- modal.js Script Tag -->
     <script defer src="./assets/js/modal.js"></script>
-    <!-- Show Modal on Page Load 
-    <script>
-        
-        $(document).ready(function () {
-            $("#myModal").modal('show');
-        });
-    </script>
--->
+    
 </body>
 
 </html>
