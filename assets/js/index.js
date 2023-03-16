@@ -1,3 +1,8 @@
+/**
+ * NEWS67 API OBTAINED FROM https://rapidapi.com/hub
+ * For use with index.html news section
+ * */
+
 // Variable object to confirm identity with Rapid API
 const options = {
 	method: 'GET',
@@ -21,9 +26,11 @@ function fetchNews(){
     });
 }
 
-// Create new div to display each news item
+// DISPLAY NEWS ITEMS
 function displayNews(news) {
   const newsItems = document.getElementById('news-container');
+  // Create html for each item and insert obtained news items
+  // Each item is linked to it's source and opens in a new page
   news.forEach(item => {
     const newNewsArticle = `
     <a href="${item.Url}" target="_blank">
@@ -32,6 +39,8 @@ function displayNews(news) {
     <p class="mt-4 news-text news-summary">${item.Summary}</p>
     </a>
     `
+    // Create new div to display each news item
+    // Append div to news section and insert news article
     let newDiv = document.createElement('div');
     newDiv.classList.add('col-12', 'col-md-4', 'ps-5', 'pe-5', 'mt-2', 'pt-2', 'news-item');
     newsItems.appendChild(newDiv);
