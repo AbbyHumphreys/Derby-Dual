@@ -15,7 +15,10 @@ function fetchNews(){
     .then(getNews => {
       newsRetrieved = getNews.news;
       displayNews(newsRetrieved);
-  })
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
 
 // Create new div to display each news item
