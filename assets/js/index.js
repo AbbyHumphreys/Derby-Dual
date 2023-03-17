@@ -35,7 +35,7 @@ function displayNews(news) {
     const newNewsArticle = `
     <a href="${item.Url}" target="_blank">
     <h5 class="news-text">${item.Title}</h2>
-    <img src="${item.Image}" class="img-fluid">
+    <img src="${item.Image}" class="img-fluid" alt="${item.Title}">
     <p class="mt-4 news-text news-summary">${item.Summary}</p>
     </a>
     `
