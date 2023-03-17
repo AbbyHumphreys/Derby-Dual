@@ -46,6 +46,12 @@ Two warnings were displayed but were not corrected for the following reasons:
 
 ![Image showing Google Chrome Lighthouse test on end.html](/assets/images/readme-images/end-page-lighthouse-test.webp "Lighthouse Test")
 
+### Accessibility Testing
+[Wave](https://wave.webaim.org/) accessibilty report highlighted a slight need for some improvement for accessibility:
+- alt tags were added to the news API images
+- aria labels were added to the hambuger menu on the home page
+
+[Web Aim's](https://webaim.org/resources/contrastchecker/) contrast checker was used before building the site to ensure contrast between foreground and background colors was enough for accessibility purposes.
 
 ## Manual Testing
 ### Compatibility Testing
