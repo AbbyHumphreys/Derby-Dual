@@ -26,7 +26,18 @@ HTML was testing using the [W3C Validator](https://validator.w3.org/) and the fo
 **Problem:** An extra 'li' closing element was found
 **Fix:** It was removed
 
+### CSS Validator Testing
+CSS was tested using [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) and the following error was reported fixed:
 
+**Problem:** bottom: cannot be used with a color
+**Fix:** change 'bottom' to 'background-color' as was intended
+
+Two warnings were displayed but were not corrected for the following reasons:
+- Warning that there is the same color for background-color and border-color for the success buttons. This warning was ignored as this is a style choice and provides a clear indication that the button was clicked.
+
+- Warning that -ms-transform is a vendor extension. This was not an error, but a choice to use in this design
+
+- Warning that imported style sheets are not checked in direct input and file upload modes. As there is only one style sheet and this was checked by direct input, there was not a need to correct this warning.
 
 
 ## Manual Testing
