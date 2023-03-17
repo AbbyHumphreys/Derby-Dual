@@ -15,6 +15,18 @@ View the deployed site: [Derby Duel](https://abbyhumphreys.github.io/Derby-Dual/
 A variety of testing methods were used throughout the project to ensure the project was error free. 
 ## Automated Testing
 ### HTML Validator Testing
+HTML was testing using the [W3C Validator](https://validator.w3.org/) and the following errors were flagged and corrected:
+
+**Problem:** There was a closing tag on the br element
+**Fix:** The closing tag was removed
+**Problem:** The copyright symbol '&#169' needs a semicolon
+**Fix:** A semicolon was put after the copyright symbol
+**Problem:** Two 'start-quiz' id's were found
+**Fix:** Put them in the class attribute and use query selector to selected them in the javascript file
+**Problem:** An extra 'li' closing element was found
+**Fix:** It was removed
+
+
 
 
 ## Manual Testing
