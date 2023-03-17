@@ -16,6 +16,10 @@ const totalPointsElement = document.getElementById('total-points');
 const endPoints = document.getElementById('end-points');
 const leftSideResults = document.getElementById('left-side-results');
 const rightSideResults = document.getElementById('right-side-results');
+let currentPromotion = '';
+let currentSymbol = '';
+let currentExclamation = '';
+let currentStatement = '';
 
 // RETRIEVE LOCAL STORAGE ITEMS
 const totalPlayed = localStorage.getItem('totalPlayed');
@@ -38,75 +42,85 @@ totalLostElement.innerHTML = totalLost;
 totalScoreElement.innerHTML = totalGoals;
 totalPointsElement.innerHTML = totalPoints;
 
-// Insert html to display final results
-// RELEGATED
-if (totalPoints <= 3) {
+// Statements used in selectStatements
+let resultsStatement = [
+    {
+        promotion: "Relegated",
+        symbol: "fa-thumbs-down",
+        exclamation: "Oops",
+        statement: "been relegated"
+    },
+    {
+        promotion: "Premiership",
+        symbol: "fa-trophy",
+        exclamation: "Well Done",
+        statement: "won the premiership"
+    },
+    {
+        promotion: "Europa League",
+        symbol: "fa-trophy",
+        exclamation: "Well Done",
+        statement: "won the Europa League"
+    },
+    {
+        promotion: "Champions League",
+        symbol: "fa-trophy",
+        exclamation: "Top Scorer",
+        statement: "won the Champions League"
+    }
+]
+
+// SELECT STATEMENTS FUNCTION
+// Select statements depending on total points
+function selectStatements(){
+    if (totalPoints <= 3) {
+        currentPromotion = resultsStatement[0].promotion;
+        currentSymbol = resultsStatement[0].symbol;
+        currentExclamation = resultsStatement[0].exclamation;
+        currentStatement = resultsStatement[0].statement;
+        displayResults();
+        launchToiletRoll()
+    } else if ((totalPoints > 3) && (totalPoints <= 9)) {
+        currentPromotion = resultsStatement[1].promotion;
+        currentSymbol = resultsStatement[1].symbol;
+        currentExclamation = resultsStatement[1].exclamation;
+        currentStatement = resultsStatement[1].statement;
+        displayResults();
+        launchConfetti();
+    } else if ((totalPoints > 9) && (totalPoints <= 18)) {
+        currentPromotion = resultsStatement[2].promotion;
+        currentSymbol = resultsStatement[2].symbol;
+        currentExclamation = resultsStatement[2].exclamation;
+        currentStatement = resultsStatement[2].statement;
+        displayResults();
+        launchConfetti();
+    } else if (totalPoints > 18) {
+        currentPromotion = resultsStatement[3].promotion;
+        currentSymbol = resultsStatement[3].symbol;
+        currentExclamation = resultsStatement[3].exclamation;
+        currentStatement = resultsStatement[3].statement;
+        displayResults();
+        launchConfetti();
+    } 
+}
+
+// DISPLAY RESULTS FUNCTION
+// Inserts selected statement into html elements
+function displayResults(){
     leftSideResults.innerHTML = `
-        <h1>Relegated!</h1>
-        <i class="fa-solid fa-thumbs-down"></i>
+        <h1>${currentPromotion}</h1>
+        <i class="fa-solid ${currentSymbol}"></i>
     `
     rightSideResults.innerHTML = `
-        <h3 id="result-exclamation">Oops!</h3>
+        <h3 id="result-exclamation">${currentExclamation}!</h3>
         <p>You scored ${totalPoints} points</p>
-        <p id="result-paragraph">You have been relegated!</p>
+        <p id="result-paragraph">You have ${currentStatement}!</p>
         <a href="game.html">
             <button type="button" class="btn btn-primary txt-color-2 end-btn">
                 Play Again
             </button>
         </a>
     `
-    launchToiletRoll()
-// PREMIERSHIP
-} else if ((totalPoints > 3) && (totalPoints <= 9)) {
-    leftSideResults.innerHTML = `
-    <h1>Premiership!</h1>
-    <i class="fa-solid fa-trophy"></i>
-    `
-    rightSideResults.innerHTML = `
-        <h3>Well Done!</h3>
-        <p>You scored ${totalPoints} points</p>
-        <p>You have won the premiership</p>
-        <a href="game.html">
-            <button type="button" class="btn btn-primary txt-color-2 end-btn">
-                Play Again
-            </button>
-        </a>
-    `
-    launchConfetti();
-// EUROPA LEAGUE
-} else if ((totalPoints > 9) && (totalPoints <= 18)) {
-    leftSideResults.innerHTML = `
-    <h1>Europa League!</h1>
-    <i class="fa-solid fa-trophy"></i>
-    `
-    rightSideResults.innerHTML = `
-        <h3>Well Done!</h3>
-        <p>You scored ${totalPoints} points</p>
-        <p>You have won the Europa League</p>
-        <a href="game.html">
-            <button type="button" class="btn btn-primary txt-color-2 end-btn">
-                Play Again
-            </button>
-        </a>
-    `
-    launchConfetti();
-// CHAMPIONS LEAGUE
-} else if (totalPoints > 18) {
-    leftSideResults.innerHTML = `
-    <h1>Champions League!</h1>
-    <i class="fa-solid fa-trophy"></i>
-    `
-    rightSideResults.innerHTML = `
-        <h3>Top Scorer!</h3>
-        <p>You scored ${totalPoints} points</p>
-        <p>You have won the Champions League</p>
-        <a href="game.html">
-            <button type="button" class="btn btn-primary txt-color-2 end-btn">
-                Play Again
-            </button>
-        </a>
-    `
-    launchConfetti();
 }
 
 // LAUNCH CONFETTI FUNCTION
@@ -128,3 +142,5 @@ function launchToiletRoll() {
         confettiNumber: 30
       })
 }
+
+selectStatements()
