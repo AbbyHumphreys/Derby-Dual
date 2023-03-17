@@ -39,6 +39,12 @@ Two warnings were displayed but were not corrected for the following reasons:
 
 - Warning that imported style sheets are not checked in direct input and file upload modes. As there is only one style sheet and this was checked by direct input, there was not a need to correct this warning.
 
+### Javascript Code Testing
+[JS Hint](https://jshint.com/) was used to check the javascript code quality.
+
+Please note: JS Hint is not updated with ES6, so these threw up warnings. Code was checked manually to confirm it was valid.
+
+
 ### Performance Testing
 [Google Chrome Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) extension was used to test performance and I was pleased with the results as demonstrated below:
 
