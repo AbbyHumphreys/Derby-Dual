@@ -39,6 +39,13 @@ Two warnings were displayed but were not corrected for the following reasons:
 
 - Warning that imported style sheets are not checked in direct input and file upload modes. As there is only one style sheet and this was checked by direct input, there was not a need to correct this warning.
 
+### Performance Testing
+[Google Chrome Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) extension was used to test performance and I was pleased with the results as demonstrated below:
+
+![Image showing Google Chrome Lighthouse test on game.html](/assets/images/readme-images/game-page-lighthouse-test.webp "Lighthouse Test")
+
+![Image showing Google Chrome Lighthouse test on end.html](/assets/images/readme-images/end-page-lighthouse-test.webp "Lighthouse Test")
+
 
 ## Manual Testing
 ### Compatibility Testing
