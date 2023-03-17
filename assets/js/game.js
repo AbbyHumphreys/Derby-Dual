@@ -87,7 +87,7 @@ function fetchQuestions(team) {
       return res.json(); // return in json format
     }).then(loadedQuestions => {
       questions = loadedQuestions;
-      let startButton = document.getElementById('start-quiz');
+      let startButton = document.querySelector('.start-quiz')
       startButton.addEventListener('click', startGame(theTeam, questions)); // begin quiz
     });
 }
