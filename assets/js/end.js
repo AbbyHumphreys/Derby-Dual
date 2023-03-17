@@ -30,8 +30,8 @@ const totalGoals = localStorage.getItem('totalGoals');
 const totalPoints = localStorage.getItem('totalPoints');
 
 // Confetti
-const canvas = document.getElementById('your_custom_canvas_id')
-const jsConfetti = new JSConfetti({ canvas })
+const canvas = document.getElementById('your_custom_canvas_id');
+const jsConfetti = new JSConfetti({ canvas });
 
 // Display results
 endPoints.innerHTML = totalPoints;
@@ -68,7 +68,7 @@ let resultsStatement = [
         exclamation: "Top Scorer",
         statement: "won the Champions League"
     }
-]
+];
 
 // SELECT STATEMENTS FUNCTION
 // Select statements depending on total points
@@ -79,7 +79,7 @@ function selectStatements(){
         currentExclamation = resultsStatement[0].exclamation;
         currentStatement = resultsStatement[0].statement;
         displayResults();
-        launchToiletRoll()
+        launchToiletRoll();
     } else if ((totalPoints > 3) && (totalPoints <= 9)) {
         currentPromotion = resultsStatement[1].promotion;
         currentSymbol = resultsStatement[1].symbol;
@@ -110,7 +110,7 @@ function displayResults(){
     leftSideResults.innerHTML = `
         <h1>${currentPromotion}</h1>
         <i class="fa-solid ${currentSymbol}"></i>
-    `
+    `;
     rightSideResults.innerHTML = `
         <h3 id="result-exclamation">${currentExclamation}!</h3>
         <p>You scored ${totalPoints} points</p>
@@ -120,7 +120,7 @@ function displayResults(){
                 Play Again
             </button>
         </a>
-    `
+    `;
 }
 
 // LAUNCH CONFETTI FUNCTION
@@ -140,7 +140,7 @@ function launchToiletRoll() {
         emojis: ['🧻'],
         emojiSize: 60,
         confettiNumber: 30
-      })
+      });
 }
 
-selectStatements()
+selectStatements();

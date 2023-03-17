@@ -38,14 +38,14 @@ function displayNews(news) {
     <img src="${item.Image}" class="img-fluid" alt="${item.Title}">
     <p class="mt-4 news-text news-summary">${item.Summary}</p>
     </a>
-    `
+    `;
     // Create new div to display each news item
     // Append div to news section and insert news article
     let newDiv = document.createElement('div');
     newDiv.classList.add('col-12', 'col-md-4', 'ps-5', 'pe-5', 'mt-2', 'pt-2', 'news-item');
     newsItems.appendChild(newDiv);
     newDiv.innerHTML = newNewsArticle;
-  })
+  });
 }
 
-fetchNews()
+fetchNews();

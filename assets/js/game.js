@@ -77,7 +77,7 @@ function fetchQuotes() {
               lostQuotes.push(quote.quote);
             }
       });
-  })
+  });
 }
 
 // FETCH QUESTIONS FUNCTION
@@ -87,7 +87,7 @@ function fetchQuestions(team) {
       return res.json(); // return in json format
     }).then(loadedQuestions => {
       questions = loadedQuestions;
-      let startButton = document.querySelector('.start-quiz')
+      let startButton = document.querySelector('.start-quiz');
       startButton.addEventListener('click', startGame(theTeam, questions)); // begin quiz
     });
 }
@@ -110,7 +110,7 @@ let matchesDrawn = 0;
 let matchesLost = 0;
 
 // Question Indicator Area
-const matchOne = Array.from(document.getElementsByClassName('question-indicator'));
+const questionIndicator = Array.from(document.getElementsByClassName('question-indicator'));
 let questionCounter = 0;
 
 // Toast Resuls
@@ -154,7 +154,7 @@ function startGame(team, questions) {
 function setNextQuestion() {
   // Check if a match has been played (each match is 4 questions)
   if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
-    played++
+    played++;
     checkMatchResult();
   }
 
@@ -189,15 +189,15 @@ function showQuestion(question) {
     
     let p = document.createElement("p");
     p.classList.add('vertical-center');
-    p.classList.add('center-text')
+    p.classList.add('center-text');
     p.innerText = question["choice" + number];
     choice.appendChild(p);
   });
 
   // Style football question indicator to show quiz progress
-  matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
-  matchOne[`${games}`].style.color = '#fff';
-  matchOne[`${games}`].style.backgroundColor = '#131f53';
+  questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
+  questionIndicator[`${games}`].style.color = '#fff';
+  questionIndicator[`${games}`].style.backgroundColor = '#131f53';
   acceptAnswers();
 }
 
@@ -231,14 +231,14 @@ function checkAnswer(userChoice, selectedChoice) {
 
   // Display indicator for correct of incorrect answer
   if (yourAnswer == "correct") {
-    matchOne[`${games}`].children[0].style.color = '#db0008';
-    matchOne[`${games}`].style.backgroundColor = '#fff';
+    questionIndicator[`${games}`].children[0].style.color = '#db0008';
+    questionIndicator[`${games}`].style.backgroundColor = '#fff';
     selectedChoice.classList.add('correct', 'correct-hover');
     selectedChoice.classList.remove('hover-color');
   } else if (yourAnswer == "incorrect") {
-    matchOne[`${games}`].innerHTML = '<i class="fa-solid fa-x vertical-center center-text"></i>';
-    matchOne[`${games}`].children[0].style.color = '#131f53';
-    matchOne[`${games}`].style.backgroundColor = '#fff';
+    questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-x vertical-center center-text"></i>';
+    questionIndicator[`${games}`].children[0].style.color = '#131f53';
+    questionIndicator[`${games}`].style.backgroundColor = '#fff';
     selectedChoice.classList.add('incorrect', 'incorrect-hover');
     selectedChoice.classList.remove('hover-color');
   }
@@ -348,7 +348,7 @@ function displayMatchResults(currentResult) {
         localStorage.setItem('totalGoals', goals);
 
         //go to the end page
-        let baseurl="https://abbyhumphreys.github.io/Derby-Dual"
+        let baseurl="https://abbyhumphreys.github.io/Derby-Dual";
         return window.location.assign(`${baseurl}/end.html`);
       }, 3000);
     }
@@ -367,9 +367,3 @@ function displayMatchResults(currentResult) {
   showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
-
-function sum(a, b) {
-  return a + b;
-}
-
-module.exports = { sum, startGame };
