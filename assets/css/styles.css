@@ -279,8 +279,8 @@ button.navbar-toggler:focus {
 }
 
 .end-btn:active {
-    bottom: #fff;
-    color:#131f53;
+    background-color: #fff;
+    color: #db0008;
     border: 1px solid #db0008;
 }
 
