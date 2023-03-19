@@ -231,13 +231,14 @@ function checkAnswer(userChoice, selectedChoice) {
 
   // Display indicator for correct of incorrect answer
   if (yourAnswer == "correct") {
-    questionIndicator[`${games}`].children[0].style.color = '#db0008';
+    questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-circle-check vertical-center center-text"></i>';
+    questionIndicator[`${games}`].children[0].style.color = 'green';
     questionIndicator[`${games}`].style.backgroundColor = '#fff';
     selectedChoice.classList.add('correct', 'correct-hover');
     selectedChoice.classList.remove('hover-color');
   } else if (yourAnswer == "incorrect") {
-    questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-x vertical-center center-text"></i>';
-    questionIndicator[`${games}`].children[0].style.color = '#131f53';
+    questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-circle-xmark vertical-center center-text"></i>';
+    questionIndicator[`${games}`].children[0].style.color = 'orange';
     questionIndicator[`${games}`].style.backgroundColor = '#fff';
     selectedChoice.classList.add('incorrect', 'incorrect-hover');
     selectedChoice.classList.remove('hover-color');
@@ -245,11 +246,10 @@ function checkAnswer(userChoice, selectedChoice) {
 
   // Increase amount of games played by 1
   games++;
-
+  updateScoreCounter(yourAnswer);
   // Delay game play so user can check where they're up to
   // Remove answer indicator
   setTimeout(() => {
-    updateScoreCounter(yourAnswer);
     setNextQuestion();
     if (yourAnswer === "correct"){
       selectedChoice.classList.remove('correct');
@@ -292,32 +292,27 @@ function checkMatchResult() {
     matchResults = "win";
     matchesWon += 1;
     points += 3;
+    currentAvailableQuotes = winQuotes;
   } else if (matchGoals == 2) {
     matchResults = "draw";
     matchesDrawn += 1;
     points += 1;
+    currentAvailableQuotes = drawQuotes;
   } else if (matchGoals <= 1) {
     matchResults = "lost";
     matchesLost += 1;
+    currentAvailableQuotes = lostQuotes;
   }
-  chooseQuote(matchResults);
+  chooseQuote(matchResults, currentAvailableQuotes);
 }
 
 // CHOOSE QUOTE FUNCTION
 // Draw random quote based on the match result
-function chooseQuote(currentResult) {
-  if (currentResult === "win") {
-    currentAvailableQuotes = winQuotes;
-  } else if (currentResult === "draw") {
-    currentAvailableQuotes = drawQuotes;
-  } else if (currentResult === "lost") {
-    currentAvailableQuotes = lostQuotes;
-  }
-
+function chooseQuote(currentResult, currentMatchQuotes) {
     // Remove used quotes
-    const quoteIndex = Math.floor(Math.random() * currentAvailableQuotes.length);
-    currentQuote = currentAvailableQuotes[quoteIndex];
-    currentAvailableQuotes.splice(quoteIndex, 1);
+    const quoteIndex = Math.floor(Math.random() * currentMatchQuotes.length);
+    currentQuote = currentMatchQuotes[quoteIndex];
+    currentMatchQuotes.splice(quoteIndex, 1);
 
     // Display bootstrap toast annoucing the match results
     const toast = new bootstrap.Toast(matchToastElement);
