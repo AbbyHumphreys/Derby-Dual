@@ -44,7 +44,6 @@ Two warnings were displayed but were not corrected for the following reasons:
 
 Please note: JS Hint is not updated with ES6, so these threw up warnings. Code was checked manually to confirm it was valid.
 
-
 ### Performance Testing
 [Google Chrome Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) extension was used to test performance and I was pleased with the results as demonstrated below:
 
@@ -99,4 +98,22 @@ As a site owner I want users to:
 4. Enjoy themselves and have a positive user experience
     - The site is easily navigable. It includes the main dropdown menu on the home-page. The navigation menu is fixed so is always visible to the user.
     - A 404 error page was created for the users so if they are directed to a non-existent domain, they are presented with an appealing page and an easy navigation buttons - back to the homepage, play the quiz or contact the site owner.
+
+`Home Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| The hamburger menu | Opens and closes correctly. The links go to relevants parts of the page. | Clicked on menu. Clicked on links | Menu opens when clicked and closed when 'x' clicked on. Links go to correct parts. | Pass|
+| The 'Take Quiz' button | Directs the user to the game page | Button clicked | User is directed to the game page | Pass |
+| The 'Take Quiz' button | Correctly styling applied to button on hover over | Button hovered over | Correct styling is applied | Pass |
+
+`Game Page - Modals`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| 'myModal1' | Displays on page load | Game page loaded | Modal displays on page load | Pass |
+| 'myModal1' button | Displays 'myModal2' | Button clicked | Modal displays second modal | Pass |
+| 'myModal2' | Clicking the Arsenal team logo starts game play and loads relevant questions | Logos clicked | Clicking the Arsenal logo starts the game and loads Arsenal questions | Pass |
+| 'myModal2' | Clicking the Spurs team logo starts game play and loads relevant questions | Logos clicked | Clicking the Spurs logo starts the game and loads Spurs questions | Pass |
+| Both modals | Clicking anywhere that's not the modal starts the game and by default loads Arsenal questions | Random areas of the page clicked | Game started and Arsenal questions loaded | Pass |
 
