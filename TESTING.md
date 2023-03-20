@@ -174,3 +174,12 @@ As a site owner I want users to:
 | Left hand side result and icon | Correct league or relegation and correct icon displayed for result | Manual change local storage and visually check correct statement and icon displayed | Correct statement and icon displayed for results obtained | Pass |
 | Right hand side statement, score and result displayed | Manual change local storage and visually check correct statement, score and result displayed | Correct statement, score and result displayed for results obtained | Pass |
 | Play again button | Displays correctly, hover over state changes color and redirects to game play | Visual check and click button | Button displays correctly, correct colors displayed on hover over and when clicked redirects the user to play another game | Pass |
+
+`404 Error Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Left hand side | Displays error message and asks which option they user would like to choose | Visually check | Correct error message and option question displayed | Pass |
+| Go home box | Takes user to index.html | Click box | User taken to index.html | Pass |
+| Play game box | Takes user to game.html and initiates new game | Click box | User taken to game.html to play new game | Pass |
+! Contact site owner box | Takes user to contact form on index.html | Click box | User is taken to contact form on index.html | Pass |
