@@ -182,4 +182,4 @@ As a site owner I want users to:
 | Left hand side | Displays error message and asks which option they user would like to choose | Visually check | Correct error message and option question displayed | Pass |
 | Go home box | Takes user to index.html | Click box | User taken to index.html | Pass |
 | Play game box | Takes user to game.html and initiates new game | Click box | User taken to game.html to play new game | Pass |
-! Contact site owner box | Takes user to contact form on index.html | Click box | User is taken to contact form on index.html | Pass |
+| Contact site owner box | lets user email the site owner | Click box | Users email client opened and recipient box filled with site owners email address | Pass |
