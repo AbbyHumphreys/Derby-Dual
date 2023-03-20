@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function fetchQuotes() {
   fetch('quotes.json')
     .then(res => {
+      if (!res.ok) {
+        throw new Error("Network response was not OK");
+      }
       return res.json();
     }).then(loadedQuotes => {
       quotes = loadedQuotes;
@@ -77,6 +80,9 @@ function fetchQuotes() {
               lostQuotes.push(quote.quote);
             }
       });
+  })
+  .catch((error) => {
+    console.error("There has been a problem with your fetch operation for gathering quotes:", error);
   });
 }
 
