@@ -164,3 +164,13 @@ As a site owner I want users to:
 | Next match button | Displays correctly, changes color on hover over and removes the toast | Click button | The button displays in the correct place. Hovering over the button changes it's colour in line with the rest of the site. Clicking the button removes the toast enabling the continuation of game play | Pass |
 | Match toast exit icon | Pressing the 'X' button in the toast header removes the toast | Click button | Toast removed on pressing button | Pass |
 | Match toast | Clicking anywhere except the 'next' button and the exit button does not remove the toast | Pressing anywhere on the screen, except the buttons does not remove the toast | Pass |
+
+`End Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Score header | Correct scores retrieved from local storage and displayed | Check storage in applications in Chrom Dev Tools. Manually calculate correctly scores and visually check they are displayed | Storage showed they were updating after each game played. Calculated scores matched those displayed | Pass |
+| Confetti | Confetti launched when 4 or more points scored. Toilet rolls launched when 3 or less points scored | Log to console to check api installed. Visually check correct confetti launched by manually changing local storage points | Correct confetti launched for results obtained | Pass |
+| Left hand side result and icon | Correct league or relegation and correct icon displayed for result | Manual change local storage and visually check correct statement and icon displayed | Correct statement and icon displayed for results obtained | Pass |
+| Right hand side statement, score and result displayed | Manual change local storage and visually check correct statement, score and result displayed | Correct statement, score and result displayed for results obtained | Pass |
+| Play again button | Displays correctly, hover over state changes color and redirects to game play | Visual check and click button | Button displays correctly, correct colors displayed on hover over and when clicked redirects the user to play another game | Pass |
