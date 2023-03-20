@@ -133,3 +133,12 @@ As a site owner I want users to:
 | Lost counter | Increases by one every time the user questions 0 or 1 questions correctly in a match | Play the game answering 0 questions correctly in a match and then 1 questions in a match | Each time, the lost counter increase by one | Pass |
 | Goals counter | Increases by one for every question answered correctly | Add the goals up manually as game progresses and check it corresponds with the goal counter shown | For each question answered correctly, the goal counter increased by one | Pass |
 | Points counter | Increases by one for each question answered correctly, increases by 3 for each match won, increases by one for each match draw and does not increase for each match lost | Played the game using different combinations of wins, draws and loses. Calculated the correctly points score manually and make sure it matches the points shown after each question and match. | The points score matched the manually calculated points at all times | Pass |
+
+`Game Page - Question Indicator Header`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Current question indicator | Background turns blue and icon white on the current question football icon | Visually check that the correct icon is highlighted for each question displayed | The correct icon was highlighted for each question displayed | Pass |
+| Correctly answer question indicator | Football icon replaced by a tick in a circle icon. The circle is coloured green | Visually check that each correctly answered question results in a green tick in the correct question indicator box | A green tick icon was displayed in the correct question indicator boxes | Pass |
+| Incorrect answer question indicator | Football icon replaced by an X in a circle icon. The circle is coloured orage | Visually check that each incorrectly answered question results in an orange X in the correct question indicator box | An orange X icon was displayed in the correct question indicator boxes | Pass |
+
