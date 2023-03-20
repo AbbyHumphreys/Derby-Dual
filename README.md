@@ -220,8 +220,9 @@ Gave inspiration for putting the functionality to display the toast within the p
 | 4 | h2 set at 6rem for Q1 on game.html, but made h2's on index.html huge | Reduced size of h2 throughout site, but put class in for Q1 and styled accordingly |
 | 5 | Answer section was not centering vertically | Position-relative used on divs so css could be used to position it’s child in the vertical center |
 | 6 | If user accidentally clicked off the modal and didn’t select a team, the quiz couldn’t begin | Fetched Arsenal questions automatically and switched to spurs questions if spurs logo clicked |
-| 7 | Redirect to end.html was not working | Solved by adapting advice from Kristien Anderson on Code Institute slack community.
-A variable for the baseURL of the project was created and then put in a template literal along with the /end.html in the redirect |
+| 7 | Redirect to end.html was not working | Solved by adapting advice from Kristien Anderson on Code Institute slack community. | A variable for the baseURL of the project was created and then put in a template literal along with the /end.html in the redirect |
 
 ## Known Bugs
 - There is a a warning displaying in the console on the live page. This error seems to be because GitHub hosted pages disable googles 3rd party cookie alternative FLoC, which then throws this error. The error doesn't affect the site in any way.
+![Interest Cohort Error Message](/assets/images/readme-images/interest-cohort-error-message.webp "Error Message")
+
