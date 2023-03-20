@@ -142,3 +142,25 @@ As a site owner I want users to:
 | Correctly answer question indicator | Football icon replaced by a tick in a circle icon. The circle is coloured green | Visually check that each correctly answered question results in a green tick in the correct question indicator box | A green tick icon was displayed in the correct question indicator boxes | Pass |
 | Incorrect answer question indicator | Football icon replaced by an X in a circle icon. The circle is coloured orage | Visually check that each incorrectly answered question results in an orange X in the correct question indicator box | An orange X icon was displayed in the correct question indicator boxes | Pass |
 
+`Game Page - Main Display`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Current question indicator | The question number increases as each new question is displayed | Visually check the question indicator increases by one each time a question is displayed | The question indicator increases as expected | Pass |
+| Question populated | Correct questions correctly pulled from the relevant json file | logos selected and questions pulled logged into console and checked. Visually checked correct questions where being displayed | Console logged showed correct questions were being fetched and visual checks on questions displayed were correct | Pass |
+| Answers displayed | They match the question being asked | answers fetched were logged to the console and visually checked throughout game progress | The answers matched the questions being fetched and were being displayed correctly | Pass |
+| Correct and incorrect answers | The correct or incorrect answers were actually correct or incorrect | The answers displayed as correct or incorrect were checked against the original json file | The answers were as expected | Pass |
+| Correct indicator | The answer box background turns green when a correct answer is chosen | Visually check that the answer clicked when correct turns green | When a correct answer was chosen, the answer box background turned green | Pass |
+| Incorrect indicator | The answer box background turns orange when an incorrect answer is chosen | Visually check that the answer clicked when incorrect turns orange | When an incorrect answer was chosen, the answer box background turned orange | Pass |
+| Answer box hover | Background turns white and text blue on hover over on bigger devices only | Visually check the correct changes take place on different size devices and using chrome dev tools | The hover over works correctly and only on devices bigger than 1200 (to prevent answer background staying white on smaller touch screen devices) | Pass |
+
+`Game Page - Match Toasts`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Match header | Displays correctly match number | Match number console logged and visually checked after each match played | Correct match number displayed after each match | Pass |
+| Quote | Quote is relevant to game result and is displayed correctly | Current available quotes console logged after each match to ensure used quotes are removed. Visual check of placement and correct quote | Console logged showed correct choice of quotes, that used quotes were removed and visual check showed correct quotes displaying in correct area | Pass |
+| Result statement | Correct statement displayed with correct match number | Win, draw and lost matches and visually check the relevant statement is displayed and the correct match number | Pass |
+| Next match button | Displays correctly, changes color on hover over and removes the toast | Click button | The button displays in the correct place. Hovering over the button changes it's colour in line with the rest of the site. Clicking the button removes the toast enabling the continuation of game play | Pass |
+| Match toast exit icon | Pressing the 'X' button in the toast header removes the toast | Click button | Toast removed on pressing button | Pass |
+| Match toast | Clicking anywhere except the 'next' button and the exit button does not remove the toast | Pressing anywhere on the screen, except the buttons does not remove the toast | Pass |
