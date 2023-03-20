@@ -288,7 +288,7 @@ button.navbar-toggler:focus {
 
 /* Removes hover on small devices
 /* Breakpoint taken from bootstrap for consistency */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
     .hover-color:hover {
         background-color: #131f53;
         color: #fff;
