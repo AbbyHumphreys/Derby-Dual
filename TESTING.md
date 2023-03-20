@@ -123,3 +123,13 @@ As a site owner I want users to:
 | 'myModal2' | Clicking the Spurs team logo starts game play and loads relevant questions | Logos clicked | Clicking the Spurs logo starts the game and loads Spurs questions | Pass |
 | Both modals | Clicking anywhere that's not the modal starts the game and by default loads Arsenal questions | Random areas of the page clicked | Game started and Arsenal questions loaded | Pass |
 
+`Game Page - Score Header`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Played counter | Updates after every 4 question (a match) | Play the game and check the played counter goes up every 4 questions| The score counter went up one after every 4 questions | Pass |
+| Won counter | Increases by one every time the user questions 3 or 4 questions correctly in a match | Play the game answering 3 questions correctly in a match and then 4 questions in a match | Each time, the won counter increased by one | Pass |
+| Draw counter | Increases by one every time the user questions 2 questions correctly in a match | Play the game answering 2 questions correctly in a match | Each time, the draw counter increased by one | Pass |
+| Lost counter | Increases by one every time the user questions 0 or 1 questions correctly in a match | Play the game answering 0 questions correctly in a match and then 1 questions in a match | Each time, the lost counter increase by one | Pass |
+| Goals counter | Increases by one for every question answered correctly | Add the goals up manually as game progresses and check it corresponds with the goal counter shown | For each question answered correctly, the goal counter increased by one | Pass |
+| Points counter | Increases by one for each question answered correctly, increases by 3 for each match won, increases by one for each match draw and does not increase for each match lost | Played the game using different combinations of wins, draws and loses. Calculated the correctly points score manually and make sure it matches the points shown after each question and match. | The points score matched the manually calculated points at all times | Pass |
