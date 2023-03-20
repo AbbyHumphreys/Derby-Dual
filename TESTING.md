@@ -106,6 +106,12 @@ As a site owner I want users to:
 | The hamburger menu | Opens and closes correctly. The links go to relevants parts of the page. | Clicked on menu. Clicked on links | Menu opens when clicked and closed when 'x' clicked on. Links go to correct parts. | Pass|
 | The 'Take Quiz' button | Directs the user to the game page | Button clicked | User is directed to the game page | Pass |
 | The 'Take Quiz' button | Correctly styling applied to button on hover over | Button hovered over | Correct styling is applied | Pass |
+| The news section API | Calls the news API url | Data called logged to console and checked | ![Image showing console log of called API](/assets/images/readme-images/newsapi-consolelog.webp "API console.log") | Pass |
+| Contact form | All field required, email format required | Empty form submitted and invalid email address submitted | Error message displayed asking for fields to be inputted and valid email inputted | Pass |
+| Contact form button | Sends inputs to site owner | Form filled in and button clicked | Site owner received email with correct inputs | Pass |
+| Contact form successful message | Message displays | Form submitted | Message displayed | Pass |
+| Contact form unsuccessful message | Message displays | Form submitted | Message displayed | Pass |
+
 
 `Game Page - Modals`
 
