@@ -226,3 +226,57 @@ Gave inspiration for putting the functionality to display the toast within the p
 - There is a a warning displaying in the console on the live page. This error seems to be because GitHub hosted pages disable googles 3rd party cookie alternative FLoC, which then throws this error. The error doesn't affect the site in any way.
 ![Interest Cohort Error Message](/assets/images/readme-images/interest-cohort-error-message.webp "Error Message")
 
+# WISHLIST
+- Change colors displayed according to which team selected
+- Change colors, logos, questions etc for more Derby teams
+
+# DEPLOYMENT
+
+The following steps were taken to deploy the website on GitHub Pages:
+
+1. The Code Insitute template was obtained from https://github.com/Code-Institute-Org/gitpod-full-template
+2. A new repository was created in GitHub, the project was named
+3. The green Gitpod button was pressed to open a new workspace/development environment (obtain the gitpod extension to enable the green button)
+4. Git is used to commit during development and push this over to Github
+5. To create the hosted site at Github Pages, I navigated to the Github repo settings tab and found the Github pages dedicated section.
+6. The main branch was chosen in the dropdown menu and the 'save' button was pressed. This supplied a live link the the website (https://abbyhumphreys.github.io/Derby-Dual/)
+
+To run this on your local machine:
+
+1. Go to the Github repo at (https://github.com/AbbyHumphreys/Derby-Dual)
+2. Click on the 'code' button and 'download zip'
+3. Extract the zip file on your local machine
+4. Run the index.html file in a browser
+
+
+# Credits
+
+**Code Institute** - I thoroughly enjoyed learning javascript through Code Insitute and have used guiding principles from the course throughout this website. I enjoyed using the idea from the Love Math project to wait for the DOM to be fully loaded before initiating game play.
+
+**[Font Awesome](https://fontawesome.com/)** -  was used for the icons from the site and instructions were followed on how to install from their website.
+
+**[Tiny PNG](https://tinypng.com/)** - was used to reduce the file size of each image.
+
+**[Adobe Express](https://express.adobe.com/spv)** - was used to resize the images.
+
+**[Google Fonts](https://fonts.google.com/)** - were the source for the fonts used throughout the site.
+
+**[Online-Convert](https://image.online-convert.com/)** - was used to convert the files to webp.
+
+**[Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1110s)** - was used for the quiz structure and was adjusted and expanded on for this site.
+
+**[Bootstrap](https://getbootstrap.com/docs/5.3/components/modal/)** - Was used for most of the styling, responsiveness and to create the Modals and Toast pop ups.
+
+**[Canvas Confetti](https://www.npmjs.com/package/canvas-confetti/v/1.6.0)** - this package was used for the confetti in end.html.
+
+**[JS Confetti](https://www.npmjs.com/package/js-confetti)** - this package was used for the toilet roll confetti in end.html.
+
+**[Emojipedia](https://emojipedia.org/emoji/%F0%9F%A7%BB/#:~:text=Character-,%F0%9F%A7%BB,of%20paper%2C%20as%20toilet%20paper%E2%80%A6)** - provided the toilet roll emoji used with js-confetti.
+
+**[Am I Reponsive](https://ui.dev/amiresponsive)** - was used to create the first image in the readme file to show the responsiveness of the website.
+
+**[Stack Overflow](https://stackoverflow.com/questions/24775725/loop-through-childnodes)** - This thread gave the basic structure for how to easily loop through child nodes using forEach.
+
+**Arsenal and Tottenham Hotspurs** both gave direct consent for use of their logos for this site for educational purposes only.
+
+All other text and coding was created by myself.
