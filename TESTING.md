@@ -185,3 +185,39 @@ As a site owner I want users to:
 | Go home box | Takes user to index.html | Click box | User taken to index.html | Pass |
 | Play game box | Takes user to game.html and initiates new game | Click box | User taken to game.html to play new game | Pass |
 | Contact site owner box | lets user email the site owner | Click box | Users email client opened and recipient box filled with site owners email address | Pass |
+
+# WISHLIST
+- Change colors displayed according to which team selected
+- Change colors, logos, questions etc for more Derby teams
+
+# Credits
+
+**Code Institute** - I thoroughly enjoyed learning javascript through Code Insitute and have used guiding principles from the course throughout this website. I enjoyed using the idea from the Love Math project to wait for the DOM to be fully loaded before initiating game play.
+
+**[Font Awesome](https://fontawesome.com/)** -  was used for the icons from the site and instructions were followed on how to install from their website.
+
+**[Tiny PNG](https://tinypng.com/)** - was used to reduce the file size of each image.
+
+**[Adobe Express](https://express.adobe.com/spv)** - was used to resize the images.
+
+**[Google Fonts](https://fonts.google.com/)** - were the source for the fonts used throughout the site.
+
+**[Online-Convert](https://image.online-convert.com/)** - was used to convert the files to webp.
+
+**[Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1110s)** - was used for the quiz structure and was adjusted and expanded on for this site.
+
+**[Bootstrap](https://getbootstrap.com/docs/5.3/components/modal/)** - Was used for most of the styling, responsiveness and to create the Modals and Toast pop ups.
+
+**[Canvas Confetti](https://www.npmjs.com/package/canvas-confetti/v/1.6.0)** - this package was used for the confetti in end.html.
+
+**[JS Confetti](https://www.npmjs.com/package/js-confetti)** - this package was used for the toilet roll confetti in end.html.
+
+**[Emojipedia](https://emojipedia.org/emoji/%F0%9F%A7%BB/#:~:text=Character-,%F0%9F%A7%BB,of%20paper%2C%20as%20toilet%20paper%E2%80%A6)** - provided the toilet roll emoji used with js-confetti.
+
+**[Am I Reponsive](https://ui.dev/amiresponsive)** - was used to create the first image in the readme file to show the responsiveness of the website.
+
+**[Stack Overflow](https://stackoverflow.com/questions/24775725/loop-through-childnodes)** - This thread gave the basic structure for how to easily loop through child nodes using forEach.
+
+**Arsenal and Tottenham Hotspurs** both gave direct consent for use of their logos for this site for educational purposes only.
+
+All other text and coding was created by myself.
