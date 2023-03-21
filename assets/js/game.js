@@ -157,25 +157,16 @@ function startGame(team, questions) {
   matchGoals = 0;
   points = 0;
   availableQuestions = [...questions];
-  setNextQuestion();
+  updateQuestionCounter();
 }
 
 // SET NEXT QUESTION FUNCTION
 function setNextQuestion() {
-  // Check if a match has been played (each match is 4 questions)
-  if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
-    played++;
-    checkMatchResult();
-  }
-
-  // Increase question counter by 1
   // Randomly select question and ensure not chosen again
-  questionCounter++;
   const questionIndex = Math.floor(Math.random() * 12);
   currentQuestion = availableQuestions[questionIndex];
   availableQuestions.splice(questionIndex, 1);
   showQuestion(currentQuestion);
-  updateQuestionCounter(questionCounter);
 }
 
 // SHOW QUESTION FUNCTION
@@ -260,7 +251,6 @@ function checkAnswer(userChoice, selectedChoice) {
   // Delay game play so user can check where they're up to
   // Remove answer indicator
   setTimeout(() => {
-    setNextQuestion();
     if (yourAnswer === "correct"){
       selectedChoice.classList.remove('correct');
       selectedChoice.classList.add('hover-color');
@@ -268,15 +258,18 @@ function checkAnswer(userChoice, selectedChoice) {
       selectedChoice.classList.remove('incorrect');
       selectedChoice.classList.add('hover-color');
     }
+    checkIfMatchPlayed();
   }, 3000);
-  
 }
 
 // QUESTION COUNTER FUNCTION
 // Update question counter
-function updateQuestionCounter(counter) {
+function updateQuestionCounter() {
+  // Increase question counter by 1
+  questionCounter++;
   const counterElement = document.getElementById('question-counter');
-  counterElement.innerHTML = counter;
+  counterElement.innerHTML = questionCounter;
+  setNextQuestion();
 }
 
 // UPDATE SCORE COUNTER
@@ -293,6 +286,16 @@ function updateScoreCounter(answer) {
   scoreElement.innerHTML = goals;
   // Display current amount of points
   pointsElement.innerHTML = points;
+}
+
+function checkIfMatchPlayed () {
+  // Check if a match has been played (each match is 4 questions)
+  if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
+    played++;
+    checkMatchResult();
+  } else {
+    updateQuestionCounter();
+  }
 }
 
 // CHECK MATCH RESULT FUNCTION
@@ -369,6 +372,5 @@ function displayMatchResults(currentResult) {
       
   pointsElement.innerHTML = points;
 
-  showQuestion(currentQuestion);
   updateQuestionCounter(questionCounter);
 }
