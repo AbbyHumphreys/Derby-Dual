@@ -172,10 +172,6 @@ function setNextQuestion() {
 // SHOW QUESTION FUNCTION
 // Display question with related answers choices
 function showQuestion(question) {
-  // Reset match goals counter after each match played
-  if ((questionCounter === 5) || (questionCounter === 9)) {
-    matchGoals = 0;
-  }
 
   //Display the current question
   const questionElement = document.getElementById('question-paragraph');
@@ -369,8 +365,9 @@ function displayMatchResults(currentResult) {
     } else if (currentResult === 'lost') {
       lostElement.innerHTML = matchesLost;
     }
-      
+      console.log(matchGoals);
   pointsElement.innerHTML = points;
-
+  matchGoals = 0; // reset goal counter for new match
+  console.log(matchGoals);
   updateQuestionCounter(questionCounter);
 }
