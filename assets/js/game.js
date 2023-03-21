@@ -160,6 +160,28 @@ function startGame(team, questions) {
   updateQuestionCounter();
 }
 
+// UPDATE QUESTION COUNTER FUNCTION
+// Update question counter
+function updateQuestionCounter() {
+  // Increase question counter by 1
+  questionCounter++;
+  const counterElement = document.getElementById('question-counter');
+  counterElement.innerHTML = questionCounter;
+  
+  updateQuestionIndicator();
+}
+
+// UPDATE QUESTION INDICATOR FUNCTION
+// Update question indicator
+function updateQuestionIndicator () {
+  // Style football question indicator to show quiz progress
+questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
+questionIndicator[`${games}`].style.color = '#fff';
+questionIndicator[`${games}`].style.backgroundColor = '#131f53';
+
+setNextQuestion();
+}
+
 // SET NEXT QUESTION FUNCTION
 function setNextQuestion() {
   // Randomly select question and ensure not chosen again
@@ -191,10 +213,6 @@ function showQuestion(question) {
     choice.appendChild(p);
   });
 
-  // Style football question indicator to show quiz progress
-  questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-futbol vertical-center center-text"></i>';
-  questionIndicator[`${games}`].style.color = '#fff';
-  questionIndicator[`${games}`].style.backgroundColor = '#131f53';
   acceptAnswers();
 }
 
@@ -256,16 +274,6 @@ function checkAnswer(userChoice, selectedChoice) {
     }
     checkIfMatchPlayed();
   }, 3000);
-}
-
-// QUESTION COUNTER FUNCTION
-// Update question counter
-function updateQuestionCounter() {
-  // Increase question counter by 1
-  questionCounter++;
-  const counterElement = document.getElementById('question-counter');
-  counterElement.innerHTML = questionCounter;
-  setNextQuestion();
 }
 
 // UPDATE SCORE COUNTER
