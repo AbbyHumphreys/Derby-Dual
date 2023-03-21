@@ -16,7 +16,12 @@ const options = {
 function fetchNews(){
   let newsRetrieved = [];
   fetch('https://news67.p.rapidapi.com/v2/topic-search?languages=en&search=arsenal%20tottenham&batchSize=3', options)
-    .then(response => response.json())
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Network response was not OK for questions");
+      }
+      return res.json(); // return in json format
+    })
     .then(getNews => {
       newsRetrieved = getNews.news;
       displayNews(newsRetrieved);

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let arsenalQuestions = 'arsenal-questions.json';
     let spursQuestions = 'spurs-questions.json';
     
-    // Arsenal questions chosen as default if user clicks off modals
+    // Arsenal questions chosen as default
     fetchQuestions(arsenalQuestions);
     
     // SELECT TEAM
@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
             border: #db0008 3px solid;
             background: #131f53;
           `;
-          // Fetch Arsenal questions
-          fetchQuestions(arsenalQuestions);
 
         // Spurs selected 
         } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
@@ -58,7 +56,7 @@ function fetchQuotes() {
   fetch('quotes.json')
     .then(res => {
       if (!res.ok) {
-        throw new Error("Network response was not OK");
+        throw new Error("Network response was not OK for quotes");
       }
       return res.json();
     }).then(loadedQuotes => {
@@ -90,11 +88,17 @@ function fetchQuotes() {
 function fetchQuestions(team) {
   fetch(team)
     .then(res => {
+      if (!res.ok) {
+        throw new Error("Network response was not OK for questions");
+      }
       return res.json(); // return in json format
     }).then(loadedQuestions => {
       questions = loadedQuestions;
       let startButton = document.querySelector('.start-quiz');
       startButton.addEventListener('click', startGame(theTeam, questions)); // begin quiz
+    })
+    .catch((error) => {
+      console.error("There has been a problem with your fetch operation for gathering questions:", error);
     });
 }
 
