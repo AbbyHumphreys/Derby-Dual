@@ -106,7 +106,7 @@ As a site owner I want users to:
 | The hamburger menu | Opens and closes correctly. The links go to relevants parts of the page. | Clicked on menu. Clicked on links | Menu opens when clicked and closed when 'x' clicked on. Links go to correct parts. | Pass|
 | The 'Take Quiz' button | Directs the user to the game page | Button clicked | User is directed to the game page | Pass |
 | The 'Take Quiz' button | Correctly styling applied to button on hover over | Button hovered over | Correct styling is applied | Pass |
-| The news section API | Calls the news API url | Data called logged to console and checked | ![Image showing console log of called API](/assets/images/readme-images/newsapi-consolelog.webp "API console.log") | Pass |
+| The news section API | Calls the news API url | Data called logged to console and checked | 3 news items logged to the console as expected | Pass |
 | Contact form | All field required, email format required | Empty form submitted and invalid email address submitted | Error message displayed asking for fields to be inputted and valid email inputted | Pass |
 | Contact form button | Sends inputs to site owner | Form filled in and button clicked | Site owner received email with correct inputs | Pass |
 | Contact form successful message | Message displays | Form submitted | Message displayed | Pass |
@@ -148,11 +148,13 @@ As a site owner I want users to:
 | --- | --- | --- | --- | --- |
 | Current question indicator | The question number increases as each new question is displayed | Visually check the question indicator increases by one each time a question is displayed | The question indicator increases as expected | Pass |
 | Question populated | Correct questions correctly pulled from the relevant json file | logos selected and questions pulled logged into console and checked. Visually checked correct questions where being displayed | Console logged showed correct questions were being fetched and visual checks on questions displayed were correct | Pass |
+| Fetch error catch | Error message logged to console | Deliberate misspelling of file created to throw error | Error message logged to console | Pass |
 | Answers displayed | They match the question being asked | answers fetched were logged to the console and visually checked throughout game progress | The answers matched the questions being fetched and were being displayed correctly | Pass |
 | Correct and incorrect answers | The correct or incorrect answers were actually correct or incorrect | The answers displayed as correct or incorrect were checked against the original json file | The answers were as expected | Pass |
 | Correct indicator | The answer box background turns green when a correct answer is chosen | Visually check that the answer clicked when correct turns green | When a correct answer was chosen, the answer box background turned green | Pass |
 | Incorrect indicator | The answer box background turns orange when an incorrect answer is chosen | Visually check that the answer clicked when incorrect turns orange | When an incorrect answer was chosen, the answer box background turned orange | Pass |
 | Answer box hover | Background turns white and text blue on hover over on bigger devices only | Visually check the correct changes take place on different size devices and using chrome dev tools | The hover over works correctly and only on devices bigger than 1200 (to prevent answer background staying white on smaller touch screen devices) | Pass |
+| Answer box | Can't click before next question set or until after match Toast has been dismissed | Click answer boxes | Clicking the answer boxes before the next question is set or while a match Toast is being displayed results in no action | Pass |
 
 `Game Page - Match Toasts`
 
