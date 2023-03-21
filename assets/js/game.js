@@ -123,12 +123,14 @@ let matchesLost = 0;
 const questionIndicator = Array.from(document.getElementsByClassName('question-indicator'));
 let questionCounter = 0;
 
-// Toast Resuls
+// Toast Results
+const toastButton = document.getElementById('toast-button');
 const toastHeadMatch = document.getElementById('toast-header-match');
 const toastBodyMatch = document.getElementById('toast-body-match');
 const toastResults = document.getElementById('toast-body-result');
 const matchToastElement = document.getElementById('match-toast');
 let matchGoals = 0;
+let matchResults = '';
 
 // Toast Quotes
 const matchQuoteElement = document.getElementById('match-quote');
@@ -337,34 +339,55 @@ function checkMatchResult() {
     matchesLost += 1;
     currentAvailableQuotes = lostQuotes;
   }
-  chooseQuote(matchResults, currentAvailableQuotes);
+  chooseQuote(currentAvailableQuotes);
 }
 
 // CHOOSE QUOTE FUNCTION
 // Draw random quote based on the match result
-function chooseQuote(currentResult, currentMatchQuotes) {
+function chooseQuote(currentMatchQuotes) {
     // Remove used quotes
     const quoteIndex = Math.floor(Math.random() * currentMatchQuotes.length);
     currentQuote = currentMatchQuotes[quoteIndex];
     currentMatchQuotes.splice(quoteIndex, 1);
-
-    // Display bootstrap toast annoucing the match results
-    const toast = new bootstrap.Toast(matchToastElement);
-    toast.show();
-    toastHeadMatch.innerHTML = played;
-    toastBodyMatch.innerHTML = played;
-    matchQuoteElement.innerHTML = currentQuote;
-    toastResults.innerHTML = currentResult;
   
-  displayMatchResults(currentResult);
+  displayMatchToast();
+  displayMatchResults();
+}
+
+function displayMatchToast() {
+  // Display bootstrap toast annoucing the match results
+  const toast = new bootstrap.Toast(matchToastElement);
+  toast.show();
+  toastHeadMatch.innerHTML = played;
+  toastBodyMatch.innerHTML = played;
+  matchQuoteElement.innerHTML = currentQuote;
+  toastResults.innerHTML = matchResults;
+
+  if (questionCounter == 12) {
+    toastButton.classList.add('hide');
+  }
 }
 
 // DISPLAY MATCH RESULTS FUNCTION
 // Increase matches played result
 // Display matches played
-function displayMatchResults(currentResult) {
+function displayMatchResults() {
   playedElement.innerHTML = played;
-    // Game ends after 12 questions
+    // update win, draw, lost counters in main game play
+    if (matchResults === 'win') {
+      wonElement.innerHTML = matchesWon;
+    } else if (matchResults === 'draw') {
+      drawnElement.innerHTML = matchesDrawn;
+    } else if (matchResults === 'lost') {
+      lostElement.innerHTML = matchesLost;
+    }
+  pointsElement.innerHTML = points;
+  matchGoals = 0; // reset goal counter for new match
+  playAnotherMatch();
+}
+
+function playAnotherMatch () {
+  // Game ends after 12 questions
     // Scores saved in local storage
     if (questionCounter == 12) {
       // Delay allows user to view last match results
@@ -380,19 +403,7 @@ function displayMatchResults(currentResult) {
         let baseurl="https://abbyhumphreys.github.io/Derby-Dual";
         return window.location.assign(`${baseurl}/end.html`);
       }, 3000);
+    } else {
+      updateQuestionCounter(questionCounter);
     }
-
-    // update win, draw, lost counters in main game play
-    if (currentResult === 'win') {
-      wonElement.innerHTML = matchesWon;
-    } else if (currentResult === 'draw') {
-      drawnElement.innerHTML = matchesDrawn;
-    } else if (currentResult === 'lost') {
-      lostElement.innerHTML = matchesLost;
-    }
-      console.log(matchGoals);
-  pointsElement.innerHTML = points;
-  matchGoals = 0; // reset goal counter for new match
-  console.log(matchGoals);
-  updateQuestionCounter(questionCounter);
 }
