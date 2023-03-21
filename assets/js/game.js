@@ -296,7 +296,6 @@ function updateScoreCounter(answer) {
     matchGoals += 1;
     points += 1;
   }
-
   displayScores();
 }
 
