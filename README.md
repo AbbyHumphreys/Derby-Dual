@@ -204,10 +204,6 @@ A 404 page was added to the root folder as when researched it was discovered tha
 * Google Fonts
 * Font Awesome
 
-# Wishlist
-- Make the hamburger icon close on click
-- Add an option to the contact form for the user to receive a copy
-
 # Bugs
 
 ## Fixed Bugs
@@ -229,6 +225,8 @@ Gave inspiration for putting the functionality to display the toast within the p
 # WISHLIST
 - Change colors displayed according to which team selected
 - Change colors, logos, questions etc for more Derby teams
+- Make the hamburger icon close on click
+- Add an option to the contact form for the user to receive a copy
 
 # DEPLOYMENT
 
