@@ -244,6 +244,14 @@ function checkAnswer(userChoice, selectedChoice) {
   // Check if user's answer is correct
   const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
 
+  displayAnswerIndicators(yourAnswer, selectedChoice);
+  updateScoreCounter(yourAnswer);
+}
+
+// DISPLAY ANSWER INDICATORS FUNCTION
+// Replaces football with answer indicator
+// and highlights answer box as correct or incorrect
+function displayAnswerIndicators (yourAnswer, selectedChoice) {
   // Display indicator for correct of incorrect answer
   if (yourAnswer == "correct") {
     questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-circle-check vertical-center center-text"></i>';
@@ -258,10 +266,10 @@ function checkAnswer(userChoice, selectedChoice) {
     selectedChoice.classList.add('incorrect', 'incorrect-hover');
     selectedChoice.classList.remove('hover-color');
   }
+  removeAnswerBoxIndicator(yourAnswer, selectedChoice);
+}
 
-  // Increase amount of games played by 1
-  games++;
-  updateScoreCounter(yourAnswer);
+function removeAnswerBoxIndicator (yourAnswer, selectedChoice) {
   // Delay game play so user can check where they're up to
   // Remove answer indicator
   setTimeout(() => {
@@ -279,12 +287,20 @@ function checkAnswer(userChoice, selectedChoice) {
 // UPDATE SCORE COUNTER
 // Add 1 to goals, matchGoals and points
 function updateScoreCounter(answer) {
+  // Increase amount of games played by 1
+  games++;
   if (answer == "correct") {
     goals += 1;
     matchGoals += 1;
     points += 1;
   }
 
+  displayScores();
+}
+
+// DISPLAY SCORES FUNCTION
+// Update goals and points
+function displayScores () {
   // Display current amount of goals
   const scoreElement = document.getElementById('score');
   scoreElement.innerHTML = goals;
@@ -292,8 +308,9 @@ function updateScoreCounter(answer) {
   pointsElement.innerHTML = points;
 }
 
+// CHECK IF MATCH PLAYED FUNCTION
+// Check if a match has been played (each match is 4 questions)
 function checkIfMatchPlayed () {
-  // Check if a match has been played (each match is 4 questions)
   if ((questionCounter === 4) || (questionCounter === 8) || (questionCounter === 12)) {
     played++;
     checkMatchResult();
