@@ -31,8 +31,13 @@ Javascript, HTML and CSS will be the languages used to create this website.
     - [`Languages`](#languages)
     - [`Framework`](#framework)
     - [`Tools`](#tools)
-
-
+- [`Bugs`](#bugs)
+    - [`Fixed Bugs`](#fixed-bugs)
+    - [`Known Bugs`](#known-bugs)
+- [`Testing`](#testing)
+- [`Wishlist`](#wishlist)
+- [`Deployment`](#deployment)
+- [`Credits`](#credits)
 
 # User Experience (UX)
 
@@ -84,6 +89,7 @@ As a site owner I want users to:
 3. Be able to contact the game creator
 4. Enjoy themselves and have a positive user experience
 
+# Design
 ## Wireframes
 
 The following wireframes were created near the beginning of the design process with [Balsamiq](https://balsamiq.com/wireframes/?gclid=CjwKCAiAhKycBhAQEiwAgf19etPR1ccdA0Aiezm63MsBy4PezCLSlN1T14ubQH1pMB7oa7Hz9YqWHhoC-VEQAvD_BwE).
@@ -211,8 +217,7 @@ A 404 page was added to the root folder as when researched it was discovered tha
 | --- | --- | --- |
 | 1 | Height of game area slightly smaller than needed | Adjust height in Chrome Dev Tools until perfect fit and transfer adjusted height to working environment |
 | 2 | Answer was being used for next question as well | Put setNextQuestion function inside a setTimeOut |
-| 3 | Match toast quote coming up as undefined in DOM | https://stackoverflow.com/questions/30702670/undefined-when-passing-dom-object-in-javascript
-Gave inspiration for putting the functionality to display the toast within the promise |
+| 3 | Match toast quote coming up as undefined in DOM | https://stackoverflow.com/questions/30702670/undefined-when-passing-dom-object-in-javascript Gave inspiration for putting the functionality to display the toast within the promise |
 | 4 | h2 set at 6rem for Q1 on game.html, but made h2's on index.html huge | Reduced size of h2 throughout site, but put class in for Q1 and styled accordingly |
 | 5 | Answer section was not centering vertically | Position-relative used on divs so css could be used to position it’s child in the vertical center |
 | 6 | If user accidentally clicked off the modal and didn’t select a team, the quiz couldn’t begin | Fetched Arsenal questions automatically and switched to spurs questions if spurs logo clicked |
