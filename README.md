@@ -254,7 +254,6 @@ To run this on your local machine:
 3. Extract the zip file on your local machine
 4. Run the index.html file in a browser
 
-
 # CREDITS
 
 **Code Institute** - I thoroughly enjoyed learning javascript through Code Insitute and have used guiding principles from the course throughout this website. I enjoyed using the idea from the Love Math project to wait for the DOM to be fully loaded before initiating game play.
