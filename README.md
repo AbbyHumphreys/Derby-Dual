@@ -39,7 +39,7 @@ Javascript, HTML and CSS will be the languages used to create this website.
 - [`Deployment`](#deployment)
 - [`Credits`](#credits)
 
-# User Experience (UX)
+# USER EXPERIENCE (UX)
 
 ## Project Goals
 
@@ -89,7 +89,7 @@ As a site owner I want users to:
 3. Be able to contact the game creator
 4. Enjoy themselves and have a positive user experience
 
-# Design
+# DESIGN
 ## Wireframes
 
 The following wireframes were created near the beginning of the design process with [Balsamiq](https://balsamiq.com/wireframes/?gclid=CjwKCAiAhKycBhAQEiwAgf19etPR1ccdA0Aiezm63MsBy4PezCLSlN1T14ubQH1pMB7oa7Hz9YqWHhoC-VEQAvD_BwE).
@@ -125,7 +125,7 @@ This website was designed with mobile users foremost in mind as most users will 
 * An end page is also dynamically populated using javascript to inform the user of their end result
 
 
-# Features
+# FEATURES
 
 ## Home Page
 
@@ -195,7 +195,7 @@ The footer remains the same throughout the website.
 
 A 404 page was added to the root folder as when researched it was discovered that github pages has an automated system for finding the 404 page in this folder to handle errors.
 
-# Technologies Used
+# TECHNOLOGIES USED
 ## Languages
 * HTML5
 * CSS3
@@ -210,7 +210,7 @@ A 404 page was added to the root folder as when researched it was discovered tha
 * Google Fonts
 * Font Awesome
 
-# Bugs
+# BUGS
 
 ## Fixed Bugs
 | No. | Problem | Fix |
@@ -226,6 +226,9 @@ A 404 page was added to the root folder as when researched it was discovered tha
 ## Known Bugs
 - There is a a warning displaying in the console on the live page. This error seems to be because GitHub hosted pages disable googles 3rd party cookie alternative FLoC, which then throws this error. The error doesn't affect the site in any way.
 ![Interest Cohort Error Message](/assets/images/readme-images/interest-cohort-error-message.webp "Error Message")
+
+# TESTING
+Extensive testing was conducted and documented in [Testing.md](TESTING.md)
 
 # WISHLIST
 - Change colors displayed according to which team selected
@@ -252,7 +255,7 @@ To run this on your local machine:
 4. Run the index.html file in a browser
 
 
-# Credits
+# CREDITS
 
 **Code Institute** - I thoroughly enjoyed learning javascript through Code Insitute and have used guiding principles from the course throughout this website. I enjoyed using the idea from the Love Math project to wait for the DOM to be fully loaded before initiating game play.
 
