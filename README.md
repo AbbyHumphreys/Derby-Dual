@@ -136,6 +136,11 @@ This website was designed with mobile users foremost in mind as most users will 
 * A game page is dynamically filled using javascript to create the interactive quiz with updating scores
 * An end page is also dynamically populated using javascript to inform the user of their end result
 
+## Defensive Design
+To prevent user error and instruct users in the case of an error, defensive design strategies were used:
+- a 404 error page was used in case an incorrect url was used. This allows the user to pick which area of the website they would like to navigate to
+- validation of the news api data and json files for quotes and questions was used to get they were fetched correctly and network errors logged to the console should an error occur
+- if the user clicks on the dismiss button of the toast for each match result, game play is not interrupted and the user can carry on.
 
 # FEATURES
 
