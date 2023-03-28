@@ -6,7 +6,7 @@
 // Wait for the DOM to finish loading before running the game
 // Get the start-btn ID and add an event listener to it
 // Run startGame function when start-btn clicked
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   
   fetchQuotes();
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Arsenal selected
         if (selectedTeam.id == 'modal-arsenal-logo' || selectedTeam.id == 'modal-arsenal-image') {
-          theTeam = "arsenal";
+          theTeam = 'arsenal';
           arsenalTeam.style.cssText = `
             border: #db0008 3px solid;
             background: #131f53;
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Spurs selected 
         } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
-          theTeam = "spurs";
+          theTeam = 'spurs';
           spursTeam.style.cssText = `
             border: #131f53 3px solid;
             background: #db0008;
@@ -64,23 +64,23 @@ function fetchQuotes() {
       availableQuotes = [...quotes];
       // Spilt quotes into arrays by results
       availableQuotes.forEach(quote => {
-        if (quote.result === "win") {
+        if (quote.result === 'win') {
           winQuotes.push(quote.quote);
         } 
       });
         availableQuotes.forEach(quote => {
-          if (quote.result === "draw") {
+          if (quote.result === 'draw') {
             drawQuotes.push(quote.quote);
           }
         });
           availableQuotes.forEach(quote => {
-            if (quote.result === "lost") {
+            if (quote.result === 'lost') {
               lostQuotes.push(quote.quote);
             }
       });
   })
   .catch((error) => {
-    console.error("There has been a problem with your fetch operation for gathering quotes:", error);
+    console.error('There has been a problem with your fetch operation for gathering quotes:', error);
   });
 }
 
@@ -89,7 +89,7 @@ function fetchQuestions(team) {
   fetch(team)
     .then(res => {
       if (!res.ok) {
-        throw new Error("Network response was not OK for questions");
+        throw new Error('Network response was not OK for questions');
       }
       return res.json(); // return in json format
     }).then(loadedQuestions => {
@@ -98,7 +98,7 @@ function fetchQuestions(team) {
       startButton.addEventListener('click', startGame(theTeam, questions)); // begin quiz
     })
     .catch((error) => {
-      console.error("There has been a problem with your fetch operation for gathering questions:", error);
+      console.error('There has been a problem with your fetch operation for gathering questions:', error);
     });
 }
 
@@ -206,12 +206,12 @@ function showQuestion(question) {
   // Display each answer in the center
   choices.forEach(choice => {
     choice.innerHTML = '';
-    const number = choice.dataset["number"];
+    const number = choice.dataset['number'];
     
-    let p = document.createElement("p");
+    let p = document.createElement('p');
     p.classList.add('vertical-center');
     p.classList.add('center-text');
-    p.innerText = question["choice" + number];
+    p.innerText = question['choice' + number];
     choice.appendChild(p);
   });
 
@@ -235,7 +235,7 @@ function acceptAnswers() {
       }
 
       // Change answer into an Integer
-      const selectedAnswer = parseInt(selectedChoice.dataset["number"], 10);
+      const selectedAnswer = parseInt(selectedChoice.dataset['number'], 10);
       checkAnswer(selectedAnswer, selectedChoice);
     });
   });
@@ -244,7 +244,7 @@ function acceptAnswers() {
 // CHECK ANSWER FUNCTION
 function checkAnswer(userChoice, selectedChoice) {
   // Check if user's answer is correct
-  const yourAnswer = userChoice === currentQuestion.answer ? "correct" : "incorrect";
+  const yourAnswer = userChoice === currentQuestion.answer ? 'correct' : 'incorrect';
 
   displayAnswerIndicators(yourAnswer, selectedChoice);
   updateScoreCounter(yourAnswer);
@@ -255,13 +255,13 @@ function checkAnswer(userChoice, selectedChoice) {
 // and highlights answer box as correct or incorrect
 function displayAnswerIndicators (yourAnswer, selectedChoice) {
   // Display indicator for correct of incorrect answer
-  if (yourAnswer == "correct") {
+  if (yourAnswer == 'correct') {
     questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-circle-check vertical-center center-text"></i>';
     questionIndicator[`${games}`].children[0].style.color = 'green';
     questionIndicator[`${games}`].style.backgroundColor = '#fff';
     selectedChoice.classList.add('correct', 'correct-hover');
     selectedChoice.classList.remove('hover-color');
-  } else if (yourAnswer == "incorrect") {
+  } else if (yourAnswer == 'incorrect') {
     questionIndicator[`${games}`].innerHTML = '<i class="fa-solid fa-circle-xmark vertical-center center-text"></i>';
     questionIndicator[`${games}`].children[0].style.color = 'orange';
     questionIndicator[`${games}`].style.backgroundColor = '#fff';
@@ -275,10 +275,10 @@ function removeAnswerBoxIndicator (yourAnswer, selectedChoice) {
   // Delay game play so user can check where they're up to
   // Remove answer indicator
   setTimeout(() => {
-    if (yourAnswer === "correct"){
+    if (yourAnswer === 'correct'){
       selectedChoice.classList.remove('correct');
       selectedChoice.classList.add('hover-color');
-    } else if (yourAnswer === "incorrect") {
+    } else if (yourAnswer === 'incorrect') {
       selectedChoice.classList.remove('incorrect');
       selectedChoice.classList.add('hover-color');
     }
@@ -291,7 +291,7 @@ function removeAnswerBoxIndicator (yourAnswer, selectedChoice) {
 function updateScoreCounter(answer) {
   // Increase amount of games played by 1
   games++;
-  if (answer == "correct") {
+  if (answer == 'correct') {
     goals += 1;
     matchGoals += 1;
     points += 1;
@@ -324,17 +324,17 @@ function checkIfMatchPlayed () {
 // Determine if match won, lost or drawn
 function checkMatchResult() {
   if (matchGoals >= 3) {
-    matchResults = "win";
+    matchResults = 'win';
     matchesWon += 1;
     points += 3;
     currentAvailableQuotes = winQuotes;
   } else if (matchGoals == 2) {
-    matchResults = "draw";
+    matchResults = 'draw';
     matchesDrawn += 1;
     points += 1;
     currentAvailableQuotes = drawQuotes;
   } else if (matchGoals <= 1) {
-    matchResults = "lost";
+    matchResults = 'lost';
     matchesLost += 1;
     currentAvailableQuotes = lostQuotes;
   }
@@ -399,7 +399,7 @@ function playAnotherMatch () {
         localStorage.setItem('totalGoals', goals);
 
         //go to the end page
-        let baseurl="https://abbyhumphreys.github.io/Derby-Dual";
+        let baseurl='https://abbyhumphreys.github.io/Derby-Dual';
         return window.location.assign(`${baseurl}/end.html`);
       }, 3000);
     } else {
