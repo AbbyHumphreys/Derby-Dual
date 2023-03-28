@@ -92,7 +92,19 @@ As a site owner I want users to:
 # DESIGN
 ## Wireframes
 
+Two versions of the quiz were created. The first was a minimum viable product version to ensure the project was viable and could be completed in time. The second was the ideal, upgraded version that you see today. The second was based off the first, for ease of upgrade and added more significant interactivity than the first. 
+
 The following wireframes were created near the beginning of the design process with [Balsamiq](https://balsamiq.com/wireframes/?gclid=CjwKCAiAhKycBhAQEiwAgf19etPR1ccdA0Aiezm63MsBy4PezCLSlN1T14ubQH1pMB7oa7Hz9YqWHhoC-VEQAvD_BwE).
+
+### First Design
+
+![Image showing the home page design](/assets/images/readme-images/home-page-design.webp "Home Page Design")
+
+![Image showing the first game page design](/assets/images/readme-images/first-game-design.webp "Game Page Design One")
+
+### Second Design
+
+![Image showing the second game page design](/assets/images/readme-images/second-game-design.webp "Game Page Design Two")
 
 ## Colour
 The colour palette was taken from the infamous logos of the North London derby teams. 
