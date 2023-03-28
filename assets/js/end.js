@@ -4,7 +4,7 @@
  * */
 
 // Wait for the DOM to finish loading before running the game
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
 
 // VARIABLES DECLARED
 // Header Area
@@ -48,28 +48,28 @@ totalPointsElement.innerHTML = totalPoints;
 // Statements used in selectStatements
 let resultsStatement = [
     {
-        promotion: "Relegated",
-        symbol: "fa-thumbs-down",
-        exclamation: "Oops",
-        statement: "been relegated"
+        promotion: 'Relegated',
+        symbol: 'fa-thumbs-down',
+        exclamation: 'Oops',
+        statement: 'been relegated'
     },
     {
-        promotion: "Premiership",
-        symbol: "fa-trophy",
-        exclamation: "Well Done",
-        statement: "won the premiership"
+        promotion: 'Premiership',
+        symbol: 'fa-trophy',
+        exclamation: 'Well Done',
+        statement: 'won the premiership'
     },
     {
-        promotion: "Europa League",
-        symbol: "fa-trophy",
-        exclamation: "Well Done",
-        statement: "won the Europa League"
+        promotion: 'Europa League',
+        symbol: 'fa-trophy',
+        exclamation: 'Well Done',
+        statement: 'won the Europa League'
     },
     {
-        promotion: "Champions League",
-        symbol: "fa-trophy",
-        exclamation: "Top Scorer",
-        statement: "won the Champions League"
+        promotion: 'Champions League',
+        symbol: 'fa-trophy',
+        exclamation: 'Top Scorer',
+        statement: 'won the Champions League'
     }
 ];
 
