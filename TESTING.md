@@ -19,6 +19,8 @@ View the deployed site: [Derby Duel](https://abbyhumphreys.github.io/Derby-Dual/
 
 A variety of testing methods were used throughout the project to ensure the project was error free. 
 
+Common methods used through production was logging information out to the console to check the correct data was being passed, visually checking the preview and deployed site. Unit tests for individual functions were manually tested as well as integrated tests to ensure the functions worked together.
+
 Git branches were used extensively throughout project developement. It was discovered that merges were not shown well in Github, therefore, the branches were pushed over to Github before and after merging to show development. This is also the reason why the branches still exist (ordinarily, these would have been deleted once each merge was complete).
 
 # AUTOMATED TESTING
