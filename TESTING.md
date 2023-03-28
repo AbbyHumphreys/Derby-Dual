@@ -4,17 +4,27 @@
 
 View the deployed site: [Derby Duel](https://abbyhumphreys.github.io/Derby-Dual/)
 
-## Table of Contents
+# Table of Contents
 - [`Automated Testing`](#automated-testing)
     - [`HTML Validator Testing`](#html-validator-testing)
 - [`Manual Testing`](#manual-testing)
     - [`Compatibility Testing`](#compatibility-testing)
     - [`Responsiveness Testing`](#Responsiveness-testing)
-- [`User Story Testing`](#user-story-testing)
+    - [`User Story Testing`](#user-story-testing)
+    - [`Functional Testing`](#functional-testing)
 
 A variety of testing methods were used throughout the project to ensure the project was error free. 
-## Automated Testing
-### HTML Validator Testing
+
+# Automated Testing
+Code validating tools were used (see below). 
+
+Jest was installed and initiated. However, there is an incompatibility with the fetch API used in the site. A polyfill ([Node Fetch](https://www.npmjs.com/package/node-fetch)) was used to try to patch over these differences, but a workable solution was not found in this case. Tutor support was unable to help in this regard.
+
+If Jest had been available, the ideal solution would be to use the Test Driven Methodology to test as the quiz was being created. Due to lack of experience in this regard, testing was scheduled to take place once most of the code was implemented to ensure it works correctly. This would have taken the form of creating scenarios to test all likely outcomes and user inputs.
+
+Due to an incomplete Jest solution, extensive manual testing was implemented and the deployed site was sent out and tested by many users to test the robustness of the code. Pleasingly, no errors were reported by users.
+
+## HTML Validator Testing
 HTML was testing using the [W3C Validator](https://validator.w3.org/) and the following errors were flagged and corrected:
 
 **Problem:** There was a closing tag on the br element
@@ -26,7 +36,7 @@ HTML was testing using the [W3C Validator](https://validator.w3.org/) and the fo
 **Problem:** An extra 'li' closing element was found
 **Fix:** It was removed
 
-### CSS Validator Testing
+## CSS Validator Testing
 CSS was tested using [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) and the following error was reported fixed:
 
 **Problem:** bottom: cannot be used with a color
@@ -39,32 +49,32 @@ Two warnings were displayed but were not corrected for the following reasons:
 
 - Warning that imported style sheets are not checked in direct input and file upload modes. As there is only one style sheet and this was checked by direct input, there was not a need to correct this warning.
 
-### Javascript Code Testing
+## Javascript Code Testing
 [JS Hint](https://jshint.com/) was used to check the javascript code quality.
 
 Please note: JS Hint is not updated with ES6, so these threw up warnings. Code was checked manually to confirm it was valid.
 
-### Performance Testing
+## Performance Testing
 [Google Chrome Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) extension was used to test performance and I was pleased with the results as demonstrated below:
 
 ![Image showing Google Chrome Lighthouse test on game.html](/assets/images/readme-images/game-page-lighthouse-test.webp "Lighthouse Test")
 
 ![Image showing Google Chrome Lighthouse test on end.html](/assets/images/readme-images/end-page-lighthouse-test.webp "Lighthouse Test")
 
-### Accessibility Testing
+## Accessibility Testing
 [Wave](https://wave.webaim.org/) accessibilty report highlighted a slight need for some improvement for accessibility:
 - alt tags were added to the news API images
 - aria labels were added to the hambuger menu on the home page
 
 [Web Aim's](https://webaim.org/resources/contrastchecker/) contrast checker was used before building the site to ensure contrast between foreground and background colors was enough for accessibility purposes.
 
-## Manual Testing
-### Compatibility Testing
+# Manual Testing
+## Compatibility Testing
 This site was tested across the three most widely used browsers today - Google Chrome, Microsoft Edge and Safari. The site worked well across all three browsers and discrepancies were not found.
 
 The site was tested on numerous devices and it worked well on all. The devices used for testing were a ASUS Vivobook Laptop, an iMac, an iphone 11 and a Samsung s22
 
-### Responsiveness Testing
+## Responsiveness Testing
 Responsiveness was tested throughout the site development using Google Chrome Dev Tools. Bootstrap made responsivity much easier to achieve and then a few css rules were required to adjust the site for small to large devices.
 
 ## User Story Testing
@@ -98,6 +108,8 @@ As a site owner I want users to:
 4. Enjoy themselves and have a positive user experience
     - The site is easily navigable. It includes the main dropdown menu on the home-page. The navigation menu is fixed so is always visible to the user.
     - A 404 error page was created for the users so if they are directed to a non-existent domain, they are presented with an appealing page and an easy navigation buttons - back to the homepage, play the quiz or contact the site owner.
+
+## Functional Testing
 
 `Home Page`
 
@@ -165,7 +177,7 @@ As a site owner I want users to:
 | Result statement | Correct statement displayed with correct match number | Win, draw and lost matches and visually check the relevant statement is displayed and the correct match number | Pass |
 | Next match button | Displays correctly, changes color on hover over and removes the toast | Click button | The button displays in the correct place. Hovering over the button changes it's colour in line with the rest of the site. Clicking the button removes the toast enabling the continuation of game play | Pass |
 | Match toast exit icon | Pressing the 'X' button in the toast header removes the toast | Click button | Toast removed on pressing button | Pass |
-| Match toast | Clicking anywhere except the 'next' button and the exit button does not remove the toast | Pressing anywhere on the screen, except the buttons does not remove the toast | Pass |
+| Match toast | Clicking anywhere except the 'next' button and the exit button does not remove the toast | Pressing anywhere on the screen, except the buttons | Pressing anywhere on the screen, except the buttons does not remove the toast | Pass |
 
 `End Page`
 
@@ -174,7 +186,7 @@ As a site owner I want users to:
 | Score header | Correct scores retrieved from local storage and displayed | Check storage in applications in Chrom Dev Tools. Manually calculate correctly scores and visually check they are displayed | Storage showed they were updating after each game played. Calculated scores matched those displayed | Pass |
 | Confetti | Confetti launched when 4 or more points scored. Toilet rolls launched when 3 or less points scored | Log to console to check api installed. Visually check correct confetti launched by manually changing local storage points | Correct confetti launched for results obtained | Pass |
 | Left hand side result and icon | Correct league or relegation and correct icon displayed for result | Manual change local storage and visually check correct statement and icon displayed | Correct statement and icon displayed for results obtained | Pass |
-| Right hand side statement, score and result displayed | Manual change local storage and visually check correct statement, score and result displayed | Correct statement, score and result displayed for results obtained | Pass |
+| Right hand side statement, score and result displayed | Manually change local storage and visually check correct statement, score and result displayed | Visual checks | Correct statement, score and result displayed for results obtained | Pass |
 | Play again button | Displays correctly, hover over state changes color and redirects to game play | Visual check and click button | Button displays correctly, correct colors displayed on hover over and when clicked redirects the user to play another game | Pass |
 
 `404 Error Page`
