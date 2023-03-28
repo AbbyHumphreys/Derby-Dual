@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const spursTeam = document.getElementById('modal-spurs-logo');
         
         // Arsenal selected
-        if (selectedTeam.id == 'modal-arsenal-logo' || selectedTeam.id == 'modal-arsenal-image') {
+        if (selectedTeam.id === 'modal-arsenal-logo' || selectedTeam.id === 'modal-arsenal-image') {
           theTeam = 'arsenal';
           arsenalTeam.style.cssText = `
             border: #db0008 3px solid;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
           `;
 
         // Spurs selected 
-        } else if (selectedTeam.id == 'modal-spurs-logo' || selectedTeam.id == 'modal-spurs-image') {
+        } else if (selectedTeam.id === 'modal-spurs-logo' || selectedTeam.id === 'modal-spurs-image') {
           theTeam = 'spurs';
           spursTeam.style.cssText = `
             border: #131f53 3px solid;
@@ -291,7 +291,7 @@ function removeAnswerBoxIndicator (yourAnswer, selectedChoice) {
 function updateScoreCounter(answer) {
   // Increase amount of games played by 1
   games++;
-  if (answer == 'correct') {
+  if (answer === 'correct') {
     goals += 1;
     matchGoals += 1;
     points += 1;
@@ -328,7 +328,7 @@ function checkMatchResult() {
     matchesWon += 1;
     points += 3;
     currentAvailableQuotes = winQuotes;
-  } else if (matchGoals == 2) {
+  } else if (matchGoals === 2) {
     matchResults = 'draw';
     matchesDrawn += 1;
     points += 1;
@@ -362,7 +362,7 @@ function displayMatchToast() {
   matchQuoteElement.innerHTML = currentQuote;
   toastResults.innerHTML = matchResults;
 
-  if (questionCounter == 12) {
+  if (questionCounter === 12) {
     toastButton.classList.add('hide');
   }
 }
@@ -388,7 +388,7 @@ function displayMatchResults() {
 function playAnotherMatch () {
   // Game ends after 12 questions
     // Scores saved in local storage
-    if (questionCounter == 12) {
+    if (questionCounter === 12) {
       // Delay allows user to view last match results
       setTimeout(() => {
         localStorage.setItem('totalPoints', points);
