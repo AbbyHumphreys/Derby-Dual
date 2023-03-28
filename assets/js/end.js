@@ -75,36 +75,30 @@ let resultsStatement = [
 
 // SELECT STATEMENTS FUNCTION
 // Select statements depending on total points
-function selectStatements(){
+function displayStatements(){
     if (totalPoints <= 3) {
-        currentPromotion = resultsStatement[0].promotion;
-        currentSymbol = resultsStatement[0].symbol;
-        currentExclamation = resultsStatement[0].exclamation;
-        currentStatement = resultsStatement[0].statement;
-        displayResults();
+        selectStatements(0)
         launchToiletRoll();
     } else if ((totalPoints > 3) && (totalPoints <= 9)) {
-        currentPromotion = resultsStatement[1].promotion;
-        currentSymbol = resultsStatement[1].symbol;
-        currentExclamation = resultsStatement[1].exclamation;
-        currentStatement = resultsStatement[1].statement;
-        displayResults();
+        selectStatements(1)
         launchConfetti();
     } else if ((totalPoints > 9) && (totalPoints <= 18)) {
-        currentPromotion = resultsStatement[2].promotion;
-        currentSymbol = resultsStatement[2].symbol;
-        currentExclamation = resultsStatement[2].exclamation;
-        currentStatement = resultsStatement[2].statement;
-        displayResults();
+        selectStatements(2)
         launchConfetti();
     } else if (totalPoints > 18) {
-        currentPromotion = resultsStatement[3].promotion;
-        currentSymbol = resultsStatement[3].symbol;
-        currentExclamation = resultsStatement[3].exclamation;
-        currentStatement = resultsStatement[3].statement;
-        displayResults();
+        selectStatements(3);
         launchConfetti();
     } 
+}
+
+// SELECT STATEMENTS FUNCTION
+// Retrieves statement dependent on result passed through
+function selectStatements(num) {
+    currentPromotion = resultsStatement[num].promotion;
+    currentSymbol = resultsStatement[num].symbol;
+    currentExclamation = resultsStatement[num].exclamation;
+    currentStatement = resultsStatement[num].statement;
+    displayResults();
 }
 
 // DISPLAY RESULTS FUNCTION
@@ -146,5 +140,5 @@ function launchToiletRoll() {
       });
 }
 
-selectStatements();
+displayStatements();
 });
