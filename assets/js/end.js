@@ -3,6 +3,9 @@
  * For use with end.html section
  * */
 
+// Wait for the DOM to finish loading before running the game
+document.addEventListener("DOMContentLoaded", function () {
+
 // VARIABLES DECLARED
 // Header Area
 const totalPlayedElement = document.getElementById('total-played');
@@ -144,3 +147,4 @@ function launchToiletRoll() {
 }
 
 selectStatements();
+});
