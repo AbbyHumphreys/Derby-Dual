@@ -19,6 +19,8 @@ View the deployed site: [Derby Duel](https://abbyhumphreys.github.io/Derby-Dual/
 
 A variety of testing methods were used throughout the project to ensure the project was error free. 
 
+Git branches were used extensively throughout project developement. It was discovered that merges were not shown well in Github, therefore, the branches were pushed over to Github before and after merging to show development. This is also the reason why the branches still exist (ordinarily, these would have been deleted once each merge was complete).
+
 # AUTOMATED TESTING
 Code validating tools were used (see below). 
 
