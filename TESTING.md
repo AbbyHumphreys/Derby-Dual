@@ -7,15 +7,19 @@ View the deployed site: [Derby Duel](https://abbyhumphreys.github.io/Derby-Dual/
 # Table of Contents
 - [`Automated Testing`](#automated-testing)
     - [`HTML Validator Testing`](#html-validator-testing)
+    - [`CSS Validator Testing`](#css-validator-testing)
+    - [`Javascript Code Testing`](#javascript-code-testing)
+    - [`Performance Testing`](#performance-testing)
+    - [`Accessibility Testing`](#accessibility-testing)
 - [`Manual Testing`](#manual-testing)
     - [`Compatibility Testing`](#compatibility-testing)
-    - [`Responsiveness Testing`](#Responsiveness-testing)
+    - [`Responsiveness Testing`](#responsiveness-testing)
     - [`User Story Testing`](#user-story-testing)
     - [`Functional Testing`](#functional-testing)
 
 A variety of testing methods were used throughout the project to ensure the project was error free. 
 
-# Automated Testing
+# AUTOMATED TESTING
 Code validating tools were used (see below). 
 
 Jest was installed and initiated. However, there is an incompatibility with the fetch API used in the site. A polyfill ([Node Fetch](https://www.npmjs.com/package/node-fetch)) was used to try to patch over these differences, but a workable solution was not found in this case. Tutor support was unable to help in this regard.
@@ -68,7 +72,7 @@ Please note: JS Hint is not updated with ES6, so these threw up warnings. Code w
 
 [Web Aim's](https://webaim.org/resources/contrastchecker/) contrast checker was used before building the site to ensure contrast between foreground and background colors was enough for accessibility purposes.
 
-# Manual Testing
+# MANUAL TESTING
 ## Compatibility Testing
 This site was tested across the three most widely used browsers today - Google Chrome, Microsoft Edge and Safari. The site worked well across all three browsers and discrepancies were not found.
 
