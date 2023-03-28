@@ -1,6 +1,6 @@
 /**
  * Quiz Results Revealed
- * For use with end.html news section
+ * For use with end.html section
  * */
 
 // VARIABLES DECLARED
