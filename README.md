@@ -153,19 +153,20 @@ To prevent user error and instruct users in the case of an error, defensive desi
 To simplify the webpage, but keep it familiar to the users, a hamburger icon was used. It opens as a side bar and provides access to the different sections of the home page via links.
 
 The two logos (permission sought and officially granted from both football teams) from along with the title provides a nice intro into the sites purpose - the teams the quiz is about. 
+
 A question presented as a challenge motivates the user to take the quiz. The button that takes the player to the quiz is kept in this top section so that users can go straight to the quiz if they wish.
 
 ### About Section
 
 ![The about section for the website](/assets/images/readme-images/about-section.webp "About Section")
 
-This is a brief section clarifying the purpose of the site
+There is a brief section clarifying the purpose of the site. Then game play is explained ensuring the user knows how to score points and how the score affects the final outcome. It was kept simple and short so as not to lose the users interest but provide enough information for them to understand how the quiz is scored.
 
-### Play Section
+### News Section
 
-![The how to play section for the website](/assets/images/readme-images/play-section.webp "Play Section")
+![The how to play section for the website](/assets/images/readme-images/news-section.webp "Play Section")
 
-Game play is explained in this section ensuring the user knows how to score points and how the score affects the final outcome. It was kept simple and short so as not to lose the users interest but provide enough information for them to understand how the quiz is scored.
+[Connexun News API](https://rapidapi.com/connexun-srl-connexun-srl-default/api/news67) was used via [Rapid API](https://rapidapi.com/hub) to give users relevant and up to date news on the Derby teams. The text was truncated using CSS so as not to become overbearing. When hovered over, each item is highlighted and when clicked, the original news item opens in a new tab.
 
 ### Contact Section
 
