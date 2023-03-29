@@ -243,7 +243,7 @@ A 404 page was added to the root folder as when researched it was discovered tha
 ## Known Bugs
 - There is a a warning displaying in the console on the live page. This error seems to be because GitHub hosted pages disable googles 3rd party cookie alternative FLoC, which then throws this error. The error doesn't affect the site in any way.
 ![Interest Cohort Error Message](/assets/images/readme-images/interest-cohort-error-message.webp "Error Message")
-- The end page throws an error of an uncaught promise. This is unresolved, but does not affect game play.
+- The end page throws an error of an uncaught promise. From research, this appears to be related to a chrome extension I have on my computer as others do not report getting this message. It does not affect game play.
 ![Uncaught Promise Error Message](/assets/images/readme-images/end-page-error.webp "Error Message two")
 
 # TESTING
