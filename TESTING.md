@@ -85,6 +85,15 @@ The site was tested on numerous devices and it worked well on all. The devices u
 ## Responsiveness Testing
 Responsiveness was tested throughout the site development using Google Chrome Dev Tools. Bootstrap made responsivity much easier to achieve and then a few css rules were required to adjust the site for small to large devices.
 
+## Defensive Design Testing
+Throughout the build, how users could break the site was taken into consideration. For example when an answer was submitted, the acceptinganswer variable was change to false to stop the user inputting another answer. This was tested by clicking again after an answer was inputted and was confirmed as working correctly.
+
+Repeating clicking on answers and around the site was tested and did not throw up any errors. 
+
+Clicking off the modal results in a defaul team being selected to ensure game play continues
+
+Users clicking off the toast doesn't close it. Dismissing the toast using the 'X' button doesn't stop game play.
+
 ## User Story Testing
 All user stories were achieved as the content needed was present and easily visible on the site. The navigation was easily seen and useable on both large and small devices. Text was clearly legible and displayed on contrasting background to allow accessibility. All images and icons were used to enhance the experience on the site and did not detract or distract from the user achieving their desired outcome.
 
