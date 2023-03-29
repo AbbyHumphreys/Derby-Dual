@@ -30,7 +30,7 @@ Jest was installed and initiated. However, after much research myself and discus
 
 If Jest had been available, the ideal solution would be to use the Test Driven Methodology to test as the quiz was being created. Due to lack of experience in this regard, testing was scheduled to take place once most of the code was implemented to ensure it works correctly. This would have taken the form of creating scenarios to test all likely outcomes and user inputs.
 
-Due to an incomplete Jest solution, extensive manual testing was implemented and the deployed site was sent out and tested by many users to test the robustness of the code. Pleasingly, no errors were reported by users.
+Due to an incomplete Jest solution, extensive manual testing was implemented and the deployed site was sent out and tested by many users to test the robustness of the code. Pleasingly, no errors were reported by users. The Jest file remains present in the tests folder as proof of the above.
 
 ## HTML Validator Testing
 HTML was testing using the [W3C Validator](https://validator.w3.org/) and the following errors were flagged and corrected:
