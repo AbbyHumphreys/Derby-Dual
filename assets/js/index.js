@@ -41,7 +41,7 @@ function displayNews(news) {
     <a href="${item.Url}" target="_blank">
     <h5 class="news-text">${item.Title}</h2>
     <img src="${item.Image}" class="img-fluid" alt="${item.Title}">
-    <p class="mt-4 news-text news-summary">${item.Summary}</p>
+    <p class="mt-4 news-text news-summary truncate-line-clamp">${item.Summary}</p>
     </a>
     `;
     // Create new div to display each news item

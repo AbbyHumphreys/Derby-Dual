@@ -116,6 +116,15 @@ h2 {
     margin: 0; /* Remove margins */
 }
 
+/* Snippet to truncate text from https://blog.kritikapattalam.com/2-simple-ways-you-can-truncate-text-using-css */
+.truncate-line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
+    width: 100%;
+    overflow: hidden;
+  }
+
 /*----------------------------------------------------- Hamburger Menu */
 
 .navbar-toggler-icon {
