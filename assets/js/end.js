@@ -77,13 +77,13 @@ let resultsStatement = [
 // Select statements depending on total points
 function displayStatements(){
     if (totalPoints <= 3) {
-        selectStatements(0)
+        selectStatements(0);
         launchToiletRoll();
     } else if ((totalPoints > 3) && (totalPoints <= 9)) {
-        selectStatements(1)
+        selectStatements(1);
         launchConfetti();
     } else if ((totalPoints > 9) && (totalPoints <= 18)) {
-        selectStatements(2)
+        selectStatements(2);
         launchConfetti();
     } else if (totalPoints > 18) {
         selectStatements(3);
