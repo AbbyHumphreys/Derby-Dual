@@ -128,7 +128,7 @@ Bootstrap grid system and responsiveness were used throughout the site and the H
 
 The CSS file was written in a way to utilise the cascading nature of CSS and in such a manner that general styles including colors are found at the top, then styles for each section as found in their defined order (as found when browsing the site) and then media queries at the bottom.
 
-Javascript was utilised to create game interactivity which greatly increases satisfaction and a great user experience. 
+Javascript was utilised to create game interactivity which greatly increases satisfaction and a great user experience. Javascript was refactor and tested throughout the site build and more extensively at the end to aid DRY coding and enable easy future maintenance.
 
 ## Structure
 This website was designed with mobile users foremost in mind as most users will access it using their mobile phones. With this in mind, simple layouts were used throughout to achieve an easy on the eye look. The site is structured in a familiar, user friendly way. A navigation menu is included in the single page layout of homepage. The menu is hidden using a hamburger menu icon as a toggle. This is because the page is short and it is likely users will scroll rather use the menu links.It was excluded from the game area to avoid distraction or accidently clicking away from the game. In the game pages, the homepage can be accessed using the Derby Duel logo or from a button on the end page.  The pages of the website are accessible using buttons. For example, on the home page, the ‘Take Quiz’ button links directly through to the game. The website consists of the following sections:
