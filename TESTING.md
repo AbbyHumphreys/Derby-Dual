@@ -26,7 +26,7 @@ Git branches were used extensively throughout project developement. It was disco
 # AUTOMATED TESTING
 Code validating tools were used (see below). 
 
-Jest was installed and initiated. However, there is an incompatibility with the fetch API used in the site. A polyfill ([Node Fetch](https://www.npmjs.com/package/node-fetch)) was used to try to patch over these differences, but a workable solution was not found in this case. Tutor support was unable to help in this regard.
+Jest was installed and initiated. However, after much research myself and discussion with tutor support, the issue was unresolved and therefore extensive manual testing was completed to ensure the robustness of the site. Jest by default is incompatible with the fetch API used in the site. A polyfill ([Node Fetch](https://www.npmjs.com/package/node-fetch)) was used to try to patch over these differences. It was installed according to node-fetch instructions but the error messages remained. An earlier version of node-fetch was later installed to try to resolve the issue after researching but a workable solution was not found in this case. 
 
 If Jest had been available, the ideal solution would be to use the Test Driven Methodology to test as the quiz was being created. Due to lack of experience in this regard, testing was scheduled to take place once most of the code was implemented to ensure it works correctly. This would have taken the form of creating scenarios to test all likely outcomes and user inputs.
 
